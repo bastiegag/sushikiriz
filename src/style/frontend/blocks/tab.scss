@@ -1,0 +1,61 @@
+.tabs-nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		margin-right: $border-width;
+	}
+
+	a {
+		background: $white;
+		border-radius: $border-radius $border-radius 0 0;
+		border: $border-width solid $white;
+		color: $dark;
+		display: block;
+		line-height: 2;
+		opacity: 0.5;
+		padding: $input-btn-padding-y $spacer;
+		white-space: nowrap;
+
+		&:hover {
+			color: $dark;
+			opacity: 0.75;
+			text-decoration: none;
+		}
+
+		&.is-active {
+			opacity: 1;
+		}
+	}
+
+	.bg-white & a {
+		background: $lighter;
+		border-color: $lighter;
+	}
+}
+
+.tabs-content {
+	background: $white;
+
+	.bg-white & {
+		background: $lighter;
+	}
+}
+
+.tabs-item {
+	background: $white;
+	border-radius: 0 $border-radius $border-radius $border-radius;
+	box-shadow: $box-shadow;;
+	color: $dark;
+	display: none;
+	fill: $dark;
+	height: 100%;
+	padding: $spacer;
+	position: relative;
+
+	.bg-white & {
+		background: $lighter;
+	}
+}

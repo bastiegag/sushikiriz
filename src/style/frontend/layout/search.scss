@@ -1,0 +1,109 @@
+.search-form {
+	background: $white;
+	border-radius: $border-radius;
+	margin-bottom: $spacer * 0.5;
+	position: relative;
+	z-index: 2;
+
+	.site-header & {
+		input,
+		input:focus {
+			border-color: $white;
+		}
+
+		.btn,
+		.btn:focus,
+		.btn:active {
+			background: $white;
+			border-color: $white;
+			fill: $dark;
+			height: 4rem;
+			padding-left: $input-padding-x;
+			padding-right: $input-padding-x;
+			transition: $transition-base;
+
+			&:hover {
+				fill: $primary;
+			}
+
+			&.is-active {
+				border-color: $white;
+				fill: $primary;
+			}
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		.site-header & {
+			margin-bottom: 0;
+			margin-left: $spacer * 0.5;
+			order: 5;
+
+			.btn {
+				background: transparent;
+				border-color: transparent;
+
+				&:active {
+					background: transparent;
+					border-color: transparent;
+				}
+			}
+
+			input {
+				opacity: 0;
+				pointer-events: none;
+				position: absolute !important;
+				right: 100%;
+				top: 0;
+				transform: translateX( $spacer );
+				transition: $transition-base;
+				width: 20rem !important;
+			}
+
+			.search-opened & {
+				.btn {
+					background: $white;
+					border-color: $white;
+					fill: $primary;
+				}
+
+				input {
+					opacity: 1;
+					pointer-events: auto;
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+}
+
+.search-item {
+	position: relative;
+
+	&:after {
+		background: $border-color;
+		bottom: $spacer * -0.5;
+		content: "";
+		display: block;
+		height: $border-width;
+		left: 0;
+		position: absolute;
+		right: 0;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		&:after {
+			bottom: $spacer * -0.75;
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		&:after {
+			bottom: $spacer * -1;
+		}
+	}
+}

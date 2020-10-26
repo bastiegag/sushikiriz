@@ -1,0 +1,66 @@
+.acf-field-group[data-name="social-links"],
+.acf-field-group[data-name="hero-content"],
+.acf-field-group[data-name="hero-background"] {
+	> .acf-label {
+		display: none;
+	}
+
+	.acf-fields {
+		&.-border {
+			border: none;
+		}
+
+		> .acf-field {
+			border: 0;
+			padding-left: 0;
+			padding-right: 0;
+			padding-top: 0;
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
+.acf-fc-layout-handle {
+	small {
+		color: #ccd0d4;
+	}
+}
+
+.acf-field-group[data-name="background"] {
+	.acf-fields {
+		&.-border {
+			border: none;
+		}
+
+		> .acf-field {
+			border: 0;
+			padding-left: 0;
+			padding-right: 0;
+			padding-top: 0;
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+
+		> .acf-field-select[data-name="type"] .acf-label {
+			display: none;
+		}
+	}
+}
+
+// .acf-field-image .acf-label,
+.acf-field-google-map .acf-label {
+	display: none;
+}
+
+.acf-table tr.acf-row:nth-child(even) td.acf-row-handle {
+	background: #eaeaea;
+}
+
+.acf-table tr.acf-row:nth-child(even) td.acf-fields {
+	background: #f7f7f7;
+}

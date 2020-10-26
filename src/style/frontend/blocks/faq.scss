@@ -1,0 +1,60 @@
+.faq-item {
+	background: $white;
+	border-radius: $border-radius;
+	box-shadow: $box-shadow;
+	text-align: left;
+
+	.bg-white & {
+		background: $lighter;
+	}
+}
+
+.faq-question {
+	color: $dark;
+	display: block;
+	fill: $dark;
+	padding-right: $spacer * 3;
+	padding: $spacer * 0.75 $spacer;
+	position: relative;
+	text-decoration: none;
+
+	&:hover {
+		background: dark( $lighter, 10 );
+		text-decoration: none;
+	}
+
+	.icon {
+		background: $lighter;
+		border-radius: 100%;
+		height: 3rem;
+		padding: 0.75rem;
+		position: absolute;
+		right: 2rem;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: $transition-base;
+		width: 3rem;
+	}
+
+	.is-active & {
+		color: $primary;
+
+		.icon {
+			transform: translateY(-50%) rotate(180deg);
+		}
+	}
+}
+
+.faq-answer {
+	border-top: $border-width solid $border-color;
+	color: $dark;
+	display: none;
+	padding: $spacer;
+}
+
+@each $color, $value in $theme-colors {
+	.bg-#{$color} .faq-item .icon {
+		background: #{$value};
+		fill: map-get( $text-colors, #{$color} );
+	}
+}

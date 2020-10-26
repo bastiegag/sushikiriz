@@ -1,0 +1,64 @@
+.number {
+	display: flex;
+	margin: 0 0 2rem 0;
+	position: relative;
+	width: 100%;
+	align-items: stretch;
+
+	input {
+		@extend .form-control;
+		appearance: none;
+		border-left: 0;
+		border-radius: 0;
+		border-right: 0;
+		margin: 0;
+
+		@include media-breakpoint-up(md) {
+			appearance: textfield;
+		}
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			appearance: none;
+			margin: 0;
+		}
+	}
+}
+
+.number-minus,
+.number-plus {
+	background-color: $gray;
+	border: 0;
+	color: $white;
+	cursor: pointer;
+	padding: 0;
+	width: 2rem;
+	flex: 0 0 2rem;
+
+	.no-touchevents &:hover {
+		background-color: lighten( $gray, 5 );
+	}
+
+	&:active,
+	&:focus,
+	.no-touchevents &:active:hover {
+		background-color: darken( $gray, 10 );
+		color: $white;
+		fill: $white;
+	}
+
+	&:disabled,
+	.no-touchevents &:disabled:hover {
+		background-color: $gray;
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+}
+
+.number-plus {
+	border-radius: 0 $border-radius $border-radius 0;
+}
+
+.number-minus {
+	border-radius: $border-radius 0 0 $border-radius;
+}

@@ -1,0 +1,511 @@
+# Translation of Sushikiriz - 2.0.x in English (US)
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-04-06\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: en_US\n"
+"Project-Id-Version: Sushikiriz - 2.0.x\n"
+
+msgid "Contactez-nous"
+msgstr "Contact us"
+
+msgid "La page que vous avez demandée n'a pas été trouvée"
+msgstr "The page you requested was not found"
+
+msgid "Page introuvable"
+msgstr "Page not found"
+
+msgid "Si vous arrivez ici lorsque vous suivez un lien d'un autre site Web, vous pouvez %s nous contacter %s pour nous signaler cette erreur."
+msgstr "In case you arrive here when you follow a link from another website, you can %s contact us %s to report us this error."
+
+msgid "Le moyen le plus simple est de suivre ce lien pour accéder à la %s page d'accueil %s, mais vous pouvez également accéder directement à l'une de nos sections en utilisant le menu de navigation."
+msgstr "The easiest way is to follow this link to go to the %s home page %s, but you can also go directly to one of our sections by using the navigation menu."
+
+msgid "Que faire maintenant?"
+msgstr "What to do now?"
+
+msgid "Aucun commentaire pour le moment"
+msgstr "No comments yet"
+
+msgid "Commentaires"
+msgstr "Comments"
+
+msgid "Conception web"
+msgstr "Web conception"
+
+msgid "Tous droits réservés."
+msgstr "All rights reserved."
+
+msgid "Lire la suite"
+msgstr "Read more"
+
+msgid "Nous nous excusons pour le dérangement.<br />Notre site sera bientôt de nouveau en ligne."
+msgstr "We apologize for the inconvenience.<br />Our site will be back online soon."
+
+msgid "Nous travaillons actuellement à améliorer <br />votre expérience sur notre site web."
+msgstr "We are currently working on <br />improving your experience on our website."
+
+msgid "Site en maintenance"
+msgstr "Site under maintenance"
+
+msgid "Aucune résultat"
+msgstr "No results"
+
+msgid "Portfolio"
+msgstr "Portfolio"
+
+msgid "Équipe"
+msgstr "Team"
+
+msgid "Article"
+msgstr "Post"
+
+msgid "Produit"
+msgstr "Product"
+
+msgid "Page"
+msgstr "Page"
+
+msgid "%s commentaires"
+msgstr "%s comments"
+
+msgid "%s commentaire"
+msgstr "%s comment"
+
+msgid "%s résultats"
+msgstr "%s results"
+
+msgid "%s résultat"
+msgstr "%s result"
+
+msgid "Par"
+msgstr "By"
+
+msgid "0 commentaire"
+msgstr "0 comment"
+
+msgid "Panier"
+msgstr "Cart"
+
+msgid "Se connecter"
+msgstr "Login"
+
+msgid "Mon compte"
+msgstr "My account"
+
+msgid "Retour au blogue"
+msgstr "Back to blog"
+
+msgid "Vous avez recherché"
+msgstr "You searched"
+
+msgid "0 résultat"
+msgstr "0 result"
+
+msgid "Catégorie"
+msgstr "Category"
+
+msgid "Recherche"
+msgstr "Search"
+
+msgid "Accepter"
+msgstr "Accept"
+
+msgctxt "Singular post type name"
+msgid "Portfolio"
+msgstr "Portfolio"
+
+msgctxt "Post type name on top bar"
+msgid "Portfolio"
+msgstr "Portfolio"
+
+msgctxt "Post type name"
+msgid "Portfolio"
+msgstr "Portfolio"
+
+msgctxt "Post type name in menu"
+msgid "Portfolio"
+msgstr "Portfolio"
+
+msgid "Catégorie portfolio"
+msgstr "Portfolio category"
+
+msgid "Voir la réalisation"
+msgstr "View work"
+
+msgid "Rechercher une réalisation"
+msgstr "Search work"
+
+msgid "Réalisation parente"
+msgstr "Parent work"
+
+msgid "Aucune réalisation trouvée dans la corbeille"
+msgstr "No work found in trash"
+
+msgid "Aucune réalisation trouvée"
+msgstr "No work found"
+
+msgid "Nouvelle réalisation"
+msgstr "New work"
+
+msgid "Modifier la réalisation"
+msgstr "Edit work"
+
+msgid "Toutes les réalisations"
+msgstr "All works"
+
+msgid "Ajouter une nouvelle réalisation"
+msgstr "Add new work"
+
+msgid "Ajouter une réalisation"
+msgstr "Add work"
+
+msgctxt "Singular post type name"
+msgid "Équipe"
+msgstr "Team"
+
+msgctxt "Post type name on top bar"
+msgid "Équipe"
+msgstr "Team"
+
+msgctxt "Post type name"
+msgid "Équipe"
+msgstr "Team"
+
+msgctxt "Post type name in menu"
+msgid "Équipe"
+msgstr "Team"
+
+msgid "Mettre à jour la catégorie"
+msgstr "Update category"
+
+msgid "Catégorie équipe"
+msgstr "Team category"
+
+msgid "Rechercher une catégorie"
+msgstr "Search category"
+
+msgid "Catégorie parente"
+msgstr "Parent category"
+
+msgid "Nom de la nouvelle catégorie"
+msgstr "New category name"
+
+msgid "Catégories"
+msgstr "Categories"
+
+msgid "Modifier la catégorie"
+msgstr "Edit category"
+
+msgid "Toutes les catégories"
+msgstr "All categories"
+
+msgid "Ajouter une catégorie"
+msgstr "Add category"
+
+msgid "Voir le membre"
+msgstr "View member"
+
+msgid "Rechercher un membre"
+msgstr "Search member"
+
+msgid "Membre parent"
+msgstr "Parent member"
+
+msgid "Aucun membre trouvé dans la corbeille"
+msgstr "No member found in trash"
+
+msgid "Aucun membre trouvé"
+msgstr "No member found"
+
+msgid "Nouveau membre"
+msgstr "New member"
+
+msgid "Modifier le membre"
+msgstr "Edit member"
+
+msgid "Tous les membres"
+msgstr "All members"
+
+msgid "Ajouter un nouveau membre"
+msgstr "Add new member"
+
+msgid "Ajouter un membre"
+msgstr "Add member"
+
+msgid "Il n'y a pas de blocs disponibles"
+msgstr "There are no blocks available"
+
+msgid "Ajouter"
+msgstr "Add"
+
+msgid "Blocs"
+msgstr "Blocks"
+
+msgid "Propulsé par"
+msgstr "Powered by"
+
+msgid "Développé par"
+msgstr "Developped by"
+
+msgid "Blogue"
+msgstr "Blog"
+
+msgid "Bas de page"
+msgstr "Footer"
+
+msgid "Réglages du site"
+msgstr "Site settings"
+
+msgid "Options du site"
+msgstr "Site options"
+
+msgid "Menu bas de page"
+msgstr "Footer menu"
+
+msgid "Menu secondaire"
+msgstr "Secondary menu"
+
+msgid "Menu principal"
+msgstr "Primary menu"
+
+msgid "Répondre"
+msgstr "Reply"
+
+msgid "En attente de modération"
+msgstr "Awaiting moderation"
+
+msgid "Laisser un commentaire"
+msgstr "Leave a comment"
+
+msgid "Répondre à"
+msgstr "Reply to"
+
+msgid "Éditeur de page"
+msgstr "Page builder"
+
+msgid "Entête"
+msgstr "Header"
+
+msgid "Arrière-plan"
+msgstr "Background"
+
+msgid "Couleur"
+msgstr "Color"
+
+msgid "Blanc"
+msgstr "White"
+
+msgid "Noir"
+msgstr "Black"
+
+msgid "Primaire"
+msgstr "Primary"
+
+msgid "Secondaire"
+msgstr "Secondary"
+
+msgid "Gris plus pâle"
+msgstr "Lighter gray"
+
+msgid "Gris pâle"
+msgstr "Light gray"
+
+msgid "Gris"
+msgstr "Gray"
+
+msgid "Gris foncé"
+msgstr "Dark gray"
+
+msgid "Gris plus foncé"
+msgstr "Darker gray"
+
+msgid "Opacité"
+msgstr "Opacity"
+
+msgid "Niveaux de gris"
+msgstr "Grayscale"
+
+msgid "Flou"
+msgstr "Blur"
+
+msgid "Titre"
+msgstr "Title"
+
+msgid "Sous-titre"
+msgstr "Subtitle"
+
+msgid "Lien"
+msgstr "Link"
+
+msgid "Plein écran"
+msgstr "Fullscreen"
+
+msgid "Vidéo"
+msgstr "Video"
+
+msgid "Url"
+msgstr "Url"
+
+msgid "Carrousel"
+msgstr "Slideshow"
+
+msgid "Texte"
+msgstr "Text"
+
+msgid "Titre visible"
+msgstr "Visible title"
+
+msgid "Alignement du texte"
+msgstr "Text alignment"
+
+msgid "Alignement vertical"
+msgstr "Vertical alignment"
+
+msgid "Pleine largeur"
+msgstr "Full width"
+
+msgid "Contenu"
+msgstr "Content"
+
+msgid "Options"
+msgstr "Options"
+
+msgid "Bloc réutilisable"
+msgstr "Reusable block"
+
+msgid "Bloc"
+msgstr "Block"
+
+msgid "Caractéristiques"
+msgstr "Features"
+
+msgid "Questions"
+msgstr "Questions"
+
+msgid "Question"
+msgstr "Question"
+
+msgid "Réponse"
+msgstr "Answer"
+
+msgid "Formulaire"
+msgstr "Form"
+
+msgid "Photos"
+msgstr "Photos"
+
+msgid "Colonnes"
+msgstr "Columns"
+
+msgid "Dimension"
+msgstr "Size"
+
+msgid "Proportion"
+msgstr "Ratio"
+
+msgid "Ordre aléatoire"
+msgstr "Random order"
+
+msgid "Galerie"
+msgstr "Gallery"
+
+msgid "Onglets"
+msgstr "Tabs"
+
+msgid "Publications"
+msgstr "Posts"
+
+msgid "Type de publication"
+msgstr "Post type"
+
+msgid "Trier par"
+msgstr "Sort by"
+
+msgid "Ordre"
+msgstr "Order"
+
+msgid "Nombre d'articles"
+msgstr "Number of articles"
+
+msgid "Gauche"
+msgstr "Left"
+
+msgid "Droite"
+msgstr "Right"
+
+msgid "Centre"
+msgstr "Center"
+
+msgid "Justifier"
+msgstr "Justify"
+
+msgid "Image"
+msgstr "Image"
+
+msgid "Aucun"
+msgstr "None"
+
+msgid "Miniature"
+msgstr "Thumbnail"
+
+msgid "Moyenne"
+msgstr "Medium"
+
+msgid "Grande"
+msgstr "Large"
+
+msgid "Taille originale"
+msgstr "Full"
+
+msgid "Général"
+msgstr "General"
+
+msgid "Maintenance"
+msgstr "Maintenance"
+
+msgid "Icônes"
+msgstr "Icons"
+
+msgid "Page contact"
+msgstr "Contact page"
+
+msgid "Fonctionnalités"
+msgstr "Features"
+
+msgid "Types de publication"
+msgstr "Post types"
+
+msgid "Annonce"
+msgstr "Banner"
+
+msgid "Réseaux sociaux"
+msgstr "Social medias"
+
+msgid "Blocs réutilisables"
+msgstr "Reusable blocks"
+
+msgid "Emploi"
+msgstr "Job"
+
+msgid "Courriel"
+msgstr "Email"
+
+msgid "Téléphone"
+msgstr "Phone"
+
+msgid "Information"
+msgstr "Information"
+
+msgid "Aucun membre"
+msgstr "No member"
+
+msgid "Aucune réalisation"
+msgstr "No work"
+
+msgid "Voir les différentes icônes disponibles"
+msgstr "See the different icons available"

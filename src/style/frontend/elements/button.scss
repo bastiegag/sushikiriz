@@ -1,0 +1,55 @@
+.btn {
+	align-items: center;
+	display: inline-flex;
+	justify-content: space-between;
+
+	&.loading:before {
+		background: url('../img/loading.svg') no-repeat center center;
+		content: "";
+		display: inline-block;
+		width: 2rem;
+		height: 2rem;
+		background-size: cover;
+		margin-right: 1rem;
+	}
+
+	&[disabled] {
+		cursor: not-allowed;
+	}
+}
+
+.button {
+	@extend .btn, .btn-gray;
+
+	&.single_add_to_cart_button {
+		@extend .btn-primary;
+	}
+}
+
+.btn-icon-left svg {
+	margin-right: $spacer * 0.5;
+}
+
+.btn-icon-right svg {
+	margin-left: $spacer * 0.5;
+}
+
+@each $color, $value in $text-colors {
+	.btn-#{$color} {
+		color: #{$value};
+		fill: #{$value};
+
+		&:hover {
+			color: #{$value};
+			fill: #{$value};
+		}
+
+		&:not(:disabled):not(.disabled):active,
+		&:not(:disabled):not(.disabled).is-active {
+			background: darken( map-get( $theme-colors, #{$color} ), 25 );
+			border-color: darken( map-get( $theme-colors, #{$color} ), 25 );
+			color: #{$value};
+			fill: #{$value};
+		}
+	}
+}

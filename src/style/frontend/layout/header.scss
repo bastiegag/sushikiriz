@@ -1,0 +1,107 @@
+.site-header {
+	background: $white;
+	box-shadow: 0 0.5rem 0 rgba( $black, 0.05 );
+	left: 0;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	transition: $transition-base;
+	width: 100%;
+	z-index: 10;
+
+	.is-resize & {
+		transition: 0s all;
+	}
+
+	.has-banner .nav-sticky & {
+		transform: translateY(-3.1rem);
+	}
+
+	&:before {
+		background: $black;
+		content: "";
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		transition: $transition-base;
+		width: 100%;
+		z-index: 2;
+	}
+
+	.search-opened &:before {
+		opacity: 0.25;
+	}
+
+	.holder {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	> .container {
+		padding-bottom: 1.5rem;
+		padding-top: 1.5rem;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		padding: 0;
+
+		.holder {
+			padding: $spacer 0;
+		}
+
+		> .container {
+			padding-bottom: 0;
+			padding-top: 0;
+		}
+
+		.nav-sticky & {
+			transform: translateY(-3.2rem);
+		}
+
+		.has-banner .nav-sticky & {
+			transform: translateY(-6.3rem);
+		}
+	}
+}
+
+.site-logo {
+	display: inline-block;
+	height: 4rem;
+	width: auto;
+	
+	svg {
+		height: 100%;
+		width: auto;
+
+		* {
+			fill: $dark;
+		}
+
+		#sherbrooke * {
+			fill: $light;
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		height: 5rem;
+	}
+}
+
+.site-call {
+	align-items: center;
+	display: flex;
+	fill: $dark;
+	height: 4rem;
+	justify-content: center;
+	padding: 0.5rem;
+	width: 4rem;
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		display: none;
+	}
+}

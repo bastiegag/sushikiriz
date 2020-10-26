@@ -1,0 +1,42 @@
+.swiper-container {
+	height: 100%;
+}
+
+.swiper-direction {
+	display: none;
+	fill: inherit;
+	height: 4rem;
+	opacity: 0.5;
+	padding: 0.5rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 4rem;
+	z-index: 10;
+
+	&.swiper-button-disabled {
+		display: none;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		display: block;
+	}
+}
+
+.swiper-prev {
+	left: $spacer;
+}
+
+.swiper-next {
+	right: $spacer;
+}
+
+.swiper-slide {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

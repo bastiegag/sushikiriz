@@ -1,0 +1,9 @@
+.team-item {
+	h3 {
+		margin-bottom: $spacer * 0.5;
+	}
+
+	p:last-of-type {
+		margin: 0;
+	}
+}

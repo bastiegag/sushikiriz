@@ -1,0 +1,19 @@
+.banner {
+	background: $primary;
+	color: $white;
+	font-size: $font-size-sm;
+	margin: 0;
+	padding: 0.5rem 0;
+	position: relative;
+	text-align: center;
+
+	a {
+		color: $white;
+		text-decoration: underline;
+
+		&:hover {
+			color: $white;
+			text-decoration: none;
+		}
+	}
+}

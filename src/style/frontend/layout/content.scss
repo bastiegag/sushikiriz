@@ -1,0 +1,86 @@
+.block {
+	overflow: hidden;
+	padding: $spacer * 2 0;
+	position: relative;
+
+	.container,
+	.container-fluid {
+		position: relative;
+		z-index: 2;
+	}
+
+	&.align-top .row {
+		align-items: start;
+	}
+
+	&.align-center .row {
+		align-items: center;
+	}
+
+	&.align-bottom .row {
+		align-items: end;
+	}
+
+	@each $color, $value in $theme-colors {
+		&.bg-#{$color}:not(.bg-image) + .block.bg-#{$color} {
+			padding-top: 0;
+		}
+	}
+
+	&.bg-none:not(.bg-image) + .block.bg-none {
+		padding-top: 0;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		padding: $spacer * 3 0;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		padding: $spacer * 4 0;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, xl ) ) {
+		padding: $spacer * 5 0;
+	}
+}
+
+@each $color, $value in $theme-colors {
+	&.text-#{$color} {
+		fill: $value;
+	}
+}
+
+.block-background {
+	height: 100%;
+
+	&.pattern:before {
+		background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjMuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0IDQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQgNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtvcGFjaXR5OjAuMTU7fQo8L3N0eWxlPgo8cmVjdCBjbGFzcz0ic3QwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+CjxyZWN0IHg9IjIiIHk9IjIiIGNsYXNzPSJzdDAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz4KPC9zdmc+Cg==');
+		background-size: 4px 4px;
+		content: "";
+		display: block;
+		height: 100%;
+		left: 0;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 2;
+	}
+
+	video {
+		left: 0;
+		min-height: 100%;
+		min-width: 100%;
+		position: absolute;
+		top: 0;
+		z-index: 1;
+	}
+}
+
+.col-first {
+	margin-bottom: $spacer * 2;
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		margin-bottom: 0;
+	}
+}

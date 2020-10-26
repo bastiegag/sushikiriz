@@ -1,0 +1,145 @@
+.quantity {
+	display: inline-block;
+	vertical-align: middle;
+
+	.number {
+		margin: 0;
+	}
+}
+
+.shop_table_responsive {
+	td.product-remove {
+		text-align: center;
+		width: 2rem;
+		fill: $danger;
+		padding: 0 !important;
+
+		a {
+			opacity: 0.5;
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			font-size: 3rem;
+			line-height: 1;
+			width: 2rem;
+			height: 2rem;
+			display: block;
+
+			&:hover {
+				opacity: 1;
+				text-decoration: none;
+			}
+		}
+
+		@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+			padding: 1rem !important;
+
+			a {
+				position: relative;
+				top: 0;
+				right: 0;
+			}
+		}
+	}
+
+	td.product-thumbnail {
+		padding-left: 25%;
+		padding-right: 25%;
+		padding-top: $spacer;
+
+		@media ( min-width: map-get( $grid-breakpoints, sm ) ) {
+			padding-left: 35%;
+			padding-right: 35%;
+		}
+
+		@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+			width: 10rem;
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
+
+	td.actions {
+		text-align: center;
+		background: $lighter;
+		padding: 0;
+
+		button[name="update_cart"] {
+			@extend .btn-secondary;
+		}
+
+		@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+			text-align: right;
+			padding-top: $spacer;
+		}
+	}
+}
+
+.coupon {
+	display: inline-flex;
+	vertical-align: middle;
+	width: 100%;
+	margin-bottom: $spacer;
+
+	label {
+		display: none;
+	}
+
+	.button {
+		border-radius: 0 $border-radius $border-radius 0;
+		white-space: nowrap;
+	}
+
+	input {
+		border-radius: $border-radius 0 0 $border-radius;
+		border-right: 0;
+		width: 15rem;
+		flex: 1 0 auto;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		float: left;
+		margin-bottom: 0;
+		width: auto;
+
+		input {
+			width: 15rem;
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		input {
+			width: auto;
+		}
+	}
+}
+
+.cart_totals {
+	margin-top: $spacer;
+
+	h2 {
+		@extend h4;
+	}
+
+	th {
+		border-top: $border-width solid $lighter;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		margin-top: $spacer * 1.5;
+		float: right;
+		width: 50%;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		margin-top: $spacer * 2;
+	}
+}
+
+.wc-proceed-to-checkout {
+	margin-top: $spacer;
+
+	.checkout-button {
+		@extend .btn-block, .btn-primary;
+	}
+}

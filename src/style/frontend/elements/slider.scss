@@ -1,0 +1,32 @@
+.ui-slider {
+	background: $light;
+	height: 0.3rem;
+	margin: $spacer 0.5rem;
+	position: relative;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+	background: $primary;
+	border-radius: 100%;
+	cursor: pointer;
+	display: block;
+	height: $spacer * 0.75;
+	margin-top: 0.1rem;
+	position: absolute;
+	transform: translateX(-50%) translateY(-50%);
+	width: $spacer * 0.75;
+}
+
+.ui-slider-range {
+	background: $primary;
+	height: 100%;
+	position: absolute;
+}
+
+.price_slider_amount {
+	text-align: center;
+
+	.button {
+		margin-bottom: $spacer;	
+	}
+}

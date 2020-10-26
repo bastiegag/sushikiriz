@@ -1,0 +1,32 @@
+body.is-maintenance {
+	background: $body-bg;
+
+	.site {
+		height: 100vh;
+	}
+
+	.page,
+	.container {
+		height: 100%;
+	}
+}
+
+.maintenance {
+	left: 50%;
+	padding: $spacer;
+	position: fixed;
+	text-align: center;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 100%;
+
+	p:last-of-type {
+		margin: 0;
+	}
+}
+
+.maintenance-logo {
+	display: inline-block;
+	margin-bottom: $spacer * 2;
+	width: 20rem;
+}

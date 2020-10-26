@@ -1,0 +1,24 @@
+.portfolio-item {
+	border-radius: $border-width;
+	box-shadow: $box-shadow;
+
+	.title {
+		align-items: center;
+		background: $white;
+		color: $dark;
+		display: flex;
+		fill: $dark;
+		justify-content: space-between;
+		padding: 1rem $spacer;
+
+		&:hover {
+			color: $primary;
+			fill: $primary;
+			text-decoration: none;
+		}
+	}
+
+	.bg-white & .title {
+		background: $lighter;
+	}
+}

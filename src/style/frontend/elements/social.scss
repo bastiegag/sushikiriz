@@ -1,0 +1,56 @@
+.social-medias {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	margin: $spacer 0 0 0;
+	padding: 0;
+
+	li {
+		margin: 0 0.5rem;
+	}
+
+	a {
+		display: block;
+		fill: $gray;
+		height: 4rem;
+		padding: 0.5rem;
+		width: 4rem;
+
+		&:hover {
+			fill: $white;
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		margin: 0;
+
+		li {
+			margin: 0 0 0 0.5rem;
+		}
+
+		a {
+			fill: $gray;
+			height: 2.4rem;
+			padding: 0.5rem;
+			width: 2.4rem;
+
+			&:hover {
+				fill: $white;
+			}
+		}
+
+		.page-footer & {
+			margin: $spacer 0 0 0;
+
+			li {
+				margin: 0 0 0 0.5rem;
+			}
+
+			a {
+				height: 4rem;
+				width: 4rem;
+			}
+		}
+	}
+}

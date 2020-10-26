@@ -1,0 +1,128 @@
+.hero {
+	height: auto;
+	overflow: hidden;
+	padding: 15rem 0 8rem 0;
+	position: relative;
+
+	.container {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		pointer-events: none;
+		position: relative;
+		z-index: 3;
+	}
+
+	.has-banner & {
+		padding: 18rem 0 8rem 0;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		padding: 19rem 0 12rem 0;
+
+		.has-banner & {
+			padding: 22rem 0 12rem 0;
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		padding: 28rem 0 16rem 0;
+
+		.has-banner & {
+			padding: 31rem 0 16rem 0;
+		}
+	}
+}
+
+.hero-fullscreen {
+	height: 100vh;
+	padding: 0;
+}
+
+.hero-background {
+	height: 100%;
+
+	&.pattern:before {
+		background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjMuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0IDQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQgNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtvcGFjaXR5OjAuMTU7fQo8L3N0eWxlPgo8cmVjdCBjbGFzcz0ic3QwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+CjxyZWN0IHg9IjIiIHk9IjIiIGNsYXNzPSJzdDAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz4KPC9zdmc+Cg==');
+		background-size: 4px 4px;
+		content: "";
+		display: block;
+		height: 100%;
+		left: 0;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 2;
+	}
+
+	video {
+		left: 0;
+		min-height: 100%;
+		min-width: 100%;
+		position: absolute;
+		top: 0;
+		z-index: 1;
+	}
+}
+
+.hero-caption {
+	text-align: center;
+
+	h1 {
+		margin-bottom: $spacer;
+	}
+
+	p {
+		margin: $spacer 0 0 0;
+	}
+
+	a {
+		pointer-events: auto;
+	}
+
+	.post-meta {
+		margin: $spacer 0;
+		pointer-events: auto;
+	}
+
+	.post-tags {
+		pointer-events: auto;
+		margin: $spacer * -0.5 0 0 0;
+	}
+
+	.btn {
+		margin-top: $spacer * 2;
+		pointer-events: auto;
+	}
+}
+
+.hero-scroll {
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-name: hero-scroll;
+	animation-timing-function: ease;
+	bottom: $spacer;
+	display: block;
+	fill: inherit;
+	height: 4rem;
+	left: 50%;
+	opacity: 0.5;
+	padding: 0.5rem;
+	position: absolute;
+	transform: translateX(-50%);
+	width: 4rem;
+	z-index: 4;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+@keyframes hero-scroll {
+	0% { transform: translateX(-50%) translateY(-50%) }
+	50% { transform: translateX(-50%) translateY(0%) }
+	100% { transform: translateX(-50%) translateY(-50%) }
+}
+

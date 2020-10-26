@@ -1,0 +1,177 @@
+.block-posts {
+	.row {
+		align-items: stretch !important;
+	}
+
+	.col {
+		margin: $spacer 0;
+	}
+
+	.post-item {
+		height: 100%;
+		margin: 0;
+	}
+
+	.container-lg {
+		position: relative;
+		padding: 0;
+	}
+
+	.swiper-container {
+		padding-bottom: 0.4rem;
+	}
+
+	.swiper-slide {
+		padding: 0;
+		width: calc( 100% - 3rem );
+	}
+
+	.swiper-next {
+		right: $spacer * -1;
+	}
+
+	.swiper-prev {
+		left: $spacer * -1;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, sm ) ) {
+		.swiper-slide {
+			width: calc( 50% - 4rem );
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		.container-lg {
+			position: relative;
+			padding: 0 $spacer * 2;
+		}
+
+		.swiper-container {
+			margin: 0 $spacer * -1;
+		}
+
+		.swiper-slide {
+			flex: 0 0 33.3333%;
+			max-width: 33.3333%;
+			padding-left: $spacer;
+			padding-right: $spacer;
+			width: auto;
+		}
+	}
+}
+
+.post-item {
+	background: $white;
+	box-shadow: $box-shadow;
+	color: $dark;
+	margin-bottom: $spacer;
+	padding: $spacer;
+	position: relative;
+
+	h2 {
+		margin: $spacer 0;
+		text-align: center;
+
+		a {
+			color: $dark;
+
+			&:hover {
+				color: $primary;
+				text-decoration: none;
+			}
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		margin-bottom: $spacer * 1.5;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		margin-bottom: $spacer * 2;
+	}
+}
+
+.post-meta {
+	font-size: $font-size-sm;
+	list-style: none;
+	margin: $spacer 0;
+	padding: 0;
+	text-align: center;
+
+	.hero-caption & li,
+	.hero-caption & a {
+		color: $white;
+	}
+	
+	li {
+		color: $gray;
+		display: inline-block;
+		padding: 0 1rem 0 0.6rem;
+		position: relative;
+
+		&:after {
+			content: "/";
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		&:last-child:after {
+			display: none;
+		}
+	}
+
+	a {
+		color: $gray;
+
+		&:hover {
+			color: $primary;
+			text-decoration: none;
+		}
+	}
+}
+
+.post-tags {
+	margin-bottom: $spacer * 0.5;
+	margin-top: $spacer * -0.5;
+	text-align: center;
+}
+
+.post-date {
+	background: $white;
+	bottom: 0;
+	font-size: 3rem;
+	position: absolute;
+	right: 0;
+	text-align: center;
+
+	span {
+		display: block;
+		line-height: 1;
+
+		&:first-child {
+			background: $white;
+			color: $dark;
+			font-size: 3rem;
+			padding: $spacer * 0.5 0;
+		}
+
+		&:last-child {
+			background: $primary;
+			color: $white;
+			font-size: 1.2rem;
+			padding: $spacer * 0.25;
+		}
+	}
+}
+
+.post-excerpt {
+	margin: 0;
+
+	a {
+		display: inline-block;
+		white-space: nowrap;
+	}
+}

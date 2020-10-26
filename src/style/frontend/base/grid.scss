@@ -1,0 +1,77 @@
+.container,
+.container-fluid {
+	padding: 0 $spacer;
+}
+
+[class$="-list"] {
+	> .row {
+		margin-bottom: $spacer * -0.5;
+		margin-top: $spacer * -0.5;
+
+		> .col,
+		> [class*="col-"] {
+			padding-bottom: $spacer * 0.5;
+			padding-top: $spacer * 0.5;
+		}
+	}
+}
+
+@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+	.container,
+	.container-fluid {
+		padding: 0 $spacer * 1.5;
+	}
+
+	.row {
+		margin: 0 $spacer * -0.75;
+
+		> .col,
+		> [class*="col-"] {
+			padding-left: $spacer * 0.75;
+			padding-right: $spacer * 0.75;
+		}
+	}
+
+	[class$="-list"] {
+		> .row {
+			margin-bottom: $spacer * -0.75;
+			margin-top: $spacer * -0.75;
+
+			> .col,
+			> [class*="col-"] {
+				padding-bottom: $spacer * 0.75;
+				padding-top: $spacer * 0.75;
+			}
+		}
+	}
+}
+
+@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+	.container,
+	.container-fluid {
+		padding: 0 $spacer * 2;
+	}
+
+	.row {
+		margin: 0 $spacer * -1;
+
+		> .col,
+		> [class*="col-"] {
+			padding-left: $spacer;
+			padding-right: $spacer;
+		}
+	}
+
+	[class$="-list"] {
+		> .row {
+			margin-bottom: -$spacer;
+			margin-top: -$spacer;
+
+			> .col,
+			> [class*="col-"] {
+				padding-bottom: $spacer;
+				padding-top: $spacer;
+			}	
+		}
+	}
+}

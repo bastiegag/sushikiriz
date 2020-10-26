@@ -1,0 +1,17 @@
+.woocommerce-MyAccount-navigation {
+	margin-bottom: $spacer;
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		margin-bottom: $spacer * 1.5;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		margin-bottom: $spacer * 2;
+	}
+}
+
+.woocommerce-orders-table {
+	.button {
+		@extend .btn-sm, .btn-secondary;
+	}
+}
