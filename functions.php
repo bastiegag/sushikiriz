@@ -3,6 +3,7 @@
  * Bravad engine room
  *
  * @package Sushikiriz
+ * @version 2.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -29,6 +30,7 @@ require 'inc/bravad-functions.php';
 require 'inc/bravad-template-functions.php';
 require 'inc/bravad-template-hooks.php';
 require 'inc/bravad-blocks.php';
+require 'inc/class-bravad-customize.php';
 require 'inc/class-bravad-meta-boxes.php';
 require 'inc/class-bravad-portfolio.php';
 require 'inc/class-bravad-comment.php';

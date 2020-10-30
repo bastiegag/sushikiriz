@@ -3,6 +3,7 @@
  * Bravad Remove Class
  *
  * @package Sushikiriz
+ * @version 2.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

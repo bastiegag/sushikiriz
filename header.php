@@ -19,9 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     <meta name="apple-mobile-web-app-title" content="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" />
     <meta name="theme-color" content="#000000" />
     <meta name="format-detection" content="telephone=no">
-
-    <link rel="shortcut icon" href="<?php echo esc_url( bravad_option( 'favicon', false ) ); ?>" />
-    <link rel="apple-touch-icon" href="<?php echo esc_url( bravad_option( 'apple', false ) ); ?>" />
     
     <?php wp_head(); ?>
 </head>

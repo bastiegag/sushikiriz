@@ -3,6 +3,7 @@
  * Bravad template functions
  *
  * @package Sushikiriz
+ * @version 2.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -155,12 +156,24 @@ if ( ! function_exists( 'bravad_page_title' ) ) {
 	function bravad_page_title() {
 		$post_id = bravad_id();
 		$content = bravad_field( 'hero-content', $post_id );
+		$class   = '';
+
+		if ( is_home() && is_front_page() ) {
+			$title = get_bloginfo( 'name' );
+			$class = ' class="site-title"';
+		}
 
 		if ( ! empty( $content['title'] ) ) {
 			$title = $content['title'];
 
 		} else {
-			$title = get_the_title( $post_id );
+			if ( is_front_page() ) {
+				$title = get_bloginfo( 'name' );
+				$class = ' class="site-title"';
+
+			} else {
+				$title = get_the_title( $post_id );
+			}
 		}
 
 		if ( is_search() ) {
@@ -169,10 +182,6 @@ if ( ! function_exists( 'bravad_page_title' ) ) {
 
 		if ( is_404() ) {
 			$title = __( 'Page introuvable', 'bravad' );
-		}
-
-		if ( is_home() && is_front_page() ) {
-			$title = get_bloginfo( 'name' );
 		}
 
 		if ( bravad_is_woocommerce_activated() && is_woocommerce() ) {
@@ -187,7 +196,7 @@ if ( ! function_exists( 'bravad_page_title' ) ) {
 			$title = get_the_title();
 		}
 
-		echo sprintf( '<h1>%s</h1>', $title );
+		echo sprintf( '<h1%s>%s</h1>', $class, $title );
 	}
 }
 
@@ -200,12 +209,15 @@ if ( ! function_exists( 'bravad_page_subtitle' ) ) {
 		$content  = bravad_field( 'hero-content', $post_id );
 		$subtitle = $content['subtitle'];
 
-		if ( ! empty( $subtitle ) ) {
-			$subtitle = sprintf( '<p>%s</p>', $subtitle );
+		if ( is_home() && is_front_page() ) {
+			$subtitle = sprintf( '<p class="site-description">%s</p>', get_bloginfo( 'description' ) );
 		}
 
-		if ( is_home() && is_front_page() ) {
-			$subtitle = sprintf( '<p>%s</p>', get_bloginfo( 'description' ) );
+		if ( ! empty( $subtitle ) ) {
+			$subtitle = sprintf( '<p>%s</p>', $subtitle );
+
+		} else if ( is_front_page() ) {
+			$subtitle = sprintf( '<p class="site-description">%s</p>', get_bloginfo( 'description' ) );
 		}
 
 		if ( is_category() ) {

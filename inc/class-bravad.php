@@ -3,6 +3,7 @@
  * Bravad Class
  *
  * @package Sushikiriz
+ * @version 2.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -158,6 +159,11 @@ if ( ! class_exists( 'Bravad' ) ) :
 			 * Enabled shortcode in text widget
 			 */
 			add_filter( 'widget_text', 'do_shortcode' );
+
+			/**
+			 * Add theme support for selective refresh for widgets
+			 */
+			add_theme_support( 'customize-selective-refresh-widgets' );
 			
 			/*
 			 * Remove crap from head
@@ -186,6 +192,14 @@ if ( ! class_exists( 'Bravad' ) ) :
 			 * ACF Options page
 			 */
 			if ( function_exists( 'acf_add_options_page' ) ) {
+				acf_add_options_page( array(
+					'icon_url'   => 'dashicons-screenoptions',
+					'menu_title' => __( 'Blocs', 'bravad' ),
+					'page_title' => __( 'Blocs réutilisables', 'bravad' ),
+					'redirect'   => true,
+					'menu_slug'  => 'reusable_blocks'
+				));
+
 				acf_add_options_sub_page( array(
 					'menu_title'  => __( 'Options du site', 'bravad' ),
 					'page_title'  => __( 'Options du site', 'bravad' ),
@@ -210,8 +224,7 @@ if ( ! class_exists( 'Bravad' ) ) :
 		public function scripts_styles() {
 			global $bravad_version;
 
-			$google_fonts   = bravad_option( 'google-fonts', false );
-			$google_key     = bravad_option( 'google-maps', false );
+			$google_key     = bravad_option( 'google-maps' );
 			$google_version = '3.41';
 
 			/**
@@ -225,15 +238,21 @@ if ( ! class_exists( 'Bravad' ) ) :
 			/**
 			 * Fonts
 			 */
+			$font = bravad_option( 'font' );
+			$font = ! empty( $font ) ? str_replace( ' ', '+', $font ) : 'Inter:wght@100;300;600';
+
+			$font_name = explode( ':', $font )[0];
+			$font_name = str_replace( '+', ' ', $font_name );
+
 			$query_args = array(
-				'family'  => $google_fonts,
-				'subset'  => urlencode( 'latin,latin-ext' ),
+				'family'  => $font,
 				'display' => 'swap'
 			);
 
 			$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css2' );
 
-			wp_enqueue_style( 'bravad-fonts', $fonts_url, array(), null );
+			wp_enqueue_style( 'bravad-fonts', esc_url( $fonts_url ), array(), null );
+			wp_add_inline_style( 'bravad-fonts', "body { font-family: '" . $font_name . "', sans-serif; }" );
 			
 			/**
 			 * Scripts

@@ -1,0 +1,10 @@
+/**
+ * List of changes
+ */
+
+2.0.1 - 10-29-2020
+• Added Google Fonts selection on the admin
+• Updated reusable blocks to be on their own options page
+
+2.0.0 - 10-26-2020
+• Official release

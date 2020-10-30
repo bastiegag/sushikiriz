@@ -10,7 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); 
-
 	/**
 	 * bravad_main_content hook
 	 *
