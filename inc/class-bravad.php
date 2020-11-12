@@ -3,7 +3,7 @@
  * Bravad Class
  *
  * @package Sushikiriz
- * @version 2.0.1
+ * @version 2.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -368,6 +368,10 @@ if ( ! class_exists( 'Bravad' ) ) :
 
 			if ( bravad_is_woocommerce_activated() ) {
 				$classes[] = 'has-woocommerce';
+			}
+
+			if ( has_nav_menu( 'secondary' ) || bravad_has_social() ) {
+				$classes[] = 'has-secondary-nav';
 			}
 
 			return $classes;

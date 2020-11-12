@@ -3,6 +3,7 @@
  * Site header template part
  *
  * @package Sushikiriz
+ * @version 2.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -90,31 +91,38 @@ if ( ! defined( 'ABSPATH' ) ) {
                         </ul>
                     </nav><!-- .primary-nav -->
 
-                    <nav id="secondary-nav" class="secondary-nav js-secondary-nav">
-                        <ul class="menu">
-                            <?php 
-                            /**
-                             * Get secondary menu
-                             */
-                            bravad_menu( 'secondary' );
+                    <?php if ( has_nav_menu( 'secondary' ) || bravad_has_social() ) : ?>
+                        <nav id="secondary-nav" class="secondary-nav js-secondary-nav">
 
-                            if ( bravad_is_woocommerce_activated() ) {
-                                echo sprintf( '<li class="account-link"><a href="%s">%s</a></li>%s',
-                                    get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ),
-                                    is_user_logged_in() ? __( 'Mon compte', 'bravad' ) : __( 'Connexion', 'bravad' ),
-                                    is_user_logged_in() ? '<li><a href="' . wc_logout_url() . '">' . __( 'Déconnexion', 'bravad' ) . '</a></li>' : ''
-                                );
+                            <?php
+                            if ( has_nav_menu( 'secondary' ) ) {
+                                echo '<ul class="menu">';
+
+                                /**
+                                 * Get secondary menu
+                                 */
+                                bravad_menu( 'secondary' );
+
+                                if ( bravad_is_woocommerce_activated() ) {
+                                    echo sprintf( '<li class="account-link"><a href="%s">%s</a></li>%s',
+                                        get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ),
+                                        is_user_logged_in() ? __( 'Mon compte', 'bravad' ) : __( 'Connexion', 'bravad' ),
+                                        is_user_logged_in() ? '<li><a href="' . wc_logout_url() . '">' . __( 'Déconnexion', 'bravad' ) . '</a></li>' : ''
+                                    );
+                                }
+
+                                echo '</ul>';
                             }
-                            ?>
-                        </ul>
 
-                        <?php
-                        /**
-                         * Get social medias
-                         */
-                        bravad_social();
-                        ?>
-                    </nav><!-- .secondary-nav -->
+                            /**
+                             * Get social medias
+                             */
+                            bravad_social();
+                            ?>
+
+                        </nav><!-- .secondary-nav -->
+                    <?php endif; ?>
+
                 </div><!-- .container -->
             </div><!-- .site-nav -->
         </div><!-- .holder -->

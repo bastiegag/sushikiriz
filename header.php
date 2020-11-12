@@ -3,6 +3,7 @@
  * Header template
  * 
  * @package Sushikiriz
+ * @version 2.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,6 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     <meta name="apple-mobile-web-app-title" content="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" />
     <meta name="theme-color" content="#000000" />
     <meta name="format-detection" content="telephone=no">
+
+    <link rel="shortcut icon" href="<?php echo esc_url( bravad_option( 'favicon' ) ); ?>" />
+    <link rel="apple-touch-icon" href="<?php echo esc_url( bravad_option( 'apple' ) ); ?>" />
     
     <?php wp_head(); ?>
 </head>

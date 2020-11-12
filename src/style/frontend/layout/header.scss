@@ -59,11 +59,11 @@
 			padding-top: 0;
 		}
 
-		.nav-sticky & {
+		.has-secondary-nav .nav-sticky & {
 			transform: translateY(-3.2rem);
 		}
 
-		.has-banner .nav-sticky & {
+		.has-secondary-nav.has-banner .nav-sticky & {
 			transform: translateY(-6.3rem);
 		}
 	}

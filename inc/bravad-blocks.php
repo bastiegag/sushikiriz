@@ -3,6 +3,7 @@
  * Bravad blocks
  *
  * @package Sushikiriz
+ * @version 2.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -59,7 +60,7 @@ function bravad_acf_add_local_field_groups() {
     			continue;
     		}
 
-    		if ( sanitize_title( $label ) == 'bloc-reutilisable' && isset( $_GET['page'] ) && $_GET['page'] == 'site_options' ) {
+    		if ( sanitize_title( $label ) == 'bloc-reutilisable' && isset( $_GET['page'] ) && $_GET['page'] == 'reusable_blocks' ) {
     			continue;
     		}
 

@@ -158,7 +158,7 @@
 	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
 		form.cart {
 			display: flex;
-			justify-content: start;
+			justify-content: flex-start;
 			margin-bottom: $spacer;
 
 			.number {

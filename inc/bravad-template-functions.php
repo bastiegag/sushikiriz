@@ -3,7 +3,7 @@
  * Bravad template functions
  *
  * @package Sushikiriz
- * @version 2.0.1
+ * @version 2.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -613,6 +613,26 @@ if ( ! function_exists( 'bravad_shop_nav' ) ) {
 		$output .= '</ul>';
 
 		echo $output;
+	}
+}
+
+if ( ! function_exists( 'bravad_has_social' ) ) {
+	/**
+	 * Check if has social media
+	 */
+	function bravad_has_social() {
+		$social = bravad_option( 'social-links' );
+		$found  = false;
+
+		foreach ( $social as $link ) {
+			if ( ! empty( $link ) ) {
+				$found = true;
+
+				break;
+			}
+		}
+		
+		return $found;
 	}
 }
 

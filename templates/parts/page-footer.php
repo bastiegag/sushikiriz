@@ -3,6 +3,7 @@
  * Page footer template part
  *
  * @package Sushikiriz
+ * @version 2.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,22 +29,26 @@ if ( ! bravad_is( 'footer', false ) ) {
 			</div><!-- .row -->
 		</div><!-- .widget-list -->
 
-		<nav id="footer-nav" class="footer-nav">
-		    <ul>
-		        <?php 
-		        /**
-		         * Get footer menu
-		         */
-		        bravad_menu( 'footer' );
-		        ?>
-		    </ul>
-		</nav><!-- .secondary-nav -->
+		<?php if ( has_nav_menu( 'footer' ) ) : ?>
+			<nav id="footer-nav" class="footer-nav">
+			    <ul>
+			        <?php 
+			        /**
+			         * Get footer menu
+			         */
+			        bravad_menu( 'footer' );
+			        ?>
+			    </ul>
+			</nav><!-- .secondary-nav -->
+		<?php endif ?>
 
 		<?php
-		/**
-		 * Get social medias
-		 */
-		bravad_social();
+		if ( bravad_has_social() ) {
+			/**
+			 * Get social medias
+			 */
+			bravad_social();
+		}
 		?>
 
 	</div><!-- .container -->

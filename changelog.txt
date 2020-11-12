@@ -2,6 +2,9 @@
  * List of changes
  */
 
+2.0.2 - 11-12-2020
+• Fixed menu
+
 2.0.1 - 10-29-2020
 • Added Google Fonts selection on the admin
 • Updated reusable blocks to be on their own options page
