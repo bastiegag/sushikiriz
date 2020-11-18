@@ -94,7 +94,7 @@ $icon-sub-active-color: svg-color(#{$white});
 		}
 
 		.menu {
-			margin: 0 $spacer 0 0;
+			margin: 0;
 
 			li {
 				display: inline-block;
@@ -113,7 +113,7 @@ $icon-sub-active-color: svg-color(#{$white});
 			}
 
 			> .menu-item-has-children > a {
-				padding-right: 3.8rem;
+				padding-right: 3.2rem;
 
 				&:after {
 					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' style='enable-background:new 0 0 24 24;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:#{$icon-color};%7D%0A%3C/style%3E%3Cpath class='st0' d='M24,8c0,0.4-0.2,0.7-0.5,0.9l-10.8,8c-0.4,0.3-0.9,0.3-1.3,0L0.5,9C0,8.6-0.1,7.9,0.2,7.4 c0.4-0.5,1.1-0.6,1.6-0.3L12,14.5l10.2-7.4c0.5-0.4,1.2-0.3,1.6,0.3C23.9,7.6,24,7.8,24,8L24,8z'/%3E%3C/svg%3E");
@@ -123,7 +123,7 @@ $icon-sub-active-color: svg-color(#{$white});
 					display: block;
 					height: 1.2rem;
 					position: absolute;
-					right: 1.8rem;
+					right: 1rem;
 					top: 50%;
 					transform: translateY(-50%) rotate(0);
 					transition: $transition-base;
@@ -159,12 +159,17 @@ $icon-sub-active-color: svg-color(#{$white});
 			}
 		}
 
+		.has-woocommerce & .menu,
+		.has-search & .menu {
+			margin: 0 $spacer 0 0;
+		}
+
 		.sub-menu {
 			background: $lighter;
 			border-radius: $border-radius;
 			box-shadow: $box-shadow;
 			display: none;
-			left: 0;
+			left: -0.5rem;
 			position: absolute;
 			top: 100%;
 
@@ -175,7 +180,8 @@ $icon-sub-active-color: svg-color(#{$white});
 			a {
 				color: $dark;
 				margin: 0.2rem;
-				padding-left: $spacer;
+				padding-left: $spacer * 0.75;
+				padding-right: $spacer * 0.75;
 
 				&:hover {
 					background: $light;
@@ -184,7 +190,7 @@ $icon-sub-active-color: svg-color(#{$white});
 			}
 
 			> .menu-item-has-children > a {
-				padding-right: 3.8rem;
+				padding-right: 3rem;
 
 				&:after {
 					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' style='enable-background:new 0 0 24 24;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:#{$icon-color};%7D%0A%3C/style%3E%3Cpath class='st0' d='M8,0c0.4,0,0.7,0.2,0.9,0.5l8,10.8c0.3,0.4,0.3,0.9,0,1.3L9,23.5c-0.4,0.5-1.1,0.6-1.6,0.3 c-0.5-0.4-0.6-1.1-0.3-1.6L14.5,12L7.1,1.8C6.7,1.3,6.8,0.6,7.4,0.2C7.6,0.1,7.8,0,8,0L8,0z'/%3E%3C/svg%3E");
@@ -194,7 +200,7 @@ $icon-sub-active-color: svg-color(#{$white});
 					display: block;
 					height: 1.2rem;
 					position: absolute;
-					right: 1.8rem;
+					right: 1rem;
 					top: 50%;
 					transform: translateY(-50%) rotate(0);
 					transition: $transition-base;
@@ -226,7 +232,8 @@ $icon-sub-active-color: svg-color(#{$white});
 
 				a {
 					color: $dark;
-					padding-left: $spacer;
+					padding-left: $spacer * 0.75;
+					padding-right: $spacer * 0.75;
 				}
 
 				> .current-menu-item > a {
@@ -336,9 +343,8 @@ $icon-sub-active-color: svg-color(#{$white});
 	width: 100%;
 	z-index: 2;
 
-	.container {
-		height: 100%;
-		overflow: auto;
+	.has-woocommerce & {
+		padding: $spacer 0 8rem 0;
 	}
 
 	.is-resize & {
@@ -353,6 +359,11 @@ $icon-sub-active-color: svg-color(#{$white});
 		height: calc( 100vh - 10.1rem );
 	}
 
+	.container {
+		height: 100%;
+		overflow: auto;
+	}
+
 	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
 		background: transparent;
 		height: auto;
@@ -363,6 +374,10 @@ $icon-sub-active-color: svg-color(#{$white});
 
 		.has-banner & {
 			height: auto;
+		}
+
+		.has-woocommerce & {
+			padding: 0;
 		}
 
 		.container {

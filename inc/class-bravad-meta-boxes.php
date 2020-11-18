@@ -189,23 +189,37 @@ if ( ! class_exists( 'Bravad_Meta_boxes' ) ) :
 					$args[] = 'ital';
 				}
 
+				$variants = array();
+				$italic   = false;
+
 				foreach ( $font['variants'] as $key ) {
 					if ( $key !== 'regular' && $key !== 'italic' ) {
 						if ( strpos( $key, 'italic' ) !== false ) {
-							$key = str_replace( 'italic', '', $key );
-							$weight[] = '1,' . $key;
+							$key        = str_replace( 'italic', '', $key );
+							$variants[] = '1,' . $key;
+							$italic     = true;
 
 						} else {
-							$weight[] = '0,' . $key;
+							$variants[] = '0,' . $key;
 						}
 
 					} else {
 						if ( $key == 'italic' ) {
-							$weight[] = '1,400';
+							$variants[] = '1,400';
+							$italic     = true;
 
 						} else {
-							$weight[] = '0,400';
+							$variants[] = '0,400';
 						}
+					}
+				}
+
+				if ( $italic ) {
+					$weight = $variants;
+
+				} else {
+					foreach ( $variants as $variant ) {
+						$weight[] = str_replace( '0,', '', $variant );
 					}
 				}
 

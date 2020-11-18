@@ -74,6 +74,11 @@
 	height: 4rem;
 	width: auto;
 	
+	img {
+		max-height: 4rem;
+		max-width: none;
+	}
+	
 	svg {
 		height: 100%;
 		width: auto;
@@ -89,6 +94,10 @@
 
 	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
 		height: 5rem;
+
+		img {
+			max-height: 5rem;
+		}
 	}
 }
 

@@ -3,7 +3,7 @@
  * Bravad Class
  *
  * @package Sushikiriz
- * @version 2.0.2
+ * @version 2.0.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -372,6 +372,10 @@ if ( ! class_exists( 'Bravad' ) ) :
 
 			if ( has_nav_menu( 'secondary' ) || bravad_has_social() ) {
 				$classes[] = 'has-secondary-nav';
+			}
+
+			if ( bravad_is( 'search', false ) ) {
+				$classes[] = 'has-search';
 			}
 
 			return $classes;

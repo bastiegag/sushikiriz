@@ -2,6 +2,12 @@
  * List of changes
  */
 
+2.0.3 - 11-18-2020
+• Fixed search in menu bar
+• Fixed PNG logo
+• Fixed mobile menu when woocommerce is activated
+• Fixed submenu
+
 2.0.2 - 11-12-2020
 • Fixed menu
 
