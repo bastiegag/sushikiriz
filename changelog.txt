@@ -2,6 +2,9 @@
  * List of changes
  */
 
+2.0.4 - 11-19-2020
+• Added ACF fields json
+
 2.0.3 - 11-18-2020
 • Fixed search in menu bar
 • Fixed PNG logo
