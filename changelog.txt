@@ -2,6 +2,9 @@
  * List of changes
  */
 
+2.0.5 - 11-25-2020
+• Updated ACF fields json
+
 2.0.4 - 11-19-2020
 • Added ACF fields json
 

@@ -3,7 +3,7 @@
  * Bravad engine room
  *
  * @package Sushikiriz
- * @version 2.0.4
+ * @version 2.0.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Assign the bravad version to a var
  */
 $theme          = wp_get_theme( 'bravad' );
-$bravad_version = '2.0.4';
+$bravad_version = '2.0.5';
 $bravad_theme   = 'Sushikiriz';
 
 $bravad = (object) array(

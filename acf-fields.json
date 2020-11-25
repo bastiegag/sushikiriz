@@ -3163,7 +3163,7 @@
                     "Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700": "Archivo Narrow",
                     "Aref+Ruqaa:wght@400;700": "Aref Ruqaa",
                     "Arima+Madurai:wght@100;200;300;400;500;700;800;900": "Arima Madurai",
-                    "Arimo:ital,wght@0,400;0,700;1,400;1,700": "Arimo",
+                    "Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700": "Arimo",
                     "Arizonia": "Arizonia",
                     "Armata": "Armata",
                     "Arsenal:ital,wght@0,400;0,700;1,400;1,700": "Arsenal",
@@ -3286,6 +3286,7 @@
                     "Carrois+Gothic": "Carrois Gothic",
                     "Carrois+Gothic+SC": "Carrois Gothic SC",
                     "Carter+One": "Carter One",
+                    "Castoro:ital,wght@0,400;1,400": "Castoro",
                     "Catamaran:wght@100;200;300;400;500;600;700;800;900": "Catamaran",
                     "Caudex:ital,wght@0,400;0,700;1,400;1,700": "Caudex",
                     "Caveat:wght@400;500;600;700": "Caveat",
@@ -3556,7 +3557,7 @@
                     "Jomhuria": "Jomhuria",
                     "Jomolhari": "Jomolhari",
                     "Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700": "Josefin Sans",
-                    "Josefin+Slab:ital,wght@0,100;0,300;0,400;0,600;0,700;1,100;1,300;1,400;1,600;1,700": "Josefin Slab",
+                    "Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700": "Josefin Slab",
                     "Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900": "Jost",
                     "Joti+One": "Joti One",
                     "Jua": "Jua",
@@ -3573,7 +3574,7 @@
                     "Kameron:wght@400;700": "Kameron",
                     "Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900": "Kanit",
                     "Kantumruy:wght@300;400;700": "Kantumruy",
-                    "Karla:ital,wght@0,400;0,700;1,400;1,700": "Karla",
+                    "Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800": "Karla",
                     "Karma:wght@300;400;500;600;700": "Karma",
                     "Katibeh": "Katibeh",
                     "Kaushan+Script": "Kaushan Script",
@@ -3752,6 +3753,7 @@
                     "Nanum+Gothic+Coding:wght@400;700": "Nanum Gothic Coding",
                     "Nanum+Myeongjo:wght@400;700;800": "Nanum Myeongjo",
                     "Nanum+Pen+Script": "Nanum Pen Script",
+                    "Nerko+One": "Nerko One",
                     "Neucha": "Neucha",
                     "Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400": "Neuton",
                     "New+Rocker": "New Rocker",
@@ -4050,6 +4052,7 @@
                     "Tenali+Ramakrishna": "Tenali Ramakrishna",
                     "Tenor+Sans": "Tenor Sans",
                     "Text+Me+One": "Text Me One",
+                    "Texturina:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900": "Texturina",
                     "Thasadith:ital,wght@0,400;0,700;1,400;1,700": "Thasadith",
                     "The+Girl+Next+Door": "The Girl Next Door",
                     "Tienne:wght@400;700;900": "Tienne",
@@ -4200,7 +4203,7 @@
                 "placeholder": "",
                 "maxlength": "",
                 "rows": 3,
-                "new_lines": "br"
+                "new_lines": ""
             },
             {
                 "key": "field_5f80453e41e6c",
@@ -4219,7 +4222,7 @@
                 "placeholder": "",
                 "maxlength": "",
                 "rows": 3,
-                "new_lines": "br"
+                "new_lines": ""
             },
             {
                 "key": "field_5f8046298c7b0",

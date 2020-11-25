@@ -624,11 +624,13 @@ if ( ! function_exists( 'bravad_has_social' ) ) {
 		$social = bravad_option( 'social-links' );
 		$found  = false;
 
-		foreach ( $social as $link ) {
-			if ( ! empty( $link ) ) {
-				$found = true;
+		if ( $social ) {
+			foreach ( $social as $link ) {
+				if ( ! empty( $link ) ) {
+					$found = true;
 
-				break;
+					break;
+				}
 			}
 		}
 		
