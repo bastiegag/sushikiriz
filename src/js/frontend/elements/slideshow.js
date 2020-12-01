@@ -31,6 +31,34 @@
             });
         }
 
+        if ( $( '.js-slideshow-swiper' ).length ) {
+            $( '.js-slideshow-swiper' ).each( function( i, obj ) {
+                var me = $( this );
+
+                slideshow[i] = new Swiper( obj, {
+                    loop: true,
+                    spaceBetween: 0,
+                    slidesPerView: 1,
+                    speed: 800,
+                    autoplay: {
+                        delay: 5000,
+                    }
+                });
+
+                me.closest( '.js-slideshow' ).find( '.js-next' ).on( 'click', function() {
+                    slideshow[i].slideNext();
+
+                    return false;
+                });
+
+                me.closest( '.js-slideshow' ).find( '.js-prev' ).on( 'click', function() {
+                    slideshow[i].slidePrev();
+
+                    return false;
+                });
+            });
+        }
+
         if ( $( '.js-posts-swiper' ).length ) {
             $( '.js-posts-swiper' ).each( function( i, obj ) {
                 var me = $( this );

@@ -58,9 +58,6 @@ msgstr "No results"
 msgid "Portfolio"
 msgstr "Portfolio"
 
-msgid "Équipe"
-msgstr "Team"
-
 msgid "Article"
 msgstr "Post"
 
@@ -297,6 +294,12 @@ msgstr "Background"
 msgid "Couleur"
 msgstr "Color"
 
+msgid "Couleurs"
+msgstr "Colors"
+
+msgid "Couleurs (inutile)"
+msgstr "Colors (useless)"
+
 msgid "Blanc"
 msgstr "White"
 
@@ -509,3 +512,18 @@ msgstr "No work"
 
 msgid "Voir les différentes icônes disponibles"
 msgstr "See the different icons available"
+
+msgid "Alternatif"
+msgstr "Alternative"
+
+msgid "Typographie"
+msgstr "Typography"
+
+msgid "Page portfolio"
+msgstr "Portfolio page"
+
+msgid "Équipe"
+msgstr "Team"
+
+msgid "Grosseur du titre"
+msgstr "Title size"

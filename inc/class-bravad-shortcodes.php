@@ -3,6 +3,7 @@
  * Bravad Shortcodes Class
  *
  * @package Sushikiriz
+ * @version 2.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,6 +20,7 @@ if ( ! class_exists( 'Bravad_Shortcodes' ) ) :
 		public function __construct() {
 			add_shortcode( 'email', array( $this, 'email' ) );
 			add_shortcode( 'tel', array( $this, 'phone' ) );
+			add_shortcode( 'button', array( $this, 'button' ) );
 			add_shortcode( 'icon', array( $this, 'icon' ) );
 			add_shortcode( 'feature', array( $this, 'feature' ) );
 			add_shortcode( 'faq', array( $this, 'faq' ) );
@@ -73,6 +75,43 @@ if ( ! class_exists( 'Bravad_Shortcodes' ) ) :
 		}
 
 		/**
+		 * Button
+		 */
+		public function button( $atts, $content = null ) {
+			$options = shortcode_atts( array(
+				'url'    => '',
+				'bg'     => '',
+				'color'  => '',
+				'target' => ''
+		    ), $atts );
+
+			if ( empty( $options['url'] ) ) {
+				return;
+			}
+
+			$style = array();
+
+			if ( substr( $options['bg'], 0, 1 ) == '#' ) {
+				$style[] = 'background-color: ' . $options['bg'] . ';';
+			}
+
+			if ( substr( $options['color'], 0, 1 ) == '#' ) {
+				$style[] = 'color: ' . $options['color'] . ';';
+			}
+
+			$output = sprintf( '<a href="%s" class="btn%s%s"%s%s>%s</a>',
+				$options['url'],
+				! empty( $options['bg'] ) && substr( $options['bg'], 0, 1 ) !== '#' ? ' btn-' . $options['bg'] : '',
+				! empty( $options['color'] ) && substr( $options['color'], 0, 1 ) !== '#' ? ' text-' . $options['color'] : '',
+				! empty( $options['target'] ) ? ' target="' . $options['target'] . '"' : '',
+				substr( $options['bg'], 0, 1 ) == '#' ? ' style="' . implode( ' ', $style ) . '"' : '',
+				$content,
+			);
+
+			return $output;
+		}
+
+		/**
 		 * Svg icon
 		 */
 		public function icon( $atts, $content = null ) {
@@ -80,6 +119,10 @@ if ( ! class_exists( 'Bravad_Shortcodes' ) ) :
 				'i'    => '',
 				'size' => 'sm'
 		    ), $atts );
+
+			if ( empty( $options['i'] ) ) {
+				return;
+			}
 
 			$output = bravad_icon( esc_attr( $options['i'] ), esc_attr( $options['size'] ) );
 

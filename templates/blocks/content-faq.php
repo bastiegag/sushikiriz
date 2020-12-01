@@ -3,6 +3,7 @@
  * FAQ template part
  *
  * @package Sushikiriz
+ * @version 2.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -29,7 +30,7 @@ $faq   = get_sub_field( 'questions' );
 				foreach ( $faq as $item ) {
 					echo sprintf( '<div class="col-12"><div class="faq-item"><a href="#" class="faq-question js-faq">%s %s</a><div class="faq-answer"><p>%s</p></div></div></div>',
 						$item['question'],
-						bravad_icon( 'arrow-down' ),
+						bravad_icon( 'chevron-down' ),
 						$item['answer']
 					);
 				}

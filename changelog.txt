@@ -2,6 +2,14 @@
  * List of changes
  */
 
+2.1.0 - 12-01-2020
+• Added button shortcode
+• Added slideshow block
+• Added logo on page hero
+• Updated block options
+• Updated ACF fields json
+• Updated language
+
 2.0.5 - 11-25-2020
 • Updated ACF fields json
 

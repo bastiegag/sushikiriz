@@ -1155,6 +1155,30 @@
                 "layout": "block",
                 "sub_fields": [
                     {
+                        "key": "field_5fc69c853bc31",
+                        "label": "Logo",
+                        "name": "logo",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "id",
+                        "preview_size": "thumbnail",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
                         "key": "field_5f806b2ecd8ef",
                         "label": "Titre",
                         "name": "title",
@@ -1592,8 +1616,7 @@
                 "choices": {
                     "532": "Commentaires",
                     "708": "Contact",
-                    "526": "Infolettre",
-                    "849": "Test"
+                    "526": "Infolettre"
                 },
                 "default_value": false,
                 "allow_null": 0,
@@ -1732,7 +1755,15 @@
                 "type": "select",
                 "instructions": "",
                 "required": 0,
-                "conditional_logic": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5fc68a6aa4c6c",
+                            "operator": "!=",
+                            "value": "1"
+                        }
+                    ]
+                ],
                 "wrapper": {
                     "width": "",
                     "class": "",
@@ -2612,6 +2643,43 @@
                 "ui": 1,
                 "ui_on_text": "",
                 "ui_off_text": ""
+            },
+            {
+                "key": "field_5fc108a527380",
+                "label": "Grosseur du titre",
+                "name": "title-size",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5f8053206d551",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "h1": "H1",
+                    "h2": "H2",
+                    "h3": "H3",
+                    "h4": "H4",
+                    "h5": "H5",
+                    "h6": "H6"
+                },
+                "default_value": "h2",
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 1,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
             },
             {
                 "key": "field_5f8053466d552",
@@ -4353,6 +4421,174 @@
                 "mime_types": ""
             },
             {
+                "key": "field_5fc10fd6ac72f",
+                "label": "Couleurs (inutile)",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_5fc11048ac732",
+                "label": "Couleurs",
+                "name": "colors",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_5fc11355239c2",
+                        "label": "Arrière-plan",
+                        "name": "background",
+                        "type": "color_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#f0f2f2"
+                    },
+                    {
+                        "key": "field_5fc11388239c3",
+                        "label": "Texte",
+                        "name": "text",
+                        "type": "color_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#4e5354"
+                    },
+                    {
+                        "key": "field_5fc1105fac733",
+                        "label": "Primaire",
+                        "name": "primary",
+                        "type": "color_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#ff784d"
+                    },
+                    {
+                        "key": "field_5fc11250239bc",
+                        "label": "Secondaire",
+                        "name": "secondary",
+                        "type": "color_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#b1d9db"
+                    },
+                    {
+                        "key": "field_5fc1126b239bd",
+                        "label": "Gris plus pâle",
+                        "name": "lighter",
+                        "type": "color_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#f0f2f2"
+                    },
+                    {
+                        "key": "field_5fc112bc239be",
+                        "label": "Gris pâle",
+                        "name": "light",
+                        "type": "color_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#dfe4e6"
+                    },
+                    {
+                        "key": "field_5fc112fe239bf",
+                        "label": "Gris",
+                        "name": "gray",
+                        "type": "color_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#8a9294"
+                    },
+                    {
+                        "key": "field_5fc1131f239c0",
+                        "label": "Gris foncé",
+                        "name": "dark",
+                        "type": "color_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#4e5354"
+                    },
+                    {
+                        "key": "field_5fc11336239c1",
+                        "label": "Gris plus foncé",
+                        "name": "darker",
+                        "type": "color_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#292c2d"
+                    }
+                ]
+            },
+            {
                 "key": "field_5f804bea1e50f",
                 "label": "404",
                 "name": "",
@@ -4532,7 +4768,7 @@
             },
             {
                 "key": "field_5f804a03cb98a",
-                "label": "Types de publications",
+                "label": "Types de publication",
                 "name": "",
                 "type": "tab",
                 "instructions": "",

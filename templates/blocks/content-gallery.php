@@ -3,6 +3,7 @@
  * Gallery template part
  *
  * @package Sushikiriz
+ * @version 2.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $type    = str_replace( 'content-', '', basename( __FILE__, '.php' ) );
 $width   = get_sub_field( 'full-width' );
 $photos  = get_sub_field( 'photos' );
+$format  = get_sub_field( 'format' );
 $columns = get_sub_field( 'columns' );
 $size    = get_sub_field( 'size' );
 $ratio   = get_sub_field( 'ratio' );
@@ -27,17 +29,44 @@ $order   = get_sub_field( 'order' );
 			echo bravad_block_title( $type );
 
 			if ( $photos ) {
-			    $ids = implode( ',', $photos );
+				if ( ! $format ) {
+					$ids = implode( ',', $photos );
 
-			    $gallery = sprintf( 'gallery columns="%s" size="%s" ratio="%s" ids="%s"%s',
-			    	$columns,
-			    	$size,
-			    	$ratio,
-			    	$ids,
-			    	isset( $order ) && $order ? ' orderby="rand"' : ''
-			    );
+					$gallery = sprintf( 'gallery columns="%s" size="%s" ratio="%s" ids="%s"%s',
+						$columns,
+						$size,
+						$ratio,
+						$ids,
+						isset( $order ) && $order ? ' orderby="rand"' : ''
+					);
 
-			    echo do_shortcode( '[' . $gallery . ']' );
+					echo do_shortcode( '[' . $gallery . ']' );
+
+				} else {
+					if ( isset( $order ) && $order ) {
+						shuffle( $photos );
+					}
+
+					echo '<div class="slideshow js-slideshow slideshow-' . $ratio . '"><div class="slideshow-wrapper">';
+
+					echo sprintf( '<a href="#" class="swiper-direction swiper-prev js-prev">%s</a>',
+						bravad_icon( 'chevron-left' )
+					);
+
+					echo sprintf( '<a href="#" class="swiper-direction swiper-next js-next">%s</a>',
+						bravad_icon( 'chevron-right' )
+					);
+
+					echo '<div class="swiper-container js-slideshow-swiper"><div class="swiper-wrapper">';
+
+					foreach ( $photos as $img_id ) {
+						echo sprintf( '<div class="swiper-slide" style="background-image: url(%s);"></div>',
+							bravad_img( $img_id, $size )['url']
+						);
+					}
+
+					echo '</div></div></div></div>';
+				}
 			}
 			?>
 			

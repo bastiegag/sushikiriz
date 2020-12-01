@@ -3,7 +3,7 @@
  * Bravad template functions
  *
  * @package Sushikiriz
- * @version 2.0.2
+ * @version 2.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -196,7 +196,12 @@ if ( ! function_exists( 'bravad_page_title' ) ) {
 			$title = get_the_title();
 		}
 
-		echo sprintf( '<h1%s>%s</h1>', $class, $title );
+		if ( ! empty( $content['logo'] ) ) {
+			echo sprintf( '<h1 title="%s"%s><img src="%s" alt="%s" /></h1>', $title, $class, bravad_img( $content['logo'] )['url'], bravad_img( $content['logo'] )['alt'] );
+
+		} else {
+			echo sprintf( '<h1%s>%s</h1>', $class, $title );
+		}
 	}
 }
 
@@ -346,11 +351,13 @@ if ( ! function_exists( 'bravad_block_title' ) ) {
 	function bravad_block_title( $type ) {
 		$title   = get_sub_field( 'title' );
 		$visible = get_sub_field( 'title-visible' );
+		$size    = get_sub_field( 'title-size' );
 		
 		if ( $visible && ! empty( $title ) ) {
-			return sprintf( '<h2 class="block-title %s-title">%s</h2>', 
-				$type, 
-				$title 
+			return sprintf( '<h2 class="block-title %s-title %s">%s</h2>', 
+				$type,
+				$size,
+				$title
 			);
 
 		} else {
@@ -554,11 +561,11 @@ if ( ! function_exists( 'bravad_background' ) ) {
 					);
 
 					$output .= sprintf( '<a href="#" class="swiper-direction swiper-prev js-prev">%s</a>',
-						bravad_icon( 'arrow-left' )
+						bravad_icon( 'chevron-left' )
 					);
 
 					$output .= sprintf( '<a href="#" class="swiper-direction swiper-next js-next">%s</a>',
-						bravad_icon( 'arrow-right' )
+						bravad_icon( 'chevron-right' )
 					);
 
 					$output .= sprintf( '<div class="%s-image">',
