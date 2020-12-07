@@ -2,6 +2,13 @@
  * List of changes
  */
 
+2.1.1 - 12-07-2020
+• Added blend mode
+• Added Clean CSS to gulpfile
+• Fixed logo
+• Fixed sourcemaps
+• Updated ACF fields json
+
 2.1.0 - 12-01-2020
 • Added button shortcode
 • Added slideshow block

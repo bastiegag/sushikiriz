@@ -502,22 +502,24 @@ if ( ! function_exists( 'bravad_background' ) ) {
 		switch ( $background['type'] ) {
 			case 'image' :
 				if ( ! empty( $background['image'] ) ) {
-					$output = sprintf( '<div class="%s-background js-background %s"><div class="%2$s-image" style="background-image: url(%s);%s%s"></div>',
+					$output = sprintf( '<div class="%s-background js-background %s"><div class="%2$s-image" style="background-image: url(%s);%s%s%s"></div>',
 						$type,
 						$background['parallax'] ? 'parallax' : 'normal',
 						bravad_img( $background['image'] )['url'],
 						$background['opacity'] !== '100' ? ' opacity: ' . $background['opacity'] / 100 . ';' : '',
-						! empty( $filters ) ? ' filter: ' . implode( ' ', $filters ) . ';' : ''
+						! empty( $filters ) ? ' filter: ' . implode( ' ', $filters ) . ';' : '',
+						$background['blend'] !== 'normal' ? ' mix-blend-mode: ' . $background['blend'] . ';' : ''
 					);
 				}
 				break;
 
 			case 'video' :
 				if ( ! empty( $background['video'] ) || ! empty( $background['video-url'] ) ) {
-					$output = sprintf( '<div class="%s-background js-background pattern %s"><div class="%2$s-image"%s>',
+					$output = sprintf( '<div class="%s-background js-background pattern %s"%s><div class="%2$s-image"%s>',
 						$type,
 						$background['parallax'] ? 'parallax' : 'normal',
-						$background['opacity'] !== '100' ? ' style="opacity: ' . $background['opacity'] / 100 . ';"' : '',
+						$background['blend'] !== 'normal' ? ' style="mix-blend-mode: ' . $background['blend'] . ';"' : '',
+						$background['opacity'] !== '100' ? ' style="opacity: ' . $background['opacity'] / 100 . ';"' : ''
 					);
 					
 					if ( ! empty( $background['video'] ) ) {
@@ -555,9 +557,10 @@ if ( ! function_exists( 'bravad_background' ) ) {
 
 			case 'slideshow' :
 				if ( ! empty( $background['slideshow'] ) ) {
-					$output = sprintf( '<div class="%s-background js-background %s">',
+					$output = sprintf( '<div class="%s-background js-background %s"%s>',
 						$type,
-						$background['parallax'] ? 'parallax' : 'normal'
+						$background['parallax'] ? 'parallax' : 'normal',
+						$background['blend'] !== 'normal' ? ' style="mix-blend-mode: ' . $background['blend'] . ';"' : ''
 					);
 
 					$output .= sprintf( '<a href="#" class="swiper-direction swiper-prev js-prev">%s</a>',
@@ -573,7 +576,7 @@ if ( ! function_exists( 'bravad_background' ) ) {
 					);
 
 					$output .= sprintf( '<div class="swiper-container js-background-swiper"><div class="swiper-wrapper"%s>',
-						$background['opacity'] !== '100' ? ' style="opacity: ' . $background['opacity'] / 100 . ';"' : '',
+						$background['opacity'] !== '100' ? ' style="opacity: ' . $background['opacity'] / 100 . ';"' : ''
 					);
 
 					foreach ( $background['slideshow'] as $img_id ) {

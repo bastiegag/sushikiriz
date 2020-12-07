@@ -1,9 +1,9 @@
 var autoprefixer = require( 'gulp-autoprefixer' ),
 	concat       = require( 'gulp-concat' ),
 	gulp         = require( 'gulp' ),
+	cleancss 	 = require( 'gulp-clean-css' ),
 	imagemin     = require( 'gulp-imagemin' ),
 	jshint       = require( 'gulp-jshint' ),
-	minifycss    = require( 'gulp-uglifycss' ),
 	mmq          = require( 'gulp-merge-media-queries' ),
 	notify       = require( 'gulp-notify' ),
 	plumber      = require( 'gulp-plumber' ),
@@ -51,7 +51,7 @@ gulp.task( 'style', gulp.series( style, done => {
 }));
 
 function style() {
-	return  gulp.src( 'src/style/frontend.scss', { base: 'src' } )
+	return  gulp.src( 'src/style/frontend/**/*.scss', { base: 'src' } )
 				.pipe( plumber({ errorHandler: notify.onError( 'Error: <%= error.message %>' ) }) )
 				.pipe( sourcemaps.init() )
 				.pipe( sass({
@@ -61,17 +61,14 @@ function style() {
 					cascade: false,
 					remove: false
 				}) )
-				.pipe( mmq({
-					log: true
-				}) )
 				.pipe( concat( 'style.css' ) )
+				.pipe( cleancss( { format: 'beautify' } ) )
 				.pipe( sourcemaps.write() )
 				.pipe( gulp.dest( 'assets/css' ) )
+				.pipe( sourcemaps.init( { loadMaps: true } ) )
 				.pipe( rename( { suffix: '.min' } ) )
-				.pipe( minifycss({ 
-					maxLineLen: 0,
-					uglyComments: true
-				}) )
+				.pipe( cleancss() )
+				.pipe( sourcemaps.write() )
 				.pipe( gulp.dest( 'assets/css' ) )
 				.pipe( plumber.stop() );
 }
@@ -81,7 +78,7 @@ gulp.task( 'style-admin', gulp.series( style_admin, done => {
 }));
 
 function style_admin() {
-	return  gulp.src( 'src/style/backend.scss', { base: 'src' } )
+	return  gulp.src( 'src/style/backend/**/*.scss', { base: 'src' } )
 				.pipe( plumber({ errorHandler: notify.onError( 'Error: <%= error.message %>' ) }) )
 				.pipe( sourcemaps.init() )
 				.pipe( sass({
@@ -91,19 +88,15 @@ function style_admin() {
 					cascade: false,
 					remove: false
 				}) )
-				.pipe( mmq({
-					log: true
-				}) )
 				.pipe( concat( 'admin.css' ) )
+				.pipe( cleancss( { format: 'beautify' } ) )
 				.pipe( sourcemaps.write() )
 				.pipe( gulp.dest( 'assets/css' ) )
+				.pipe( sourcemaps.init( { loadMaps: true } ) )
 				.pipe( rename( { suffix: '.min' } ) )
-				.pipe( minifycss({ 
-					maxLineLen: 0,
-					uglyComments: true
-				}) )
-				.pipe( gulp.dest( 'assets/css' ) )
-				.pipe( plumber.stop() );
+				.pipe( cleancss() )
+				.pipe( sourcemaps.write() )
+				.pipe( gulp.dest( 'assets/css' ) );
 }
 
 /**

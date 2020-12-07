@@ -194,6 +194,67 @@
                 "mime_types": ""
             },
             {
+                "key": "field_5fca0bc91521f",
+                "label": "Mode de fusion",
+                "name": "blend",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5f804c89e27dd",
+                            "operator": "==",
+                            "value": "image"
+                        }
+                    ],
+                    [
+                        {
+                            "field": "field_5f804c89e27dd",
+                            "operator": "==",
+                            "value": "video"
+                        }
+                    ],
+                    [
+                        {
+                            "field": "field_5f804c89e27dd",
+                            "operator": "==",
+                            "value": "slideshow"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "normal": "Normal",
+                    "lighten": "Lighten",
+                    "darken": "Darken",
+                    "multiply": "Multiply",
+                    "difference": "Difference",
+                    "screen": "Screen",
+                    "hard-light": "Hard-light",
+                    "exclusion": "Exclusion",
+                    "soft-light": "Soft-light",
+                    "overlay": "Overlay",
+                    "color-dodge": "Color-dodge",
+                    "color-burn": "Color-burn",
+                    "hue": "Hue",
+                    "saturation": "Saturation",
+                    "luminosity": "Luminosity",
+                    "color": "Color"
+                },
+                "default_value": "normal",
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 1,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": ""
+            },
+            {
                 "key": "field_5f804db3e27e0",
                 "label": "Opacité",
                 "name": "opacity",
@@ -277,7 +338,7 @@
                 },
                 "default_value": 0,
                 "min": "",
-                "max": 5,
+                "max": 10,
                 "step": "",
                 "prepend": "",
                 "append": "px"
@@ -3619,6 +3680,7 @@
                     "Jacques+Francois": "Jacques Francois",
                     "Jacques+Francois+Shadow": "Jacques Francois Shadow",
                     "Jaldi:wght@400;700": "Jaldi",
+                    "JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800": "JetBrains Mono",
                     "Jim+Nightshade": "Jim Nightshade",
                     "Jockey+One": "Jockey One",
                     "Jolly+Lodger": "Jolly Lodger",

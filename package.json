@@ -1,6 +1,6 @@
 {
   "name": "bravad",
-  "version": "1.0.0",
+  "version": "2.1.1",
   "description": "Super duper gulpfile",
   "main": "gulpfile.js",
   "browserslist": [
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-jshint": "^2.1.0",

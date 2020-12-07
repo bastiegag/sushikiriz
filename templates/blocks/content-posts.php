@@ -42,11 +42,11 @@ if ( ! bravad_is( $post_type ) ) {
 
 			<?php
 			echo sprintf( '<a href="#" class="swiper-direction swiper-prev js-prev">%s</a>',
-				bravad_icon( 'arrow-left' )
+				bravad_icon( 'chevron-left' )
 			);
 
 			echo sprintf( '<a href="#" class="swiper-direction swiper-next js-next">%s</a>',
-				bravad_icon( 'arrow-right' )
+				bravad_icon( 'chevron-right' )
 			);
 			
 			$args = array(
