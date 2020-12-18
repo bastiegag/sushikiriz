@@ -31,16 +31,64 @@
 		padding-top: 0;
 	}
 
+	&.pad-none {
+		padding: 0;
+	}
+
+	&.pad-sm {
+		padding: $spacer * 1.5 0;
+	}
+
+	&.pad-lg {
+		padding: $spacer * 4 0;
+	}
+
 	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
 		padding: $spacer * 3 0;
+
+		&.pad-none {
+			padding: 0;
+		}
+
+		&.pad-sm {
+			padding: $spacer * 2 0;
+		}
+
+		&.pad-lg {
+			padding: $spacer * 5 0;
+		}
 	}
 
 	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
 		padding: $spacer * 4 0;
+
+		&.pad-none {
+			padding: 0;
+		}
+
+		&.pad-sm {
+			padding: $spacer * 2.5 0;
+		}
+
+		&.pad-lg {
+			padding: $spacer * 6 0;
+		}
 	}
 
 	@media ( min-width: map-get( $grid-breakpoints, xl ) ) {
 		padding: $spacer * 5 0;
+
+		&.pad-none {
+			padding: 0;
+		}
+
+		&.pad-sm {
+			padding: $spacer * 3 0;
+		}
+
+		&.pad-lg {
+			padding: $spacer * 7 0;
+		}
 	}
 }
 

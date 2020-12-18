@@ -3,7 +3,7 @@
  * Bravad Shortcodes Class
  *
  * @package Sushikiriz
- * @version 2.1.0
+ * @version 2.1.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -66,7 +66,7 @@ if ( ! class_exists( 'Bravad_Shortcodes' ) ) :
 
 			$phone = preg_replace( '/\D+/', '', $content );
 
-			$output = sprintf( '<a href="tel:%s" class="d-inline-block d-md-none">%s</a><p class="d-none d-md-inline-block">%2$s</p>',
+			$output = sprintf( '<a href="tel:%s" class="d-inline-block d-md-none">%s</a><span class="d-none d-md-inline-block">%2$s</span>',
 				$phone,
 				$content
 			);

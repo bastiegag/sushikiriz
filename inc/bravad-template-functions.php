@@ -3,7 +3,7 @@
  * Bravad template functions
  *
  * @package Sushikiriz
- * @version 2.1.0
+ * @version 2.1.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -430,12 +430,14 @@ if ( ! function_exists( 'bravad_block_options' ) ) {
 		$block_id = get_sub_field( 'block-id' );
 		$text     = get_sub_field( 'text-align' );
 		$vertical = get_sub_field( 'vertical-align' );
+		$padding  = get_sub_field( 'padding' );
 
 		$classes = array(
 			'block',
 			'block-' . $type,
 			'text-' . $text,
-			'align-' . $vertical
+			'align-' . $vertical,
+			'pad-' . $padding
 		);
 
 		if ( $background['type'] !== 'none' && $background['color'] ) {
@@ -853,7 +855,7 @@ if ( ! function_exists( 'bravad_post_comments' ) ) {
 	 * Get post comments
 	 */
 	function bravad_post_comments() {
-		if ( is_single() && ! is_product() && comments_open( get_the_ID() ) && bravad_is( 'comments' ) ) {
+		if ( is_single() && comments_open( get_the_ID() ) && bravad_is( 'comments' ) ) {
 			get_template_part( 'templates/parts/post', 'comments' );
 		}
 	}

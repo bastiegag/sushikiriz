@@ -2,6 +2,14 @@
  * List of changes
  */
 
+2.1.3 - 12-18-2020
+• Added padding to block options
+• Fixed icons page
+• Fixed comments on single
+• Fixed phone shortcode
+• Fixed question padding
+• Updated ACF fields json
+
 2.1.2 - 12-08-2020
 • Fixed logo
 

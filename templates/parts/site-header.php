@@ -3,7 +3,7 @@
  * Site header template part
  *
  * @package Sushikiriz
- * @version 2.1.1
+ * @version 2.1.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -34,23 +34,22 @@ if ( ! defined( 'ABSPATH' ) ) {
             $path = bravad_img( bravad_option( 'logo' ) )['url'];
             
             if ( isset( $path ) ) {
-                // $ext  = explode( '.', basename( $path ) );
+                $ext  = explode( '.', basename( $path ) );
 
-                // $args = array(
-                //     'ssl' => array(
-                //         'verify_peer'      => false,
-                //         'verify_peer_name' => false
-                //     )
-                // );
+                $args = array(
+                    'ssl' => array(
+                        'verify_peer'      => false,
+                        'verify_peer_name' => false
+                    )
+                );
 
-                // $file = file_get_contents( $path, false, stream_context_create( $args ) );
+                $file = file_get_contents( $path, false, stream_context_create( $args ) );
                 $img  = sprintf( '<img src="%s" alt="%s" />', $path, get_bloginfo( 'name' ) );
 
                 echo sprintf( '<a href="%s" title="%s" class="site-logo">%s</a>',
                     esc_url( home_url( '/' ) ),
                     get_bloginfo( 'name' ),
-                    $img
-                    // isset( $ext[1] ) && $ext[1] == 'svg' ? $file : $img
+                    isset( $ext[1] ) && $ext[1] == 'svg' ? $file : $img
                 );
             }
 
