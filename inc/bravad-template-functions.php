@@ -3,7 +3,7 @@
  * Bravad template functions
  *
  * @package Sushikiriz
- * @version 2.1.3
+ * @version 2.1.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -454,7 +454,7 @@ if ( ! function_exists( 'bravad_block_options' ) ) {
 
 		return sprintf( '%sclass="%s"',
 			! empty( $block_id ) ? 'id="' . sanitize_title( $block_id ) . '" ' : '',
-			implode( $classes, ' ' )
+			implode( ' ', $classes )
 		);
 	}
 }
@@ -711,7 +711,7 @@ if ( ! function_exists( 'bravad_multi_col' ) ) {
 	            );
 	        }
 
-	        $content = join( $columns, "\n" );
+	        $content = join( "\n", $columns );
 	    
 	    } else {
 	        $content = '<div class="col-12">' . wpautop( $content ) . '</div>';
@@ -802,7 +802,8 @@ if ( ! function_exists( 'bravad_layout' ) ) {
 				'galerie'      		=> 'gallery',
 				'onglets'           => 'tabs',
 				'publications'      => 'posts',
-				'texte'             => 'text'
+				'texte'             => 'text',
+				'texte-et-image'    => 'text-image'
 			);
 
 			$layout = isset( $names[ $layout ] ) ? $names[ $layout ] : $layout;

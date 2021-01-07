@@ -14,7 +14,7 @@ if ( ! is_active_sidebar( $args['id'] ) ) {
 
 $toggle = ! empty( $args['toggle'] ) ? $args['toggle'] : __( 'Sidebar', 'bravad' );
 
-echo sprintf( '<a href="#" class="btn btn-block btn-icon-right btn-gray sidebar-toggle js-toggle">%s %s</a>',
+echo sprintf( '<a href="#" class="btn btn-block btn-icon-right btn-gray sidebar-toggle js-toggle d-md-none">%s %s</a>',
 	$toggle,
 	bravad_icon( 'arrow-down', 'sm' )
 );

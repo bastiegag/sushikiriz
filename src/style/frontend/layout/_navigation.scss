@@ -22,9 +22,9 @@ $icon-sub-active-color: svg-color(#{$white});
 	}
 
 	a {
-		color: $light;
+		color: $white;
 		display: block;
-		fill: $light;
+		fill: $white;
 		padding: 1rem $spacer;
 		position: relative;
 
@@ -56,13 +56,13 @@ $icon-sub-active-color: svg-color(#{$white});
 	}
 
 	.sub-menu {
-		background: darken( $darker, 4 );
+		background: rgba( $black, 0.15 );
 		display: none;
 		margin: 0;
 		padding: 0;
 
 		a {
-			color: darken( $light, 15 );
+			color: $light;
 			display: block;
 			font-size: $font-size-sm;
 			margin: 0;
@@ -75,10 +75,10 @@ $icon-sub-active-color: svg-color(#{$white});
 		}
 
 		.sub-menu {
-			background: darken( $darker, 8 );
+			background: rgba( $black, 0.15 );
 
 			a {
-				color: darken( $light, 30 );
+				color: $gray;
 				padding-left: $spacer * 3;
 			}
 		}
@@ -143,7 +143,7 @@ $icon-sub-active-color: svg-color(#{$white});
 				fill: $primary;
 
 				&:before {
-					background: $primary;
+					background-color: $primary;
 					bottom: $border-width;
 					content: "";
 					display: block;
@@ -165,7 +165,7 @@ $icon-sub-active-color: svg-color(#{$white});
 		}
 
 		.sub-menu {
-			background: $lighter;
+			background-color: $lighter;
 			border-radius: $border-radius;
 			box-shadow: $box-shadow;
 			display: none;
@@ -184,7 +184,7 @@ $icon-sub-active-color: svg-color(#{$white});
 				padding-right: $spacer * 0.75;
 
 				&:hover {
-					background: $light;
+					background-color: $light;
 					color: $dark;
 				}
 			}
@@ -215,7 +215,7 @@ $icon-sub-active-color: svg-color(#{$white});
 			}
 
 			> .current-menu-item > a {
-				background: $primary;
+				background-color: $primary;
 				color: $white;
 				fill: $white;
 
@@ -225,7 +225,7 @@ $icon-sub-active-color: svg-color(#{$white});
 			}
 
 			.sub-menu {
-				background: $lighter;
+				background-color: $lighter;
 				border-radius: 0 $border-radius $border-radius $border-radius;
 				left: 100%;
 				top: -0.2rem;
@@ -237,7 +237,7 @@ $icon-sub-active-color: svg-color(#{$white});
 				}
 
 				> .current-menu-item > a {
-					background: $primary;
+					background-color: $primary;
 					color: $white;
 					fill: $white;
 				}
@@ -295,13 +295,13 @@ $icon-sub-active-color: svg-color(#{$white});
 		align-items: center;
 		background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjMuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0IDQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQgNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtvcGFjaXR5OjAuMTU7fQo8L3N0eWxlPgo8cmVjdCBjbGFzcz0ic3QwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+CjxyZWN0IHg9IjIiIHk9IjIiIGNsYXNzPSJzdDAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz4KPC9zdmc+Cg==');
 		background-size: 4px 4px;
-		background: $darker;
+		background-color: $darker;
 		display: flex;
 		justify-content: flex-end;
 		text-align: right;
 
 		&:before {
-			background: $darker;
+			background-color: $darker;
 			content: "";
 			display: block;
 			height: 100%;
@@ -332,7 +332,7 @@ $icon-sub-active-color: svg-color(#{$white});
 }
 
 .site-nav {
-	background: $darker;
+	background-color: $darker;
 	height: calc( 100vh - 7rem );
 	left: 0;
 	padding: $spacer 0;
@@ -398,7 +398,7 @@ $icon-sub-active-color: svg-color(#{$white});
 	width: 4rem;
 
 	span {
-		background: $dark;
+		background-color: $dark;
 		display: block;
 		height: 0.2rem;
 		left: 0.5rem;
@@ -410,7 +410,7 @@ $icon-sub-active-color: svg-color(#{$white});
 
 		&:before,
 		&:after {
-			background: $dark;
+			background-color: $dark;
 			content: "";
 			display: block;
 			height: 100%;
@@ -432,7 +432,7 @@ $icon-sub-active-color: svg-color(#{$white});
 	}
 
 	&.is-active span {
-		background: rgba( $dark, 0 );
+		background: rgba( $black, 0 );
 		transform: rotate(-90deg);
 
 		&:before {
@@ -485,7 +485,7 @@ $icon-sub-active-color: svg-color(#{$white});
 
 	.cart-count {
 		align-items: center;
-		background: $primary;
+		background-color: $primary;
 		border-radius: 100%;
 		color: $white;
 		display: flex;

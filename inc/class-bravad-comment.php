@@ -48,9 +48,9 @@ if ( ! class_exists( 'Bravad_Comment' ) ) :
 
 			if ( $comments ) {
 			    foreach ( $comments as $item ) {
-			    	echo sprintf( '<div class="col-12%s"><div id="comment-%s" class="comment media" data-parent="%2$s" data-name="%s">',
-			    		$item->comment_approved ? '' : ' comment-unapproved',
+			    	echo sprintf( '<div class="col-12"><div id="comment-%s" class="comment media%s" data-parent="%2$s" data-name="%s">',
 			    		$item->comment_ID,
+			    		$item->comment_approved ? '' : ' comment-unapproved',
 			    		$item->comment_author
 			    	);
 

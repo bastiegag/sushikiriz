@@ -31,7 +31,7 @@
 	}
 
 	.bg-white & a {
-		background: $lighter;
+		background-color: $lighter;
 		border-color: $lighter;
 	}
 }
@@ -40,7 +40,7 @@
 	background: $white;
 
 	.bg-white & {
-		background: $lighter;
+		background-color: $lighter;
 	}
 }
 
@@ -56,6 +56,6 @@
 	position: relative;
 
 	.bg-white & {
-		background: $lighter;
+		background-color: $lighter;
 	}
 }

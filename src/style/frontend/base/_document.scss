@@ -6,7 +6,7 @@ html {
 }
 
 body { 
-	background: $darker;
+	background-color: $darker;
 	color: $body-color;
 	fill: $body-color;
 	height: auto; 
@@ -45,7 +45,7 @@ img {
 }
 
 .site {
-	background: $body-bg;
+	background-color: $body-bg;
 	opacity: 0;
 	position: relative;
 	transition: $transition-base;

@@ -22,7 +22,7 @@ input[type=radio] {
 	&:not(:checked) + label:before {
 		background-color: $white;
 		border-radius: 100%;
-		border: $border-width solid rgba( $gray, 0.3 );
+		border: $border-width solid $light;
 		content: "";
 		display: inline-block;
 		height: 2rem;

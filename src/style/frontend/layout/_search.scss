@@ -81,7 +81,7 @@
 	position: relative;
 
 	&:after {
-		background: $border-color;
+		background-color: $border-color;
 		bottom: $spacer * -0.5;
 		content: "";
 		display: block;

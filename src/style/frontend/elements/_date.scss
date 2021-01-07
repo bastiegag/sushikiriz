@@ -12,7 +12,7 @@
 			padding: 0.5rem;
 
 			&:hover {
-				background: $primary;
+				background-color: $primary;
 				color: $white;
 				text-decoration: none;
 			}
@@ -26,17 +26,17 @@
 	}
 
 	.ui-datepicker-current-day {
-		background: $light;
+		background-color: $light;
 	}
 
 	.ui-datepicker-today {
-		background: $lighter;
+		background-color: $lighter;
 	}
 }
 
 .ui-datepicker-header {
 	align-items: center;
-	background: $gray;
+	background-color: $gray;
 	color: $white;
 	display: flex;
 	font-size: $font-size-sm;

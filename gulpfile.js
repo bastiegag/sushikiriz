@@ -4,7 +4,6 @@ var autoprefixer = require( 'gulp-autoprefixer' ),
 	cleancss 	 = require( 'gulp-clean-css' ),
 	imagemin     = require( 'gulp-imagemin' ),
 	jshint       = require( 'gulp-jshint' ),
-	mmq          = require( 'gulp-merge-media-queries' ),
 	notify       = require( 'gulp-notify' ),
 	plumber      = require( 'gulp-plumber' ),
 	rename       = require( 'gulp-rename' ),
@@ -12,8 +11,7 @@ var autoprefixer = require( 'gulp-autoprefixer' ),
 	sequence     = require( 'gulp-sequence' ),
 	sourcemaps   = require( 'gulp-sourcemaps' ),
 	svgsprite    = require( 'gulp-svg-sprite' ),
-	terser       = require( 'gulp-terser' ),
-	util         = require( 'gulp-util' );
+	terser       = require( 'gulp-terser' );
 
 /**
  * Default Gulp task
@@ -62,11 +60,18 @@ function style() {
 					remove: false
 				}) )
 				.pipe( concat( 'style.css' ) )
-				.pipe( cleancss( { format: 'beautify' } ) )
+				.pipe( cleancss({ 
+					format: 'beautify', 
+					level: 2 
+				}) )
 				.pipe( sourcemaps.write() )
 				.pipe( gulp.dest( 'assets/css' ) )
-				.pipe( sourcemaps.init( { loadMaps: true } ) )
-				.pipe( rename( { suffix: '.min' } ) )
+				.pipe( sourcemaps.init({ 
+					loadMaps: true 
+				}) )
+				.pipe( rename({ 
+					suffix: '.min' 
+				}) )
 				.pipe( cleancss() )
 				.pipe( sourcemaps.write() )
 				.pipe( gulp.dest( 'assets/css' ) )
@@ -89,11 +94,18 @@ function style_admin() {
 					remove: false
 				}) )
 				.pipe( concat( 'admin.css' ) )
-				.pipe( cleancss( { format: 'beautify' } ) )
+				.pipe( cleancss({ 
+					format: 'beautify',
+					level: 2
+				}) )
 				.pipe( sourcemaps.write() )
 				.pipe( gulp.dest( 'assets/css' ) )
-				.pipe( sourcemaps.init( { loadMaps: true } ) )
-				.pipe( rename( { suffix: '.min' } ) )
+				.pipe( sourcemaps.init({ 
+					loadMaps: true 
+				}) )
+				.pipe( rename({
+					suffix: '.min' 
+				}) )
 				.pipe( cleancss() )
 				.pipe( sourcemaps.write() )
 				.pipe( gulp.dest( 'assets/css' ) );
@@ -109,13 +121,17 @@ gulp.task( 'scripts', gulp.series( scripts, done => {
 function scripts() {
 	return  gulp.src( ['src/js/frontend/layout/*.js', 'src/js/frontend/elements/*.js', 'src/js/frontend/functions.js'] )
 				.pipe( sourcemaps.init() )
-				.pipe( jshint( { esnext: true } ) )
+				.pipe( jshint({ 
+					esnext: true 
+				}) )
 				.pipe( jshint.reporter( 'default' ) )
 				.pipe( concat( 'scripts.js' ) )
 				.pipe( sourcemaps.write() )
 				.pipe( gulp.dest( 'assets/js' ) )
 				.pipe( terser() )
-				.pipe( rename( { suffix: '.min' } ) )
+				.pipe( rename({ 
+					suffix: '.min' 
+				}) )
 				.pipe( gulp.dest( 'assets/js' ) );
 }
 
@@ -126,13 +142,17 @@ gulp.task( 'scripts-admin', gulp.series( scripts_admin, done => {
 function scripts_admin() {
 	return  gulp.src( 'src/js/backend/**/*.js' )
 				.pipe( sourcemaps.init() )
-				.pipe( jshint( { esnext: true } ) )
+				.pipe( jshint({ 
+					esnext: true 
+				}) )
 				.pipe( jshint.reporter( 'default' ) )
 				.pipe( concat( 'admin.js' ) )
 				.pipe( sourcemaps.write() )
 				.pipe( gulp.dest( 'assets/js' ) )
 				.pipe( terser() )
-				.pipe( rename( { suffix: '.min' } ) )
+				.pipe( rename({ 
+					suffix: '.min' 
+				}) )
 				.pipe( gulp.dest( 'assets/js' ) );
 }
 

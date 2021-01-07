@@ -1,3 +1,7 @@
 .DS_Store
 node_modules/
 sftp-config.json
+assets/css/color.css
+assets/css/background.css
+assets/css/border.css
+assets/css/fill.css

@@ -22,7 +22,7 @@ input[type=checkbox] {
 	&:checked + label:before,
 	&:not(:checked) + label:before {
 		background-color: $white;
-		border: $border-width solid rgba( $gray, 0.3 );
+		border: $border-width solid $light;
 		content: "";
 		display: inline-block;
 		height: 2rem;
@@ -67,7 +67,7 @@ input[type=checkbox] {
 }
 
 .checkbox-info {
-	background: $info;
+	background-color: $info;
 	border-radius: 100%;
 	color: $white;
 	cursor: help;

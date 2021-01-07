@@ -1,12 +1,12 @@
 .ui-slider {
-	background: $light;
+	background-color: $light;
 	height: 0.3rem;
 	margin: $spacer 0.5rem;
 	position: relative;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
-	background: $primary;
+	background-color: $primary;
 	border-radius: 100%;
 	cursor: pointer;
 	display: block;
@@ -18,7 +18,7 @@
 }
 
 .ui-slider-range {
-	background: $primary;
+	background-color: $primary;
 	height: 100%;
 	position: absolute;
 }

@@ -5,7 +5,7 @@
 	text-align: left;
 
 	.bg-white & {
-		background: $lighter;
+		background-color: $lighter;
 	}
 }
 
@@ -19,12 +19,12 @@
 	text-decoration: none;
 
 	&:hover {
-		background: dark( $lighter, 10 );
+		background-color: $light;
 		text-decoration: none;
 	}
 
 	.icon {
-		background: $lighter;
+		background-color: $lighter;
 		border-radius: 100%;
 		height: 3rem;
 		padding: 0.75rem;
@@ -54,7 +54,7 @@
 
 @each $color, $value in $theme-colors {
 	.bg-#{$color} .faq-item .icon {
-		background: #{$value};
+		background-color: #{$value};
 		fill: map-get( $text-colors, #{$color} );
 	}
 }

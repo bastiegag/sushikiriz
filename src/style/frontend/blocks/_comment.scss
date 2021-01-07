@@ -38,17 +38,26 @@
 	}
 }
 
-.comment-unapproved {
-	background: rgba( $danger, 0.1 );
-}
-
-.sub-comment-unapproved .media-body {
-	background: rgba( $danger, 0.1 );
+.comment-unapproved > .media-body:before,
+.sub-comment-unapproved > .media-body:before {
+	background-color: $danger;
+	content: "";
+	display: block;
+	height: calc( 100% + 2rem );
+	left: -1rem;
+	opacity: 0.1;
+	position: absolute;
+	top: -1rem;
+	width: calc( 100% + 2rem );
 }
 
 .comment,
 .sub-comment {
 	font-size: $font-size-sm;
+
+	.media-body {
+		position: relative;
+	}
 
 	p {
 		color: $gray;
@@ -87,7 +96,7 @@
 		left: -$spacer * 0.5;
 		right: -$spacer * 0.5;
 		height: $border-width;
-		background: $border-color;
+		background-color: $border-color;
 	}
 
 	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
@@ -119,7 +128,7 @@
 		left: -$spacer * 0.5;
 		right: -$spacer * 0.5;
 		height: $border-width;
-		background: $border-color;
+		background-color: $border-color;
 	}
 
 	@media ( min-width: map-get( $grid-breakpoints, md ) ) {

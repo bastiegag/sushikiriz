@@ -90,8 +90,8 @@
 	}
 
 	th {
-		background: $light;
-		border: 0.1rem solid darken( $light, 10 );
+		background-color: $light;
+		border: 0.1rem solid rgba( $black, 0.15 );
 	}
 
 	td {
@@ -99,16 +99,16 @@
 		text-align: right;
 
 		&.pad {
-			background: $lighter;
+			background-color: $lighter;
 		}
 
 		&#today {
-			background: $light;
+			background-color: $light;
 		}
 	}
 
 	caption {
-		background: $gray;
+		background-color: $gray;
 		color: $white;
 		text-align: center;
 	}

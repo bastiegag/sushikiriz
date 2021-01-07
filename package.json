@@ -1,6 +1,6 @@
 {
   "name": "bravad",
-  "version": "2.1.1",
+  "version": "2.1.4",
   "description": "Super duper gulpfile",
   "main": "gulpfile.js",
   "browserslist": [
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/bastiegag/sushikiriz#readme",
   "dependencies": {
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.5.3",
     "gulp": "^4.0.2",
     "jquery": "^1.9.1"
   },
@@ -35,19 +35,15 @@
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-jshint": "^2.1.0",
-    "gulp-merge-media-queries": "^0.2.1",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sequence": "^1.0.0",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-svg-sprite": "^1.5.0",
-    "gulp-terser": "^1.4.0",
+    "gulp-terser": "^2.0.0",
     "gulp-uglifycss": "^1.1.0",
-    "gulp-util": "^3.0.8",
-    "jshint": "^2.12.0",
-    "popper.js": "^1.16.1",
-    "postcss": "^8.1.1"
+    "popper.js": "^1.16.1"
   }
 }

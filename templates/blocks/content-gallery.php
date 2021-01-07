@@ -3,7 +3,7 @@
  * Gallery template part
  *
  * @package Sushikiriz
- * @version 2.1.0
+ * @version 2.1.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
