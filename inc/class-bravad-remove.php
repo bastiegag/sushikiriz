@@ -3,7 +3,7 @@
  * Bravad Remove Class
  *
  * @package Sushikiriz
- * @version 2.0.1
+ * @version 2.1.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,6 +28,8 @@ if ( ! class_exists( 'Bravad_Remove' ) ) :
 			add_filter( 'manage_edit-page_columns', array( $this, 'page_columns' ) );
 
 			add_filter( 'wpseo_metabox_prio', function() { return 'low'; } );
+
+			add_filter( 'wp_default_scripts', array( $this, 'remove_jquery_migrate' ) );
 		}
 
 		/**
@@ -344,6 +346,16 @@ if ( ! class_exists( 'Bravad_Remove' ) ) :
 			unset( $columns['icl_translations'] ); // = WPML
 
 			return $columns;
+		}
+
+		/**
+		 * Don't load jQuery migrate on frontend
+		 */
+		public function remove_jquery_migrate( &$scripts ) {
+			// if ( ! is_admin() ) {
+				$scripts->remove( 'jquery');
+				$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+			// }
 		}
 
 	}

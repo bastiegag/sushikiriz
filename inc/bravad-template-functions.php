@@ -3,7 +3,7 @@
  * Bravad template functions
  *
  * @package Sushikiriz
- * @version 2.1.4
+ * @version 2.1.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -292,7 +292,7 @@ if ( ! function_exists( 'bravad_page_link' ) ) {
 		$color     = bravad_field( 'background', $post_id )['color'];
 		$link      = bravad_field( 'hero-content', $post_id )['link'];
 		$contact   = bravad_field( '404-contact', 'option' );
-		$portfolio = bravad_field( 'portfolio_page', 'option' );
+		$portfolio = bravad_field( 'portfolio-page', 'option' );
 
 		if ( is_404() ) {
 			$color = bravad_option( 'background', false )['color'];

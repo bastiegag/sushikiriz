@@ -27,7 +27,7 @@ gulp.task( 'watch', gulp.series( style, scripts, scripts_admin, function() {
 	// Styles
 	gulp.watch( 'src/style/frontend/**/*.scss', gulp.series( style ) );
 	gulp.watch( 'src/style/backend/**/*.scss', gulp.series( style_admin ) );
-	gulp.watch( 'src/style/variables.scss', gulp.series( style, style_admin ) );
+	gulp.watch( 'src/style/_variables.scss', gulp.series( style, style_admin ) );
 
 	// Scripts
 	gulp.watch( 'src/js/frontend/**/*.js', gulp.series( scripts ) );
