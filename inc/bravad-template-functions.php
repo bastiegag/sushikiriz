@@ -3,7 +3,7 @@
  * Bravad template functions
  *
  * @package Sushikiriz
- * @version 2.1.5
+ * @version 2.1.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -797,9 +797,10 @@ if ( ! function_exists( 'bravad_layout' ) ) {
 			$names = array(
 				'bloc-reutilisable' => 'reusable-block',
 				'caracteristiques'  => 'features',
-				'equipe'      		=> 'team',
+				'equipe'            => 'team',
+				'fichiers'          => 'files',
 				'formulaire'        => 'form',
-				'galerie'      		=> 'gallery',
+				'galerie'           => 'gallery',
 				'onglets'           => 'tabs',
 				'publications'      => 'posts',
 				'texte'             => 'text',

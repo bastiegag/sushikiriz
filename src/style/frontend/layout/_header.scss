@@ -13,7 +13,8 @@
 		transition: 0s all;
 	}
 
-	.has-banner .nav-sticky & {
+	.has-banner .nav-sticky &,
+	.has-banner .nav-opened & {
 		transform: translateY(-3.1rem);
 	}
 
@@ -82,14 +83,6 @@
 	svg {
 		height: 100%;
 		width: auto;
-
-		* {
-			fill: $dark;
-		}
-
-		#sherbrooke * {
-			fill: $light;
-		}
 	}
 
 	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {

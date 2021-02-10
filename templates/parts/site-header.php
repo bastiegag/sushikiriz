@@ -3,7 +3,7 @@
  * Site header template part
  *
  * @package Sushikiriz
- * @version 2.1.3
+ * @version 2.1.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -123,16 +123,16 @@ if ( ! defined( 'ABSPATH' ) ) {
                         </nav><!-- .secondary-nav -->
                     <?php endif; ?>
 
+                    <?php
+                    /**
+                     * Get shop nav
+                     */
+                    bravad_shop_nav();
+                    ?>
+
                 </div><!-- .container -->
             </div><!-- .site-nav -->
         </div><!-- .holder -->
 
     </div><!-- .container -->
-
-    <?php
-    /**
-     * Get shop nav
-     */
-    bravad_shop_nav();
-    ?>
 </header>

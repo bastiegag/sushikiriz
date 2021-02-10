@@ -69,7 +69,7 @@
 
             $( '.js-shop-nav' )
                 .detach()
-                .appendTo( '.js-header' );
+                .appendTo( '.js-nav' );
         }
 
         $( '.site' ).addClass( 'is-shown' );
@@ -106,18 +106,18 @@
             $( 'body' ).removeAttr( 'style' );
             $( '.js-site' ).removeAttr( 'style' );
 
-            window.scrollTo( 0, parseInt( scrollY || '0' ) * -1 );
+            // window.scrollTo( 0, parseInt( scrollY || '0' ) * -1 );
 
         } else {
             me.addClass( 'is-active' );
 
             $( '.js-site' ).addClass( 'nav-opened' );
 
-            $( 'body' )
-                .css({
-                    'position' : 'fixed',
-                    'top': '-' + window.scrollY + 'px'
-                });
+            // $( 'body' )
+            //     .css({
+            //         'position' : 'fixed',
+            //         'top': '-' + window.scrollY + 'px'
+            //     });
         }
 
         return false;

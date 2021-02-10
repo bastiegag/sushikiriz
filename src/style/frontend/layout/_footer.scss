@@ -89,10 +89,6 @@
 	padding: $spacer 0;
 	text-align: center;
 
-	.has-woocommerce & {
-		padding-bottom: 8rem;
-	}
-
 	a {
 		color: $light;
 
@@ -104,10 +100,6 @@
 
 	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
 		text-align: left;
-
-		.has-woocommerce & {
-			padding-bottom: $spacer;
-		}
 
 		.container {
 			display: flex;

@@ -5,6 +5,13 @@
 2.x.x - xx-xx-2021
 • Added custom colors
 
+2.1.6 - 02-10-2021
+• Added files block
+• Removed logo fill
+• Fixed mobile nav
+• Fixed gulpfile
+• Updated ACF fields json
+
 2.1.5 - 01-26-2021
 • Fixed color select on the admin in english
 • Fixed package.json
