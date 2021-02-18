@@ -3,7 +3,7 @@
  * Bravad Meta Boxes Class
  *
  * @package Sushikiriz
- * @version 2.0.1
+ * @version 2.1.7
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -246,7 +246,8 @@ if ( ! class_exists( 'Bravad_Meta_boxes' ) ) :
 		 * Reusable field
 		 */
 		public function reusable_field( $field ) {
-			$blocks = bravad_option( 'reusable' );
+			// $blocks = bravad_option( 'reusable' );
+			$blocks = bravad_field( 'reusable', 'option' );
 			$output = array();
 
 			if ( isset( $blocks ) && ! empty( $blocks ) ) {

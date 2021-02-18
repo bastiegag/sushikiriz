@@ -5,6 +5,12 @@
 2.x.x - xx-xx-2021
 • Added custom colors
 
+2.1.7 - 02-18-2021
+• Fixed tabs
+• Fixed footer flicker
+• Fixed file input
+• Fixed reusable blocks
+
 2.1.6 - 02-10-2021
 • Added files block
 • Removed logo fill

@@ -43,6 +43,12 @@
                         });
                 }
 
+                if ( typeof pageScroll !== 'undefined' ) {
+                    setTimeout( function() {
+                        pageScroll.setSize();
+                    }, 300);
+                }
+
                 return false;
             });
         });
