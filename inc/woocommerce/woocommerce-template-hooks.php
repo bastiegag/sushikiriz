@@ -3,6 +3,7 @@
  * WooCommerce Hooks
  *
  * @package Sushikiriz
+ * @version 2.1.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -36,3 +37,4 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_pr
  */
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );

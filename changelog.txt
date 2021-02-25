@@ -5,6 +5,9 @@
 2.x.x - xx-xx-2021
 • Added custom colors
 
+2.1.8 - 02-25-2021
+• Fixed related products, up-sells and cross-sells
+
 2.1.7 - 02-18-2021
 • Fixed tabs
 • Fixed footer flicker

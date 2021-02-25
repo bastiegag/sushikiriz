@@ -10,11 +10,11 @@
 	}
 
 	.add_to_cart_button {
-		@extend .btn, .btn-sm, .btn-secondary;
+		@extend .btn, .btn-sm, .btn-gray;
 	}
 
 	.added_to_cart {
-		@extend .btn, .btn-sm, .btn-gray;
+		@extend .btn, .btn-sm, .btn-light;
 		clear: both;
 		margin-top: 0.5rem;
 	}
