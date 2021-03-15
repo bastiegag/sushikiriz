@@ -1,6 +1,6 @@
 <?php
 /**
- * Fichiers template part
+ * Files template part
  *
  * @package Sushikiriz
  * @version 2.1.6

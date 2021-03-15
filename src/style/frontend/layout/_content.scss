@@ -132,3 +132,284 @@
 		margin-bottom: 0;
 	}
 }
+
+// Search
+
+.search-form {
+	background: $white;
+	border-radius: $border-radius;
+	margin-bottom: $spacer * 0.5;
+	position: relative;
+	z-index: 2;
+
+	.site-header & {
+		input,
+		input:focus {
+			border-color: $white;
+		}
+
+		.btn,
+		.btn:focus,
+		.btn:active {
+			background: $white;
+			border-color: $white;
+			fill: $dark;
+			height: 4rem;
+			padding-left: $input-padding-x;
+			padding-right: $input-padding-x;
+			transition: $transition-base;
+
+			&:hover {
+				fill: $primary;
+			}
+
+			&.is-active {
+				border-color: $white;
+				fill: $primary;
+			}
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		.site-header & {
+			margin-bottom: 0;
+			margin-left: $spacer * 0.5;
+			order: 5;
+
+			.btn {
+				background: transparent;
+				border-color: transparent;
+
+				&:active {
+					background: transparent;
+					border-color: transparent;
+				}
+			}
+
+			input {
+				opacity: 0;
+				pointer-events: none;
+				position: absolute !important;
+				right: 100%;
+				top: 0;
+				transform: translateX( $spacer );
+				transition: $transition-base;
+				width: 20rem !important;
+			}
+
+			.search-opened & {
+				.btn {
+					background: $white;
+					border-color: $white;
+					fill: $primary;
+				}
+
+				input {
+					opacity: 1;
+					pointer-events: auto;
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+}
+
+.search-item {
+	position: relative;
+
+	&:after {
+		background-color: $border-color;
+		bottom: $spacer * -0.5;
+		content: "";
+		display: block;
+		height: $border-width;
+		left: 0;
+		position: absolute;
+		right: 0;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		&:after {
+			bottom: $spacer * -0.75;
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		&:after {
+			bottom: $spacer * -1;
+		}
+	}
+}
+
+// Sidebar
+
+.sidebar {
+	margin-top: $spacer;
+	display: none;
+
+	&.is-active {
+		display: block;
+	}
+
+	.widget:last-child {
+		margin-bottom: 0;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		margin-top: 0;
+		display: block;
+	}
+}
+
+.sidebar-toggle {
+	display: inline-flex;
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		display: none;
+	}
+}
+
+.widget {
+	background: $white;
+	border-radius: $border-radius;
+	font-size: $font-size-sm;
+	margin-bottom: $spacer * 2;
+	padding: $spacer;
+
+	ul {
+		color: $gray;
+		list-style: none;
+		margin: 0;
+		padding-left: $spacer;
+		padding: 0;
+	}
+
+	.button, .btn {
+		@extend .btn-sm;
+	}
+}
+
+.wc-layered-nav-term {
+	display: flex;
+	justify-content: space-between;
+
+	a {
+		order: 0;
+	}
+
+	span {
+		order: 2;
+	}
+
+	&:before {
+		content: "";
+		position: relative;
+		top: -0.2rem;
+		border-bottom: 1px dotted $light;
+		display: block;
+		order: 1;
+		flex-grow: 2;
+	}
+}
+
+.widget-title {
+	margin-bottom: $spacer * 0.5;
+	text-align: center;
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		margin-bottom: $spacer * 0.75;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		margin-bottom: $spacer;
+	}
+}
+
+.wp-calendar-table {
+	width: 100%;
+
+	td, th {
+		font-size: $font-size-sm;
+		padding: 0.5rem;
+		text-align: center;
+	}
+
+	th {
+		background-color: $light;
+		border: 0.1rem solid rgba( $black, 0.15 );
+	}
+
+	td {
+		border: 0.1rem solid $light;
+		text-align: right;
+
+		&.pad {
+			background-color: $lighter;
+		}
+
+		&#today {
+			background-color: $light;
+		}
+	}
+
+	caption {
+		background-color: $gray;
+		color: $white;
+		text-align: center;
+	}
+}
+
+.wp-calendar-nav {
+	display: flex;
+	justify-content: space-between;
+	margin-top: $spacer * 0.5;
+}
+
+.widget_ft_form_widget {
+	.ft-row {
+		margin: 0;
+	}
+
+	.ft-field {
+		flex: 2 0 50%;
+		max-width: none;
+		padding: 0 !important;
+	}
+
+	.ft-field--button {
+		flex: 1 0;
+	}
+
+	.form-control {
+		border-radius: $border-radius 0 0 $border-radius;
+	}
+
+	.btn {
+		border-radius: 0 $border-radius $border-radius 0;
+	}
+}
+
+.widget_media_gallery {
+	.row {
+		margin: 0 $spacer * -0.5;
+	}
+
+	.col {
+		flex: 0 0 50%;
+		max-width: 50%;
+		padding-left: $spacer * 0.5;
+		padding-right: $spacer * 0.5;
+	}
+
+	.gallery {
+		margin-bottom: $spacer * -1;
+	}
+
+	.gallery-item {
+		margin-bottom: $spacer;
+	}
+}

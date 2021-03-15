@@ -1,6 +1,6 @@
 <?php
 /**
- * Texte et image template part
+ * Text & image template part
  *
  * @package Sushikiriz
  * @version 2.1.4

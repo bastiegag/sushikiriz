@@ -1,6 +1,6 @@
 <?php
 /**
- * Bloc réutilisable template part
+ * Reusable block template part
  *
  * @package Sushikiriz
  */

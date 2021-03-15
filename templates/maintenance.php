@@ -3,6 +3,7 @@
  * Maintenance template
  * 
  * @package Sushikiriz
+ * @version 2.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,20 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <link rel="shortcut icon" href="<?php echo esc_url( get_field( 'favicon', 'option' ) ); ?>" />
     <link rel="apple-touch-icon" href="<?php echo esc_url( get_field( 'apple', 'option' ) ); ?>" />
 
-    <style>
-        <?php
-            $style = get_template_directory_uri() . '/assets/css/style.min.css';
-
-            $args = array(
-                'ssl' => array(
-                    'verify_peer'      => false,
-                    'verify_peer_name' => false
-                )
-            );
-
-            echo file_get_contents( $style, false, stream_context_create( $args ) );
-        ?>
-    </style>
+    <?php wp_head(); ?>
 </head>
 <body class="is-maintenance">
     <div id="site" class="site js-site is-shown">

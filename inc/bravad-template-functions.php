@@ -3,7 +3,7 @@
  * Bravad template functions
  *
  * @package Sushikiriz
- * @version 2.1.6
+ * @version 2.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -802,6 +802,7 @@ if ( ! function_exists( 'bravad_layout' ) ) {
 				'formulaire'        => 'form',
 				'galerie'           => 'gallery',
 				'onglets'           => 'tabs',
+				'points-de-vente'   => 'sale-points',
 				'publications'      => 'posts',
 				'texte'             => 'text',
 				'texte-et-image'    => 'text-image'

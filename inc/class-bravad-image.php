@@ -3,6 +3,7 @@
  * Bravad Image Class
  *
  * @package Sushikiriz
+ * @version 2.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -72,12 +73,18 @@ if ( ! class_exists( 'Bravad_Image' ) ) :
 			$ratio = ! empty( $attr['ratio'] ) ? $attr['ratio'] : 'wide';
 
 			foreach ( $ids as $img_id ) {
-				$output .= sprintf( '<div class="col"><div class="gallery-item"><div class="image image-%s image-link"><a href="%s" title="%s" data-fancybox><img src="%s" alt="%s" /></a></div></div></div>',
+				$link   = get_field( 'link', $img_id );
+				$caption = wp_get_attachment_caption( $img_id );
+
+				$output .= sprintf( '<div class="col"><div class="gallery-item"><div class="image image-%s image-link"><figure><a href="%s" title="%s"%s%s><img src="%s" alt="%s" /></a>%s</figure></div></div></div>',
 					$ratio,
-					bravad_img( $img_id )['url'],
+					! empty( $link ) ? $link['url'] : bravad_img( $img_id )['url'],
 					bravad_img( $img_id )['title'],
+					! empty( $link ) ? ' target="' . $link['target'] . '"' : ' data-fancybox="images"',
+					! empty( $caption ) ? ' data-caption="' . $caption . '"' : '',
 					bravad_img( $img_id, $size )['url'],
-					bravad_img( $img_id )['alt']
+					bravad_img( $img_id )['alt'],
+					! empty( $caption ) ? '<figcaption>' . $caption . '</figcaption>' : ''
 				);
 			}
 

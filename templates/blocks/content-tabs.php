@@ -1,6 +1,6 @@
 <?php
 /**
- * Onglets template part
+ * Tabs template part
  *
  * @package Sushikiriz
  */

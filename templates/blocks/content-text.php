@@ -1,6 +1,6 @@
 <?php
 /**
- * Texte template part
+ * Text template part
  *
  * @package Sushikiriz
  */

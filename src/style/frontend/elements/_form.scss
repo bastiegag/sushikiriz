@@ -1,0 +1,637 @@
+$icon-color: svg-color(#{$gray});
+
+// Checkbox
+
+input[type=checkbox] {
+	height: auto;
+	width: auto;
+
+	&:checked,
+	&:not(:checked) {
+		left: -9999px;
+		position: absolute;
+	}
+
+	&:checked + label,
+	&:not(:checked) + label {
+		cursor: pointer;
+		margin: 1rem 1rem 1rem 0;
+		padding-left: 3rem;
+		position: relative;
+		vertical-align: middle;
+	}
+
+	&:checked + label:before,
+	&:not(:checked) + label:before {
+		background-color: $white;
+		border: $border-width solid $light;
+		content: "";
+		display: inline-block;
+		height: 2rem;
+		left: 0;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		vertical-align: middle;
+		width: 2rem;
+	}
+
+	&:checked + label:after,
+	&:not(:checked) + label:after {
+		background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 24 24' style='enable-background:new 0 0 24 24;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:#{$icon-color};%7D%0A%3C/style%3E%3Cpath class='st0' d='M14.9,12l6.5-6.5c0.8-0.8,0.8-2.1,0-2.9c-0.8-0.8-2.1-0.8-2.9,0L12,9.1L5.5,2.6c-0.8-0.8-2.1-0.8-2.9,0 c-0.8,0.8-0.8,2.1,0,2.9L9.1,12l-6.5,6.5c-0.8,0.8-0.8,2.1,0,2.9c0.8,0.8,2.1,0.8,2.9,0l6.5-6.5l6.5,6.5c0.4,0.4,0.9,0.6,1.4,0.6 s1.1-0.2,1.4-0.6c0.8-0.8,0.8-2.1,0-2.9L14.9,12z'/%3E%3C/svg%3E%0A");
+		content: "";
+		display: none;
+		height: 1.2rem;
+		left: 0.4rem;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: all 0.2s ease-out;
+		width: 1.2rem;
+	}
+
+	&:not(:checked) + label:after {
+		display: none;
+	}
+
+	&:checked + label:after {
+		display: block;
+	}
+
+	&:disabled + label {
+		cursor: not-allowed;
+	}
+}
+
+.ft-checkbox {
+	margin-right: 0 !important;
+}
+
+.checkbox-info {
+	background-color: $info;
+	border-radius: 100%;
+	color: $white;
+	cursor: help;
+	display: inline-block;
+	font-size: $font-size-sm;
+	height: 1.6rem;
+	line-height: 1.6rem;
+	margin-left: 0.5rem;
+	text-align: center;
+	vertical-align: middle;
+	width: 1.6rem;
+
+	.no-touchevents &:hover,
+	&:active {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+// Radio
+
+input[type=radio] {
+	height: auto;
+	width: auto;
+
+	&:checked,
+	&:not(:checked) {
+		left: -9999px;
+		position: absolute;
+	}
+
+	&:checked + label,
+	&:not(:checked) + label {
+		cursor: pointer;
+		display: block;
+		margin: 1rem 1rem 1rem 0;
+		padding-left: 3rem;
+		position: relative;
+		vertical-align: middle;
+	}
+
+	&:checked + label:before,
+	&:not(:checked) + label:before {
+		background-color: $white;
+		border-radius: 100%;
+		border: $border-width solid $light;
+		content: "";
+		display: inline-block;
+		height: 2rem;
+		left: 0;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		vertical-align: middle;
+		width: 2rem;
+	}
+
+	&:checked + label:after,
+	&:not(:checked) + label:after {
+		background-color: $gray;
+		border-radius: 100%;
+		content: "";
+		display: none;
+		height: 1.2rem;
+		left: 0.4rem;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: all 0.2s ease-out;
+		width: 1.2rem;
+	}
+
+	&:not(:checked) + label:after {
+		display: none;
+	}
+
+	&:checked + label:after {
+		display: block;
+	}
+
+	&:disabled + label {
+		cursor: not-allowed;
+	}
+}
+
+// Select
+
+.select {
+	@extend .form-control;
+	align-items: center;
+	display: flex;
+	position: relative;
+	transition: $transition-base;
+
+	&:after {
+		background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 24 24' style='enable-background:new 0 0 24 24;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:#{$icon-color};%7D%0A%3C/style%3E%3Cpath class='st0' d='M24,8c0,0.4-0.2,0.7-0.5,0.9l-10.8,8c-0.4,0.3-0.9,0.3-1.3,0L0.5,9C0,8.6-0.1,7.9,0.2,7.4 c0.4-0.5,1.1-0.6,1.6-0.3L12,14.5l10.2-7.4c0.5-0.4,1.2-0.3,1.6,0.3C23.9,7.6,24,7.8,24,8L24,8z'/%3E%3C/svg%3E");
+		content: "";
+		display: block;
+		height: 2rem;
+		position: absolute;
+		right: 1rem;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 2rem;
+	}
+
+	&.is-disabled {
+		background-color: $light;
+		opacity: 1
+	}
+
+	.ft-invalid & {
+		background-color: $white;
+		border-color: $danger;
+		color: $danger;
+
+		&:before {
+			border-top-color: $danger;
+		}
+	}
+
+	.ft-success & {
+		border-color: $success;
+	}
+
+	select {
+		border: none;
+		color: $body-color;
+		cursor: pointer;
+		height: 100%;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 3;
+
+		&:disabled {
+			cursor: not-allowed;
+		}
+	}
+}
+
+.select-choice {
+	display: inline-block;
+	font-size: 1em;
+	overflow: hidden;
+	padding-right: 3rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+}
+
+// Color
+
+.ft-color-holder {
+	position: relative;
+
+	a {
+		transition: all 00s;
+	}
+}
+
+.iris-picker .iris-strip .ui-slider-handle {
+	left: -8px !important;
+	right: -8px !important;
+}
+
+.ft-color {
+	height: 3.6rem;
+	position: absolute;
+	right: 0.2rem;
+	top: 0.2rem;
+	width: 3.6rem;
+}
+
+// Date
+
+.ui-datepicker-calendar {
+	text-align: center;
+
+	th {
+		padding: 0.5rem;
+	}
+
+	td {
+		padding: 0;
+
+		a {
+			padding: 0.5rem;
+
+			&:hover {
+				background-color: $primary;
+				color: $white;
+				text-decoration: none;
+			}
+		}
+	}
+
+	a {
+		color: $gray;
+		display: block;
+		text-align: center;
+	}
+
+	.ui-datepicker-current-day {
+		background-color: $light;
+	}
+
+	.ui-datepicker-today {
+		background-color: $lighter;
+	}
+}
+
+.ui-datepicker-header {
+	align-items: center;
+	background-color: $gray;
+	color: $white;
+	display: flex;
+	font-size: $font-size-sm;
+	justify-content: space-between;
+	padding: 0.5rem;
+	text-align: center;
+
+	a {
+		color: $white;
+		cursor: pointer;
+		display: block;
+		height: 0;
+		padding: 0 0.2rem;
+		text-indent: -99999rem;
+		width: 0;
+	}
+}
+
+.ui-datepicker-title {
+	text-transform: uppercase;
+	order: 1;
+}
+
+.ui-datepicker-prev {
+	border-top: 0.6rem solid transparent;
+	border-bottom: 0.6rem solid transparent; 
+	border-right: 0.6rem solid $white;
+	order: 0;
+}
+
+.ui-datepicker-next {
+	border-top: 0.6rem solid transparent;
+	border-bottom: 0.6rem solid transparent; 
+	border-left: 0.6rem solid $white;
+	order: 2;
+}
+
+// File
+
+.file {
+	display: flex;
+	position: relative;
+	width: 100%;
+
+	button {
+		display: table-cell;
+		vertical-align: middle;
+		border-radius: $border-radius 0 0 $border-radius;
+		flex-shrink: 0;
+	}
+
+	input[type=file] {
+		left: 0;
+		margin: 0;
+		opacity: 0;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+	}
+
+	&.is-disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+}
+
+.file-selected {
+	background-color: $white;
+	border-radius: 0 $border-radius $border-radius 0;
+	border: $border-width solid $input-border-color;
+	border-left: 0;
+	color: $body-color;
+	flex-shrink: 1;
+	font-size: $font-size-sm;
+	line-height: 3.6rem;
+	margin: 0;
+	max-width: 100%;
+	overflow: hidden;
+	padding: 0 4rem 0 1rem;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+	white-space: nowrap;
+	width: 100%;
+
+	.ft-invalid & {
+		background-color: $white;
+		border-color: $danger !important;
+		color: $danger !important;
+	}
+}
+
+.file-remove {
+	color: $body-color;
+	cursor: pointer;
+	display: none;
+	font-size: 2.4rem;
+	opacity: 0.5;
+	position: absolute !important;
+	right: 0.2rem;
+	text-align: center;
+	text-decoration: none;
+	top: 45%;
+	transform: translateY(-50%);
+	width: 4rem;
+
+	.is-active & {
+		display: block;
+	}
+
+	&:hover {
+		opacity: 1;
+		text-decoration: none;
+		color: $body-color;
+	}
+}
+
+.ft-field--file {
+	span.ft-invalid {
+		bottom: -0.7rem;
+	}
+
+	.file {
+		margin: 0;
+	}
+}
+
+.files {
+	margin: 4rem 0 -2rem 0;
+}
+
+.file-item {
+	position: relative;
+	text-align: center;
+	margin: 2rem 0;
+
+	&:hover {
+		fill: $primary;
+	}
+
+	a {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+	}
+
+	.icon {
+		margin-bottom: 1rem;
+		transition: $transition-base;
+	}
+
+	.h6 {
+		margin: 0;
+	}
+}
+
+// Number
+
+.number {
+	display: flex;
+	margin: 0 0 2rem 0;
+	position: relative;
+	width: 100%;
+	align-items: stretch;
+
+	input {
+		@extend .form-control;
+		appearance: none;
+		border-left: 0;
+		border-radius: 0;
+		border-right: 0;
+		margin: 0;
+
+		@include media-breakpoint-up(md) {
+			appearance: textfield;
+		}
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			appearance: none;
+			margin: 0;
+		}
+	}
+}
+
+.number-minus,
+.number-plus {
+	background-color: $gray;
+	border: 0;
+	color: $white;
+	cursor: pointer;
+	padding: 0;
+	width: 2rem;
+	flex: 0 0 2rem;
+
+	.no-touchevents &:hover {
+		background-color: $dark;
+	}
+
+	&:active,
+	&:focus,
+	.no-touchevents &:active:hover {
+		background-color: $dark;
+		color: $white;
+		fill: $white;
+	}
+
+	&:disabled,
+	.no-touchevents &:disabled:hover {
+		background-color: $gray;
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+}
+
+.number-plus {
+	border-radius: 0 $border-radius $border-radius 0;
+}
+
+.number-minus {
+	border-radius: $border-radius 0 0 $border-radius;
+}
+
+// Slider
+
+.ui-slider {
+	background-color: $light;
+	height: 0.3rem;
+	margin: $spacer 0.5rem;
+	position: relative;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+	background-color: $primary;
+	border-radius: 100%;
+	cursor: pointer;
+	display: block;
+	height: $spacer * 0.75;
+	margin-top: 0.1rem;
+	position: absolute;
+	transform: translateX(-50%) translateY(-50%);
+	width: $spacer * 0.75;
+}
+
+.ui-slider-range {
+	background-color: $primary;
+	height: 100%;
+	position: absolute;
+}
+
+.price_slider_amount {
+	text-align: center;
+
+	.button {
+		margin-bottom: $spacer;	
+	}
+}
+
+// button
+
+.btn {
+	align-items: center;
+	display: inline-flex;
+	justify-content: space-between;
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		background: rgba( $white, 0.1 );
+		content: "";
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		transition: $transition-base;
+		width: 100%;
+		z-index: 1;
+	}
+
+	&:hover:before {
+		opacity: 1;
+	}
+
+	&.loading:before {
+		background: url('../img/loading.svg') no-repeat center center;
+		content: "";
+		display: inline-block;
+		width: 2rem;
+		height: 2rem;
+		background-size: cover;
+		margin-right: 1rem;
+	}
+
+	&[disabled] {
+		cursor: not-allowed;
+	}
+}
+
+.btn-block {
+	text-align: center;
+	display: block;
+}
+
+.button {
+	@extend .btn, .btn-gray;
+
+	&.single_add_to_cart_button {
+		@extend .btn-primary;
+	}
+}
+
+.btn-icon-left svg {
+	margin-right: $spacer * 0.5;
+}
+
+.btn-icon-right svg {
+	margin-left: $spacer * 0.5;
+}
+
+@each $color, $value in $text-colors {
+	.btn-#{$color} {
+		color: #{$value};
+		fill: #{$value};
+
+		&:hover {
+			background-color: map-get( $theme-colors, #{$color} );
+			border-color: map-get( $theme-colors, #{$color} );
+			color: #{$value};
+			fill: #{$value};
+		}
+
+		&:not(:disabled):not(.disabled):active,
+		&:not(:disabled):not(.disabled).is-active {
+			background-color: map-get( $theme-colors, #{$color} );
+			border-color: map-get( $theme-colors, #{$color} );
+			color: #{$value};
+			fill: #{$value};
+		}
+	}
+}
+

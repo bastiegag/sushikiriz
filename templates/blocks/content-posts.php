@@ -1,6 +1,6 @@
 <?php
 /**
- * Portfolio template part
+ * Posts template part
  *
  * @package Sushikiriz
  */

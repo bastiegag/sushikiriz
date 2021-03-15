@@ -3,7 +3,7 @@
  * Bravad blocks
  *
  * @package Sushikiriz
- * @version 2.0.2
+ * @version 2.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -36,10 +36,12 @@ function bravad_acf_add_local_field_groups() {
 	    	$label = get_the_title( $post_id );
 
 			$options = array(
-				'portfolio'  => 'portfolio',
-				'equipe'     => 'team',
-				'post'       => 'post',
-				'google-map' => 'google-maps'
+				'portfolio'       => 'portfolio',
+				'equipe'          => 'team',
+				'post'            => 'post',
+				'google-map'      => 'google-maps',
+				'points-de-vente' => 'sale-points',
+				'points-de-vente' => 'google-maps'
 			);
 
 			if ( isset( $options[ sanitize_title( $label ) ] ) ) {

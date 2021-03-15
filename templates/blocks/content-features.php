@@ -1,6 +1,6 @@
 <?php
 /**
- * Caractéristiques template part
+ * Features template part
  *
  * @package Sushikiriz
  */

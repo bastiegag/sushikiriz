@@ -3,7 +3,7 @@
  * Bravad Meta Boxes Class
  *
  * @package Sushikiriz
- * @version 2.1.7
+ * @version 2.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -159,24 +159,32 @@ if ( ! class_exists( 'Bravad_Meta_boxes' ) ) :
 		 * Fonts field
 		 */
 		public function font_field( $field ) {
-			$google_api_key = 'AIzaSyB40cZLKU3FPd4SMyqTHXp4O17HiKiUYOc';
+			$google_key = bravad_option( 'google-maps' );
+
+			if ( empty( $google_key ) ) {
+				return;
+			}
+
+			if ( ! is_admin() ) {
+				return;
+			}
 
 			$ch = curl_init();
-			curl_setopt( $ch, CURLOPT_URL, 'https://www.googleapis.com/webfonts/v1/webfonts?key=' . $google_api_key );
+			curl_setopt( $ch, CURLOPT_URL, 'https://www.googleapis.com/webfonts/v1/webfonts?key=' . $google_key );
 			curl_setopt( $ch, CURLOPT_HTTPHEADER, array(
 			    'Content-Type: application/json'
 			) );
 			curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
 			curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );  
 
-			$list = json_decode( curl_exec( $ch ), true );
+			$list      = json_decode( curl_exec( $ch ), true );
 			$http_code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
 
 			curl_close( $ch );
 
-			if ( $http_code !== 200 ) {
-				exit( 'Error : Failed to get Google Fonts list' );
-			}
+			// if ( $http_code !== 200 ) {
+			// 	exit( 'Error : Failed to get Google Fonts list' );
+			// }
 
 			$fonts = array();
 

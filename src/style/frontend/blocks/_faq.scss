@@ -1,7 +1,11 @@
-.faq-item {
-	background: $white;
+.faq-list {
 	border-radius: $border-radius;
 	box-shadow: $box-shadow;
+	overflow: hidden;
+}
+
+.faq-item {
+	background: $white;
 	text-align: left;
 
 	.bg-white & {
@@ -20,6 +24,8 @@
 
 	&:hover {
 		background-color: $light;
+		color: $dark;
+		fill: $dark;
 		text-decoration: none;
 	}
 
@@ -37,7 +43,8 @@
 	}
 
 	.is-active & {
-		color: $primary;
+		color: $white;
+		background-color: $dark;
 
 		.icon {
 			transform: translateY(-50%) rotate(180deg);
@@ -46,7 +53,7 @@
 }
 
 .faq-answer {
-	border-top: $border-width solid $border-color;
+	border-bottom: $border-width solid $border-color;
 	color: $dark;
 	display: none;
 	padding: $spacer;

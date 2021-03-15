@@ -3,7 +3,7 @@
  * Bravad Class
  *
  * @package Sushikiriz
- * @version 2.0.3
+ * @version 2.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -38,9 +38,13 @@ if ( ! class_exists( 'Bravad' ) ) :
 			add_filter( 'upload_mimes', array( $this, 'add_file_types' ) );
 
 			add_action( 'template_include', array( $this, 'maintenance' ), 99 );
-			add_action( 'template_include', array( $this, 'icons' ), 99 );
 
 			add_action( 'admin_bar_menu', array( $this, 'icons_link' ), 999 );
+			add_action( 'template_include', array( $this, 'icons' ), 99 );
+
+			// add_action( 'admin_bar_menu', array( $this, 'help_link' ), 999 );
+			// add_action( 'template_include', array( $this, 'help' ), 99 );
+			
 			// add_action( 'wp_print_scripts', array( $this, 'get_enqueued_scripts' ) );
 		}
 
@@ -224,8 +228,7 @@ if ( ! class_exists( 'Bravad' ) ) :
 		public function scripts_styles() {
 			global $bravad_version;
 
-			$google_key     = bravad_option( 'google-maps' );
-			$google_version = '3.41';
+			$google_key = bravad_option( 'google-maps' );
 
 			/**
 			 * Styles
@@ -257,8 +260,8 @@ if ( ! class_exists( 'Bravad' ) ) :
 			/**
 			 * Scripts
 			 */
-			wp_enqueue_script( 'modernizr', get_theme_file_uri( '/assets/js/modernizr.js' ), array( 'jquery' ), '3.6.0', false );
-			wp_enqueue_script( 'bravad-google-maps', 'https://maps.googleapis.com/maps/api/js?v=' . $google_version . '&libraries=geometry,places&key=' . $google_key, array( 'jquery' ), $google_version, true );
+			// wp_enqueue_script( 'modernizr', get_theme_file_uri( '/assets/js/modernizr.js' ), array( 'jquery' ), '3.6.0', false );
+			wp_enqueue_script( 'bravad-google-maps', 'https://maps.googleapis.com/maps/api/js?v=weekly&libraries=geometry,places&key=' . $google_key, array( 'jquery' ), true );
 			wp_enqueue_script( 'imagesloaded', 'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd' . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) . '.js', array( 'jquery' ), '4.1.4', true );
 			wp_enqueue_script( 'swiper', 'https://unpkg.com/swiper/swiper-bundle' . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) . '.js', array( 'jquery' ), '6.3.2', true );
 			wp_enqueue_script( 'fancybox', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox' . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) . '.js', array( 'jquery' ), '3.5.7', true );
@@ -514,6 +517,49 @@ if ( ! class_exists( 'Bravad' ) ) :
 					'parent' => false,
 					'meta'   => array( 
 						'title'  => __( 'Voir les différentes icônes disponibles', 'bravad' ),
+						'target' => '_blank'
+					)
+				)
+			);
+
+			if ( isset( $links ) ) {
+				foreach ( $links as $link ) {
+					$wp_admin_bar->add_node( $link );
+				}	
+			}
+		}
+
+		/**
+		 * Help template
+		 */
+		public function help( $template ) {
+			if ( is_user_logged_in() && isset( $_GET['bravad'] ) && $_GET['bravad'] == 'aide' ) {
+				$help = locate_template( array( '/templates/help.php' ) );
+
+				if ( ! empty( $help ) ) {
+					return $help;
+
+				} else {
+					return $template;
+				}
+				
+			} else {
+				return $template;
+			}
+		}
+
+		/**
+		 * Help link
+		 */
+		public function help_link( $wp_admin_bar ) {
+			$links = array(
+				array(
+					'id'     => 'bravad-help',
+					'title'  => __( 'Aide', 'bravad' ),
+					'href'   => esc_url( home_url( '/' ) ) . '?bravad=aide',
+					'parent' => false,
+					'meta'   => array( 
+						'title'  => __( 'Voir l\'aide pour Wordpress', 'bravad' ),
 						'target' => '_blank'
 					)
 				)

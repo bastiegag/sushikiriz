@@ -2345,6 +2345,47 @@
         "description": "Équipe"
     },
     {
+        "key": "group_60391ce5341a4",
+        "title": "Information",
+        "fields": [
+            {
+                "key": "field_60391ceaa8185",
+                "label": "Adresse",
+                "name": "marker",
+                "type": "google_map",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "center_lat": "45.398306449514145",
+                "center_lng": "-71.93221728646337",
+                "zoom": "",
+                "height": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "points"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
         "key": "group_5f80985a3acf7",
         "title": "Média",
         "fields": [
@@ -2374,6 +2415,21 @@
                 "ajax": 0,
                 "return_format": "value",
                 "placeholder": ""
+            },
+            {
+                "key": "field_603901aaa5378",
+                "label": "Lien",
+                "name": "link",
+                "type": "link",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array"
             }
         ],
         "location": [
@@ -3072,6 +3128,120 @@
         "description": ""
     },
     {
+        "key": "group_60391dc2c2ef6",
+        "title": "Points de vente",
+        "fields": [
+            {
+                "key": "field_60391dc2cd194",
+                "label": "Contenu",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_60391dc2cd19b",
+                "label": "Titre",
+                "name": "title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_60391dc2cd1a0",
+                "label": "Texte",
+                "name": "text",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_60391dc2cd1a5",
+                "label": "Options",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_60391dc2cd1a9",
+                "label": "Options",
+                "name": "options",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "clone": [
+                    "group_5f805302666ff"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Block"
+    },
+    {
         "key": "group_5f807bbf10b3b",
         "title": "Portfolio",
         "fields": [
@@ -3442,13 +3612,15 @@
                     "Adamina": "Adamina",
                     "Advent+Pro:wght@100;200;300;400;500;600;700": "Advent Pro",
                     "Aguafina+Script": "Aguafina Script",
+                    "Akaya+Kanadaka": "Akaya Kanadaka",
+                    "Akaya+Telivigala": "Akaya Telivigala",
                     "Akronim": "Akronim",
                     "Aladin": "Aladin",
                     "Alata": "Alata",
                     "Alatsi": "Alatsi",
                     "Aldrich": "Aldrich",
                     "Alef:wght@400;700": "Alef",
-                    "Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900": "Alegreya",
+                    "Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900": "Alegreya",
                     "Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900": "Alegreya SC",
                     "Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900": "Alegreya Sans",
                     "Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900": "Alegreya Sans SC",
@@ -3525,6 +3697,7 @@
                     "Bahiana": "Bahiana",
                     "Bahianita": "Bahianita",
                     "Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700": "Bai Jamjuree",
+                    "Ballet": "Ballet",
                     "Baloo+2:wght@400;500;600;700;800": "Baloo 2",
                     "Baloo+Bhai+2:wght@400;500;600;700;800": "Baloo Bhai 2",
                     "Baloo+Bhaina+2:wght@400;500;600;700;800": "Baloo Bhaina 2",
@@ -3555,6 +3728,7 @@
                     "Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700": "Bellota",
                     "Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700": "Bellota Text",
                     "BenchNine:wght@300;400;700": "BenchNine",
+                    "Benne": "Benne",
                     "Bentham": "Bentham",
                     "Berkshire+Swash": "Berkshire Swash",
                     "Beth+Ellen": "Beth Ellen",
@@ -3585,6 +3759,7 @@
                     "Bowlby+One+SC": "Bowlby One SC",
                     "Brawler": "Brawler",
                     "Bree+Serif": "Bree Serif",
+                    "Brygada+1918:wght@400;500;600;700": "Brygada 1918",
                     "Bubblegum+Sans": "Bubblegum Sans",
                     "Bubbler+One": "Bubbler One",
                     "Buda": "Buda",
@@ -3713,6 +3888,7 @@
                     "Doppio+One": "Doppio One",
                     "Dorsa": "Dorsa",
                     "Dosis:wght@200;300;400;500;600;700;800": "Dosis",
+                    "DotGothic16": "DotGothic16",
                     "Dr+Sugiyama": "Dr Sugiyama",
                     "Duru+Sans": "Duru Sans",
                     "Dynalight": "Dynalight",
@@ -4094,6 +4270,7 @@
                     "Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400": "Neuton",
                     "New+Rocker": "New Rocker",
                     "News+Cycle:wght@400;700": "News Cycle",
+                    "Newsreader:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800": "Newsreader",
                     "Niconne": "Niconne",
                     "Niramit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700": "Niramit",
                     "Nixie+One": "Nixie One",
@@ -4129,6 +4306,7 @@
                     "Odibee+Sans": "Odibee Sans",
                     "Odor+Mean+Chey": "Odor Mean Chey",
                     "Offside": "Offside",
+                    "Oi": "Oi",
                     "Old+Standard+TT:ital,wght@0,400;0,700;1,400": "Old Standard TT",
                     "Oldenburg": "Oldenburg",
                     "Oleo+Script:wght@400;700": "Oleo Script",
@@ -4242,6 +4420,7 @@
                     "Redressed": "Redressed",
                     "Reem+Kufi": "Reem Kufi",
                     "Reenie+Beanie": "Reenie Beanie",
+                    "Reggae+One": "Reggae One",
                     "Revalia": "Revalia",
                     "Rhodium+Libre": "Rhodium Libre",
                     "Ribeye": "Ribeye",
@@ -4254,6 +4433,7 @@
                     "Roboto+Slab:wght@100;200;300;400;500;600;700;800;900": "Roboto Slab",
                     "Rochester": "Rochester",
                     "Rock+Salt": "Rock Salt",
+                    "RocknRoll+One": "RocknRoll One",
                     "Rokkitt:wght@100;200;300;400;500;600;700;800;900": "Rokkitt",
                     "Romanesco": "Romanesco",
                     "Ropa+Sans:ital,wght@0,400;1,400": "Ropa Sans",
@@ -4310,6 +4490,8 @@
                     "Share:ital,wght@0,400;0,700;1,400;1,700": "Share",
                     "Share+Tech": "Share Tech",
                     "Share+Tech+Mono": "Share Tech Mono",
+                    "Shippori+Mincho:wght@400;500;600;700;800": "Shippori Mincho",
+                    "Shippori+Mincho+B1:wght@400;500;600;700;800": "Shippori Mincho B1",
                     "Shojumaru": "Shojumaru",
                     "Short+Stack": "Short Stack",
                     "Shrikhand": "Shrikhand",
@@ -4358,6 +4540,7 @@
                     "Stalemate": "Stalemate",
                     "Stalinist+One": "Stalinist One",
                     "Stardos+Stencil:wght@400;700": "Stardos Stencil",
+                    "Stick": "Stick",
                     "Stint+Ultra+Condensed": "Stint Ultra Condensed",
                     "Stint+Ultra+Expanded": "Stint Ultra Expanded",
                     "Stoke:wght@300;400": "Stoke",
@@ -4404,6 +4587,7 @@
                     "Trispace:wght@100;200;300;400;500;600;700;800": "Trispace",
                     "Trocchi": "Trocchi",
                     "Trochut:ital,wght@0,400;0,700;1,400": "Trochut",
+                    "Truculenta:wght@100;200;300;400;500;600;700;800;900": "Truculenta",
                     "Trykker": "Trykker",
                     "Tulpen+One": "Tulpen One",
                     "Turret+Road:wght@200;300;400;500;700;800": "Turret Road",
@@ -5211,6 +5395,25 @@
                 "key": "field_5f804a58cb98e",
                 "label": "Équipe",
                 "name": "team",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_60391bc3b11bc",
+                "label": "Points de vente",
+                "name": "sale-points",
                 "type": "true_false",
                 "instructions": "",
                 "required": 0,

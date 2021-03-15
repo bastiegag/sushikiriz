@@ -1,6 +1,6 @@
 <?php
 /**
- * Formulaire template part
+ * Form template part
  *
  * @package Sushikiriz
  */

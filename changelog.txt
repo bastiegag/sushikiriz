@@ -4,6 +4,18 @@
 
 2.x.x - xx-xx-2021
 • Added custom colors
+• Added help
+
+2.2.0 - 03-15-2021
+• Added link to gallery image
+• Added sale points block
+• Fixed gallery
+• Fixed icons page
+• Fixed google fonts
+• Fixed variable product
+• Updated scss
+• Updated google map
+• Updated ACF fields json
 
 2.1.8 - 02-25-2021
 • Fixed related products, up-sells and cross-sells
