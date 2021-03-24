@@ -3,8 +3,11 @@
  */
 
 2.x.x - xx-xx-2021
-• Added custom colors
 • Added help
+
+2.2.1 - 03-24-2021
+• Fixed google fonts
+• Updated ACF fields json
 
 2.2.0 - 03-15-2021
 • Added link to gallery image

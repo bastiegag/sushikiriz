@@ -3660,7 +3660,7 @@
                     "Arbutus": "Arbutus",
                     "Arbutus+Slab": "Arbutus Slab",
                     "Architects+Daughter": "Architects Daughter",
-                    "Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700": "Archivo",
+                    "Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900": "Archivo",
                     "Archivo+Black": "Archivo Black",
                     "Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700": "Archivo Narrow",
                     "Aref+Ruqaa:wght@400;700": "Aref Ruqaa",
@@ -3759,7 +3759,7 @@
                     "Bowlby+One+SC": "Bowlby One SC",
                     "Brawler": "Brawler",
                     "Bree+Serif": "Bree Serif",
-                    "Brygada+1918:wght@400;500;600;700": "Brygada 1918",
+                    "Brygada+1918:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700": "Brygada 1918",
                     "Bubblegum+Sans": "Bubblegum Sans",
                     "Bubbler+One": "Bubbler One",
                     "Buda": "Buda",
@@ -3871,6 +3871,7 @@
                     "Dawning+of+a+New+Day": "Dawning of a New Day",
                     "Days+One": "Days One",
                     "Dekko": "Dekko",
+                    "Dela+Gothic+One": "Dela Gothic One",
                     "Delius": "Delius",
                     "Delius+Swash+Caps": "Delius Swash Caps",
                     "Delius+Unicase:wght@400;700": "Delius Unicase",
@@ -4100,6 +4101,7 @@
                     "Khula:wght@300;400;600;700;800": "Khula",
                     "Kirang+Haerang": "Kirang Haerang",
                     "Kite+One": "Kite One",
+                    "Kiwi+Maru:wght@300;400;500": "Kiwi Maru",
                     "Knewave": "Knewave",
                     "KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700": "KoHo",
                     "Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700": "Kodchasan",
@@ -4133,6 +4135,7 @@
                     "Lekton:ital,wght@0,400;0,700;1,400": "Lekton",
                     "Lemon": "Lemon",
                     "Lemonada:wght@300;400;500;600;700": "Lemonada",
+                    "Lexend:wght@100;300;400;500;600;700;800": "Lexend",
                     "Lexend+Deca": "Lexend Deca",
                     "Lexend+Exa": "Lexend Exa",
                     "Lexend+Giga": "Lexend Giga",
@@ -4269,6 +4272,7 @@
                     "Neucha": "Neucha",
                     "Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400": "Neuton",
                     "New+Rocker": "New Rocker",
+                    "New+Tegomin": "New Tegomin",
                     "News+Cycle:wght@400;700": "News Cycle",
                     "Newsreader:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800": "Newsreader",
                     "Niconne": "Niconne",
@@ -4583,6 +4587,7 @@
                     "Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700": "Titillium Web",
                     "Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900": "Tomorrow",
                     "Trade+Winds": "Trade Winds",
+                    "Train+One": "Train One",
                     "Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900": "Trirong",
                     "Trispace:wght@100;200;300;400;500;600;700;800": "Trispace",
                     "Trocchi": "Trocchi",
@@ -4873,234 +4878,6 @@
                 "max_height": "",
                 "max_size": "",
                 "mime_types": ""
-            },
-            {
-                "key": "field_5fc10fd6ac72f",
-                "label": "Couleurs (inutile)",
-                "name": "",
-                "type": "tab",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "placement": "left",
-                "endpoint": 0
-            },
-            {
-                "key": "field_5fc11048ac732",
-                "label": "Couleurs",
-                "name": "colors",
-                "type": "group",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "layout": "block",
-                "sub_fields": [
-                    {
-                        "key": "field_5fc1105fac733",
-                        "label": "Primaire",
-                        "name": "primary",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#ff784d"
-                    },
-                    {
-                        "key": "field_5fc11250239bc",
-                        "label": "Secondaire",
-                        "name": "secondary",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#b1d9db"
-                    },
-                    {
-                        "key": "field_5fc11355239c2",
-                        "label": "Arrière-plan",
-                        "name": "background",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#f0f2f2"
-                    },
-                    {
-                        "key": "field_5fc11388239c3",
-                        "label": "Texte",
-                        "name": "text",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#4e5354"
-                    },
-                    {
-                        "key": "field_5fc1126b239bd",
-                        "label": "Gris plus pâle",
-                        "name": "lighter",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#f0f2f2"
-                    },
-                    {
-                        "key": "field_5fc112bc239be",
-                        "label": "Gris pâle",
-                        "name": "light",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#dfe4e6"
-                    },
-                    {
-                        "key": "field_5fc112fe239bf",
-                        "label": "Gris",
-                        "name": "gray",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#8a9294"
-                    },
-                    {
-                        "key": "field_5fc1131f239c0",
-                        "label": "Gris foncé",
-                        "name": "dark",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#4e5354"
-                    },
-                    {
-                        "key": "field_5fc11336239c1",
-                        "label": "Gris plus foncé",
-                        "name": "darker",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#292c2d"
-                    },
-                    {
-                        "key": "field_5fdd021730a5a",
-                        "label": "Succès",
-                        "name": "success",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#77c18c"
-                    },
-                    {
-                        "key": "field_5fdd022630a5b",
-                        "label": "Information",
-                        "name": "info",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#58aadb"
-                    },
-                    {
-                        "key": "field_5fdd023930a5c",
-                        "label": "Attention",
-                        "name": "warning",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#ffbe4d"
-                    },
-                    {
-                        "key": "field_5fdd026530a5d",
-                        "label": "Danger",
-                        "name": "danger",
-                        "type": "color_picker",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "#ff784d"
-                    }
-                ]
             },
             {
                 "key": "field_5f804bea1e50f",

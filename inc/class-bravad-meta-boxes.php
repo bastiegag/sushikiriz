@@ -3,7 +3,7 @@
  * Bravad Meta Boxes Class
  *
  * @package Sushikiriz
- * @version 2.2.0
+ * @version 2.2.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -182,9 +182,9 @@ if ( ! class_exists( 'Bravad_Meta_boxes' ) ) :
 
 			curl_close( $ch );
 
-			// if ( $http_code !== 200 ) {
-			// 	exit( 'Error : Failed to get Google Fonts list' );
-			// }
+			if ( $http_code !== 200 ) {
+				exit( __( 'Erreur : Échec de l\'obtention de la liste des polices Google', 'bravad' ) );
+			}
 
 			$fonts = array();
 

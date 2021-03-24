@@ -3,7 +3,7 @@
  * Bravad engine room
  *
  * @package Sushikiriz
- * @version 2.2.0
+ * @version 2.2.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Assign the bravad version to a var
  */
 $theme          = wp_get_theme( 'bravad' );
-$bravad_version = '2.2.0';
+$bravad_version = '2.2.1';
 $bravad_theme   = 'Sushikiriz';
 
 $bravad = (object) array(
@@ -34,7 +34,6 @@ require 'inc/class-bravad-customize.php';
 require 'inc/class-bravad-meta-boxes.php';
 require 'inc/class-bravad-portfolio.php';
 require 'inc/class-bravad-points-sale.php';
-// require 'inc/class-bravad-color.php';
 require 'inc/class-bravad-comment.php';
 require 'inc/class-bravad-team.php';
 require 'inc/class-bravad-image.php';
