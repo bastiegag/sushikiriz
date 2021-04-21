@@ -3,7 +3,7 @@
  * Bravad template functions
  *
  * @package Sushikiriz
- * @version 2.2.0
+ * @version 2.2.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -312,7 +312,7 @@ if ( ! function_exists( 'bravad_page_link' ) ) {
 				get_permalink( get_option( 'page_for_posts' ) ),
 				get_the_title( get_option( 'page_for_posts' ) ),
 				$color == 'primary' ? 'white' : 'primary',
-				bravad_icon( 'arrow-left', 'xs' ),
+				bravad_icon( 'chevron-left', 'xs' ),
 				__( 'Retour au blogue', 'bravad' )
 			);
 		}
@@ -322,7 +322,7 @@ if ( ! function_exists( 'bravad_page_link' ) ) {
 				get_permalink( $portfolio ),
 				get_the_title( $portfolio ),
 				$color == 'primary' ? 'white' : 'primary',
-				bravad_icon( 'arrow-left', 'xs' ),
+				bravad_icon( 'chevron-left', 'xs' ),
 				__( 'Retour au portfolio', 'bravad' )
 			);
 		}
@@ -380,6 +380,7 @@ if ( ! function_exists( 'bravad_hero_options' ) ) {
 			'secondary'
 		);
 
+		$slideshow  = bravad_field( 'slideshow', $post_id );
 		$background = bravad_field( 'background', $post_id );
 
 		if ( is_404() ) {
@@ -398,7 +399,12 @@ if ( ! function_exists( 'bravad_hero_options' ) ) {
 			$classes[] = 'hero-fullscreen';
 		}
 
-		if ( $background['type'] !== 'none' && $background['color'] ) {
+		if ( $slideshow ) {
+			$background = bravad_field( 'hero-slideshow' );
+			$classes[]  = 'bg-' . $background['color'];
+			$classes[]  = in_array( $background['color'], $light ) ? 'text-dark' : 'text-white';
+
+		} else if ( $background['type'] !== 'none' && $background['color'] ) {
 			$classes[] = 'bg-' . $background['color'];
 			$classes[] = in_array( $background['color'], $light ) ? 'text-dark' : 'text-white';
 		}
@@ -427,18 +433,20 @@ if ( ! function_exists( 'bravad_block_options' ) ) {
 
 		$background = get_sub_field( 'background' );
 
-		$block_id = get_sub_field( 'block-id' );
-		$text     = get_sub_field( 'text-align' );
-		$vertical = get_sub_field( 'vertical-align' );
-		$padding  = get_sub_field( 'padding' );
+		$block_id    = get_sub_field( 'block-id' );
+		$block_class = get_sub_field( 'block-class' );
+		$text        = get_sub_field( 'text-align' );
 
 		$classes = array(
+			$block_class,
 			'block',
 			'block-' . $type,
-			'text-' . $text,
-			'align-' . $vertical,
-			'pad-' . $padding
+			'text-' . $text
 		);
+
+		if ( ! empty( $vertical ) ) {
+			$classes[] = 'align-' . $vertical;
+		}
 
 		if ( $background['type'] !== 'none' && $background['color'] ) {
 			$classes[] = 'bg-' . $background['color'];
@@ -554,40 +562,6 @@ if ( ! function_exists( 'bravad_background' ) ) {
 							$iframe
 						);
 					}
-				}
-				break;
-
-			case 'slideshow' :
-				if ( ! empty( $background['slideshow'] ) ) {
-					$output = sprintf( '<div class="%s-background js-background %s"%s>',
-						$type,
-						$background['parallax'] ? 'parallax' : 'normal',
-						$background['blend'] !== 'normal' ? ' style="mix-blend-mode: ' . $background['blend'] . ';"' : ''
-					);
-
-					$output .= sprintf( '<a href="#" class="swiper-direction swiper-prev js-prev">%s</a>',
-						bravad_icon( 'chevron-left' )
-					);
-
-					$output .= sprintf( '<a href="#" class="swiper-direction swiper-next js-next">%s</a>',
-						bravad_icon( 'chevron-right' )
-					);
-
-					$output .= sprintf( '<div class="%s-image">',
-						$background['parallax'] ? 'parallax' : 'normal'
-					);
-
-					$output .= sprintf( '<div class="swiper-container js-background-swiper"><div class="swiper-wrapper"%s>',
-						$background['opacity'] !== '100' ? ' style="opacity: ' . $background['opacity'] / 100 . ';"' : ''
-					);
-
-					foreach ( $background['slideshow'] as $img_id ) {
-						$output .= sprintf( '<div class="swiper-slide" style="background-image: url(%s);"></div>',
-							bravad_img( $img_id )['url']
-						);
-					}
-
-					$output .= '</div></div></div>';
 				}
 				break;
 		}
@@ -849,7 +823,14 @@ if ( ! function_exists( 'bravad_page_hero' ) ) {
 	 * Get page hero
 	 */
 	function bravad_page_hero() {
-		get_template_part( 'templates/parts/page', 'hero' );
+		$slideshow = get_field( 'slideshow' );
+
+		if ( $slideshow ) {
+			get_template_part( 'templates/parts/page', 'slideshow' );
+
+		} else {
+			get_template_part( 'templates/parts/page', 'hero' );
+		}
 	}
 }
 

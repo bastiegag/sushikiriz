@@ -5,6 +5,19 @@
 2.x.x - xx-xx-2021
 • Added help
 
+2.2.2 - 04-21-2021
+• Added link in block
+• Added slides per view in slideshow
+• Added class in block options
+• Changed textarea to WYSIWYG in FAQ block
+• Fixed slideshow in hero
+• Fixed google fonts
+• Fixed parallax
+• Removed slideshow from background
+• Removed vertical align from block options
+• Removed padding from block options
+• Updated ACF fields json
+
 2.2.1 - 03-24-2021
 • Fixed google fonts
 • Updated ACF fields json

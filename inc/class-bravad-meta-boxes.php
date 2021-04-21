@@ -3,7 +3,7 @@
  * Bravad Meta Boxes Class
  *
  * @package Sushikiriz
- * @version 2.2.1
+ * @version 2.2.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,7 +25,6 @@ if ( ! class_exists( 'Bravad_Meta_boxes' ) ) :
 			add_filter( 'acf/load_field/name=icon', array( $this, 'icon_field' ) );
 			add_filter( 'acf/load_field/name=post-type', array( $this, 'post_type_field' ) );
 			add_filter( 'acf/load_field/name=form', array( $this, 'form_field' ) );
-			add_filter( 'acf/load_field/name=font', array( $this, 'font_field' ) );
 			add_filter( 'acf/load_field/name=reusable-block', array( $this, 'reusable_field' ) );
 		}
 
@@ -151,101 +150,6 @@ if ( ! class_exists( 'Bravad_Meta_boxes' ) ) :
 			}
 
 			$field['choices'] = $forms;
-
-			return $field;
-		}
-
-		/**
-		 * Fonts field
-		 */
-		public function font_field( $field ) {
-			$google_key = bravad_option( 'google-maps' );
-
-			if ( empty( $google_key ) ) {
-				return;
-			}
-
-			if ( ! is_admin() ) {
-				return;
-			}
-
-			$ch = curl_init();
-			curl_setopt( $ch, CURLOPT_URL, 'https://www.googleapis.com/webfonts/v1/webfonts?key=' . $google_key );
-			curl_setopt( $ch, CURLOPT_HTTPHEADER, array(
-			    'Content-Type: application/json'
-			) );
-			curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-			curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );  
-
-			$list      = json_decode( curl_exec( $ch ), true );
-			$http_code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
-
-			curl_close( $ch );
-
-			if ( $http_code !== 200 ) {
-				exit( __( 'Erreur : Échec de l\'obtention de la liste des polices Google', 'bravad' ) );
-			}
-
-			$fonts = array();
-
-			foreach ( $list['items'] as $key => $font ) {
-				$args   = array();
-				$weight = array();
-				$value  = str_replace( ' ', '+', $font['family'] );
-
-				if ( in_array( 'italic', $font['variants'] ) ) {
-					$args[] = 'ital';
-				}
-
-				$variants = array();
-				$italic   = false;
-
-				foreach ( $font['variants'] as $key ) {
-					if ( $key !== 'regular' && $key !== 'italic' ) {
-						if ( strpos( $key, 'italic' ) !== false ) {
-							$key        = str_replace( 'italic', '', $key );
-							$variants[] = '1,' . $key;
-							$italic     = true;
-
-						} else {
-							$variants[] = '0,' . $key;
-						}
-
-					} else {
-						if ( $key == 'italic' ) {
-							$variants[] = '1,400';
-							$italic     = true;
-
-						} else {
-							$variants[] = '0,400';
-						}
-					}
-				}
-
-				if ( $italic ) {
-					$weight = $variants;
-
-				} else {
-					foreach ( $variants as $variant ) {
-						$weight[] = str_replace( '0,', '', $variant );
-					}
-				}
-
-				if ( ! empty( $weight ) && count( $weight ) > 1 ) {
-					sort( $weight );
-
-					$args[] = 'wght@' . implode( ';', $weight );
-				}
-
-				if ( ! empty( $args ) ) {
-					$fonts[ $value . ':' . implode( ',', $args ) ] = $font['family'];
-
-				} else {
-					$fonts[ $value ] = $font['family'];
-				}
-			}
-
-			$field['choices'] = $fonts;
 
 			return $field;
 		}

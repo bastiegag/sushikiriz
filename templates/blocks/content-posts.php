@@ -3,6 +3,7 @@
  * Posts template part
  *
  * @package Sushikiriz
+ * @version 2.2.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,6 +17,7 @@ $orderby        = get_sub_field( 'orderby' );
 $order          = get_sub_field( 'order' );
 $posts_per_page = get_sub_field( 'posts-per-page' );
 $link           = get_sub_field( 'link' );
+$bg             = get_sub_field( 'background' );
 
 if ( ! bravad_is( $post_type ) ) {
 	return;
@@ -80,6 +82,13 @@ if ( ! bravad_is( $post_type ) ) {
 				echo '</div></div>';
 			endif;
 			wp_reset_postdata();
+
+			echo ! empty( $link ) ? sprintf( '<div class="mt-4 text-center"><a href="%s" title="%s" class="btn btn-%s"%s>%2$s</a></div>',
+				$link['url'],
+				$link['title'],
+				$bg['color'] == 'primary' ? 'white' : 'primary',
+				! empty( $link['target'] ) ? ' target="_blank"' : ''
+			) : '';
 			?>
 			
 		</div><!-- .container-lg -->

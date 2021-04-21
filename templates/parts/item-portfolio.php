@@ -3,6 +3,7 @@
  * Portfolio template part
  *
  * @package Sushikiriz
+ * @version 2.2.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -34,7 +35,7 @@ $ratio  = 'wide';
 	echo sprintf( '<a href="%s" title="%s" class="title">%2$s %s</a>',
 		get_permalink(),
 		get_the_title(),
-		bravad_icon( 'arrow-right', 'xs' )
+		bravad_icon( 'chevron-right', 'xs' )
 	);
 	?>
 </div><!-- .portfolio-item -->

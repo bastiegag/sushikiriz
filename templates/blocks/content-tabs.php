@@ -3,6 +3,7 @@
  * Tabs template part
  *
  * @package Sushikiriz
+ * @version 2.2.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -42,10 +43,15 @@ $tabs  = get_sub_field( 'tabs' );
 
 				$i = 0;
 				foreach ( $tabs as $tab ) {
-					echo sprintf( '<div class="tabs-item%s" id="tab-%s">%s</div>',
+					echo sprintf( '<div class="tabs-item%s" id="tab-%s">%s%s</div>',
 						$i == 0 ? ' is-active' : '',
 						sanitize_title( $tab['title'] ),
-						! empty( $tab['text'] ) ? '<div class="row">' . bravad_multi_col( $tab['text'] ) . '</div>' : ''
+						! empty( $tab['text'] ) ? '<div class="row">' . bravad_multi_col( $tab['text'] ) . '</div>' : '',
+						! empty( $tab['link'] ) ? sprintf( '<div class="mt-3"><a href="%s" title="%s" class="btn btn-primary"%s>%2$s</a></div>',
+							$tab['link']['url'],
+							$tab['link']['title'],
+							! empty( $tab['link']['target'] ) ? ' target="_blank"' : ''
+						) : ''
 					);
 
 					$i++;

@@ -3,7 +3,7 @@
  * Bravad Class
  *
  * @package Sushikiriz
- * @version 2.2.0
+ * @version 2.2.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -231,36 +231,25 @@ if ( ! class_exists( 'Bravad' ) ) :
 			$google_key = bravad_option( 'google-maps' );
 
 			/**
+			 * Fonts
+			 */
+			$fonts = bravad_option( 'font' );
+			$fonts_url = ! empty( $fonts ) ? $fonts : 'https://fonts.googleapis.com/css2?family=Inter:wght@100;300;600&display=swap';
+
+			wp_enqueue_style( 'bravad-fonts', esc_url( $fonts_url ), array(), null );
+
+			/**
 			 * Styles
 			 */
 			wp_enqueue_style( 'theme', get_template_directory_uri() . '/style.css', array(), $bravad_version );
 			wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper/swiper-bundle' . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) . '.css', array(), '6.3.2' );
 			wp_enqueue_style( 'fancybox', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox' . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) . '.css', array(), '3.5.7' );
 			wp_enqueue_style( 'bravad', get_template_directory_uri() . '/assets/css/style' . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) . '.css', array(), $bravad_version );
-
-			/**
-			 * Fonts
-			 */
-			$font = bravad_option( 'font' );
-			$font = ! empty( $font ) ? str_replace( ' ', '+', $font ) : 'Inter:wght@100;300;600';
-
-			$font_name = explode( ':', $font )[0];
-			$font_name = str_replace( '+', ' ', $font_name );
-
-			$query_args = array(
-				'family'  => $font,
-				'display' => 'swap'
-			);
-
-			$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css2' );
-
-			wp_enqueue_style( 'bravad-fonts', esc_url( $fonts_url ), array(), null );
-			wp_add_inline_style( 'bravad-fonts', "body { font-family: '" . $font_name . "', sans-serif; }" );
 			
 			/**
 			 * Scripts
 			 */
-			// wp_enqueue_script( 'modernizr', get_theme_file_uri( '/assets/js/modernizr.js' ), array( 'jquery' ), '3.6.0', false );
+			wp_enqueue_script( 'modernizr', get_theme_file_uri( '/assets/js/modernizr.js' ), array( 'jquery' ), '3.6.0', false );
 			wp_enqueue_script( 'bravad-google-maps', 'https://maps.googleapis.com/maps/api/js?v=weekly&libraries=geometry,places&key=' . $google_key, array( 'jquery' ), true );
 			wp_enqueue_script( 'imagesloaded', 'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd' . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) . '.js', array( 'jquery' ), '4.1.4', true );
 			wp_enqueue_script( 'swiper', 'https://unpkg.com/swiper/swiper-bundle' . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) . '.js', array( 'jquery' ), '6.3.2', true );

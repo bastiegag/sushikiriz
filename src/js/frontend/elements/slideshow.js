@@ -1,6 +1,8 @@
 (function($) {
 
-    var slideshow = [];
+    var slideshow = [],
+        main_slideshow = '',
+        content_slideshow = '';
 
     $( window ).on( 'load', function() {
         if ( $( '.js-background-swiper' ).length ) {
@@ -31,14 +33,55 @@
             });
         }
 
+        if ( $( '.js-main-swiper' ).length ) {
+            main_slideshow = new Swiper( '.js-main-swiper', {
+                loop: true,
+                spaceBetween: 0,
+                slidesPerView: 1,
+                speed: 800,
+                autoplay: {
+                    delay: 5000,
+                }
+            });
+
+            $( '.js-main-swiper' ).closest( '.js-background' ).find( '.js-next' ).on( 'click', function() {
+                main_slideshow.slideNext();
+
+                return false;
+            });
+
+            $( '.js-main-swiper' ).closest( '.js-background' ).find( '.js-prev' ).on( 'click', function() {
+                main_slideshow.slidePrev();
+
+                return false;
+            });
+        }
+
+        if ( $( '.js-content-swiper' ).length ) {
+            content_slideshow = new Swiper( '.js-content-swiper', {
+                loop: true,
+                spaceBetween: 0,
+                slidesPerView: 1,
+                speed: 800,
+                parallax: true
+            });
+        }
+
+        if ( main_slideshow !== '' && content_slideshow !== '' ) {
+            main_slideshow.controller.control = content_slideshow;
+            content_slideshow.controller.control = main_slideshow;
+        }
+
         if ( $( '.js-slideshow-swiper' ).length ) {
             $( '.js-slideshow-swiper' ).each( function( i, obj ) {
-                var me = $( this );
+                var me   = $( this ),
+                    view = me.closest( '.js-slideshow' ).attr( 'data-view' );
 
                 slideshow[i] = new Swiper( obj, {
                     loop: true,
                     spaceBetween: 0,
-                    slidesPerView: 1,
+                    slidesPerView: view,
+                    autoHeight: true,
                     speed: 800,
                     autoplay: {
                         delay: 5000,

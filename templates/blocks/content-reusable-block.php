@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$clone  = get_sub_field( 'clone' );
+$clone  = get_sub_field( 'reusable-block' );
 $blocks = get_field( 'reusable', 'option' );
 
 if ( isset( $clone ) && $clone !== '' ) {

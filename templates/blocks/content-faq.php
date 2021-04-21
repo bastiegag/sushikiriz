@@ -28,10 +28,15 @@ $faq   = get_sub_field( 'questions' );
 				echo '<div class="row">';
 
 				foreach ( $faq as $item ) {
-					echo sprintf( '<div class="col-12"><div class="faq-item"><a href="#" class="faq-question js-faq">%s %s</a><div class="faq-answer"><p>%s</p></div></div></div>',
+					echo sprintf( '<div class="col-12"><div class="faq-item"><a href="#" class="faq-question js-faq">%s %s</a><div class="faq-answer">%s%s</div></div></div>',
 						$item['question'],
 						bravad_icon( 'chevron-down' ),
-						$item['answer']
+						$item['answer'],
+						! empty( $item['link'] ) ? sprintf( '<div class="mt-3"><a href="%s" title="%s" class="btn btn-primary"%s>%2$s</a></div>',
+							$item['link']['url'],
+							$item['link']['title'],
+							! empty( $item['link']['target'] ) ? ' target="_blank"' : ''
+						) : ''
 					);
 				}
 

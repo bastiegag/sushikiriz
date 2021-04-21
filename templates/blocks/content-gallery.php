@@ -3,7 +3,7 @@
  * Gallery template part
  *
  * @package Sushikiriz
- * @version 2.1.4
+ * @version 2.2.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -47,7 +47,7 @@ $order   = get_sub_field( 'order' );
 						shuffle( $photos );
 					}
 
-					echo '<div class="slideshow js-slideshow slideshow-' . $ratio . '"><div class="slideshow-wrapper">';
+					echo '<div class="slideshow js-slideshow" data-view="' . $columns . '"><div class="slideshow-wrapper">';
 
 					echo sprintf( '<a href="#" class="swiper-direction swiper-prev js-prev">%s</a>',
 						bravad_icon( 'chevron-left' )
@@ -60,8 +60,10 @@ $order   = get_sub_field( 'order' );
 					echo '<div class="swiper-container js-slideshow-swiper"><div class="swiper-wrapper">';
 
 					foreach ( $photos as $img_id ) {
-						echo sprintf( '<div class="swiper-slide" style="background-image: url(%s);"></div>',
-							bravad_img( $img_id, $size )['url']
+						echo sprintf( '<div class="swiper-slide"><div class="image image-%s"><img src="%s" alt="%s" /></div></div>',
+							$ratio,
+							bravad_img( $img_id, $size )['url'],
+							bravad_img( $img_id )['alt']
 						);
 					}
 
