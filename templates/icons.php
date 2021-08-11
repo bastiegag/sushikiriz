@@ -1,6 +1,6 @@
 <?php
 /**
- * Icon template
+ * Icons template
  * 
  * @package Sushikiriz
  * @version 2.2.0

@@ -65,7 +65,7 @@
 
                                 <?php video( 'page' ); ?>
                             </div>
-                        </div><!-- page -->
+                        </div><!-- .faq-item -->
 
                         <div class="faq-item">
                             <?php section( 'Ajouter un <strong>article de blogue</strong>', 2 ); ?>
@@ -80,7 +80,7 @@
 
                                 <?php video( 'post' ); ?>
                             </div>
-                        </div><!-- page -->
+                        </div><!-- .faq-item -->
 
                         <div class="faq-item">
                             <?php section( 'Ajouter une catégorie/étiquette', 3 ); ?>
@@ -93,7 +93,7 @@
 
                                 <?php video( 'category' ); ?>
                             </div>
-                        </div><!-- page -->
+                        </div><!-- .faq-item -->
 
                         <div class="faq-item">
                             <?php section( 'Entête de page', 4 ); ?>
@@ -108,9 +108,9 @@
 
                                 <?php video( 'header' ); ?>
                             </div>
-                        </div><!-- page -->
+                        </div><!-- .faq-item -->
 
-                    </div>
+                    </div><!-- .faq-list -->
 
                 </div><!-- .help-page -->
                 

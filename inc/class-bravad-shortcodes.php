@@ -91,6 +91,10 @@ if ( ! class_exists( 'Bravad_Shortcodes' ) ) :
 
 			$style = array();
 
+			if ( empty( $options['bg'] ) ) {
+				$options['bg'] = 'primary';
+			}
+
 			if ( substr( $options['bg'], 0, 1 ) == '#' ) {
 				$style[] = 'background-color: ' . $options['bg'] . ';';
 			}
@@ -167,7 +171,7 @@ if ( ! class_exists( 'Bravad_Shortcodes' ) ) :
 
 			$output = sprintf( '<div class="faq-item"><a href="#" class="faq-question js-faq">%s %s</a><div class="faq-answer"><p>%s</p></div></div>',
 				esc_html( $options['question'] ),
-				bravad_icon( 'arrow-down' ),
+				bravad_icon( 'chevron-down' ),
 				esc_html( $content )
 			);
 

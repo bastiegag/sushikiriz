@@ -34,22 +34,12 @@ if ( ! defined( 'ABSPATH' ) ) {
             $path = bravad_img( bravad_option( 'logo' ) )['url'];
             
             if ( isset( $path ) ) {
-                $ext  = explode( '.', basename( $path ) );
-
-                $args = array(
-                    'ssl' => array(
-                        'verify_peer'      => false,
-                        'verify_peer_name' => false
-                    )
-                );
-
-                $file = file_get_contents( $path, false, stream_context_create( $args ) );
                 $img  = sprintf( '<img src="%s" alt="%s" />', $path, get_bloginfo( 'name' ) );
 
                 echo sprintf( '<a href="%s" title="%s" class="site-logo">%s</a>',
                     esc_url( home_url( '/' ) ),
                     get_bloginfo( 'name' ),
-                    isset( $ext[1] ) && $ext[1] == 'svg' ? $file : $img
+                    $img
                 );
             }
 

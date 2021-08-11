@@ -388,7 +388,12 @@ if ( ! function_exists( 'bravad_hero_options' ) ) {
 		}
 
 		if ( ! isset( $background['type'] ) || $background['type'] == 'none' ) {
-			$background = bravad_field( 'background', get_option( 'page_on_front' ) );
+			if ( is_single() && get_post_type() == 'post' ) {
+				$background = bravad_field( 'background', get_option( 'page_for_posts' ) );
+
+			} else {
+				$background = bravad_field( 'background', get_option( 'page_on_front' ) );
+			}
 		}
 		
 		$content    = bravad_field( 'hero-content', $post_id );
@@ -414,7 +419,7 @@ if ( ! function_exists( 'bravad_hero_options' ) ) {
 		}
 
 		return sprintf( '%s',
-			implode( $classes, ' ' )
+			implode( ' ', $classes )
 		);
 	}
 }
@@ -484,6 +489,9 @@ if ( ! function_exists( 'bravad_background' ) ) {
 					if ( ! isset( $background['type'] ) || $background['type'] == 'none' ) {
 						$background = bravad_field( 'background', get_option( 'page_on_front' ) );
 					}
+
+				} else if ( is_single() && get_post_type() == 'post' ) {
+					$background = bravad_field( 'background', get_option( 'page_for_posts' ) );
 					
 				} else {
 					$background = bravad_field( 'background', get_option( 'page_on_front' ) );
@@ -753,7 +761,7 @@ if ( ! function_exists( 'bravad_post_meta' ) ) {
 		}
 		
 		return sprintf( '<ul class="post-meta"><li>%s</li><li>%s %s</li><li>%s</li>%s</ul>%s',
-			implode( ',', $list ),
+			implode( ', ', $list ),
 			__( 'Par', 'bravad' ),
 			get_the_author_meta( 'display_name', $post->post_author ),
 			get_the_time( 'j F Y' ),

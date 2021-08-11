@@ -14,7 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 $type     = str_replace( 'content-', '', basename( __FILE__, '.php' ) );
 $width    = get_sub_field( 'full-width' );
 $features = get_sub_field( 'features' );
-$link     = get_sub_field( 'link' );
 $bg       = get_sub_field( 'background' );
 ?>
 
@@ -44,6 +43,8 @@ $bg       = get_sub_field( 'background' );
 				echo '</div>';
 				echo '</div>';
 			}
+
+			$link = get_sub_field( 'link' );
 
 			echo ! empty( $link ) ? sprintf( '<div class="mt-4 text-center"><a href="%s" title="%s" class="btn btn-%s"%s>%2$s</a></div>',
 				$link['url'],

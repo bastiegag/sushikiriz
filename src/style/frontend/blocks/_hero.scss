@@ -94,6 +94,19 @@
 .hero-caption {
 	text-align: center;
 
+	.home & {
+		max-width: 75%;
+
+		@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+			max-width: 50%;
+		}
+
+		h1 {
+			width: 50rem;
+			max-width: 100%;
+		}
+	}
+
 	h1 {
 		margin-bottom: $spacer;
 	}

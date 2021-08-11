@@ -39,6 +39,9 @@ if ( ! class_exists( 'Bravad' ) ) :
 
 			add_action( 'template_include', array( $this, 'maintenance' ), 99 );
 
+			add_action( 'admin_bar_menu', array( $this, 'shortcodes_link' ), 999 );
+			add_action( 'template_include', array( $this, 'shortcodes' ), 99 );
+
 			add_action( 'admin_bar_menu', array( $this, 'icons_link' ), 999 );
 			add_action( 'template_include', array( $this, 'icons' ), 99 );
 
@@ -250,7 +253,11 @@ if ( ! class_exists( 'Bravad' ) ) :
 			 * Scripts
 			 */
 			wp_enqueue_script( 'modernizr', get_theme_file_uri( '/assets/js/modernizr.js' ), array( 'jquery' ), '3.6.0', false );
-			wp_enqueue_script( 'bravad-google-maps', 'https://maps.googleapis.com/maps/api/js?v=weekly&libraries=geometry,places&key=' . $google_key, array( 'jquery' ), true );
+
+			if ( ! empty( $google_key ) ) {
+				wp_enqueue_script( 'bravad-google-maps', 'https://maps.googleapis.com/maps/api/js?v=weekly&libraries=geometry,places&key=' . $google_key, array( 'jquery' ), true );
+			}
+			
 			wp_enqueue_script( 'imagesloaded', 'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd' . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) . '.js', array( 'jquery' ), '4.1.4', true );
 			wp_enqueue_script( 'swiper', 'https://unpkg.com/swiper/swiper-bundle' . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) . '.js', array( 'jquery' ), '6.3.2', true );
 			wp_enqueue_script( 'fancybox', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox' . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' ) . '.js', array( 'jquery' ), '3.5.7', true );
@@ -386,7 +393,7 @@ if ( ! class_exists( 'Bravad' ) ) :
 		 * Change WP logo on the admin
 		 */
 		public function login_logo() {
-			$logo = bravad_option( 'logo-alt' );
+			$logo = bravad_option( 'logo' );
 
 			if ( isset( $logo ) ) {
 				?>
@@ -396,7 +403,7 @@ if ( ! class_exists( 'Bravad' ) ) :
 			            background-size: auto 100% !important;
 			            padding-bottom: 0 !important;
 			            width: 320px !important;
-			            height: 120px !important;
+			            height: 60px !important;
 			        }
 			    </style>
 				<?php
@@ -447,10 +454,7 @@ if ( ! class_exists( 'Bravad' ) ) :
 		 */
 		public function add_file_types( $types ) {
 			if ( current_user_can( 'manage_options' ) ) {
-				$arr        = array();
-				$arr['svg'] = 'image/svg+xml';
-				
-				$types = array_merge( $types, $arr );
+				$types['svg'] = 'image/svg+xml';
 			}
 
 			return $types;
@@ -472,6 +476,49 @@ if ( ! class_exists( 'Bravad' ) ) :
 				
 			} else {
 				return $template;
+			}
+		}
+
+		/**
+		 * Shortcodes template
+		 */
+		public function shortcodes( $template ) {
+			if ( is_user_logged_in() && isset( $_GET['bravad'] ) && $_GET['bravad'] == 'shortcodes' ) {
+				$shortcodes = locate_template( array( '/templates/shortcodes.php' ) );
+
+				if ( ! empty( $shortcodes ) ) {
+					return $shortcodes;
+
+				} else {
+					return $template;
+				}
+				
+			} else {
+				return $template;
+			}
+		}
+
+		/**
+		 * Shortcodes link
+		 */
+		public function shortcodes_link( $wp_admin_bar ) {
+			$links = array(
+				array(
+					'id'     => 'bravad-shortcodes',
+					'title'  => __( 'Shortcodes', 'bravad' ),
+					'href'   => esc_url( home_url( '/' ) ) . '?bravad=shortcodes',
+					'parent' => false,
+					'meta'   => array( 
+						'title'  => __( 'Voir la liste de shortcodes', 'bravad' ),
+						'target' => '_blank'
+					)
+				)
+			);
+
+			if ( isset( $links ) ) {
+				foreach ( $links as $link ) {
+					$wp_admin_bar->add_node( $link );
+				}	
 			}
 		}
 

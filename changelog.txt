@@ -2,8 +2,19 @@
  * List of changes
  */
 
-2.x.x - xx-xx-2021
+2.3.0 - xx-xx-2021
 • Added help
+• Added cheatsheet
+
+2.2.3 - 06-16-2021
+• Added shortcodes list
+• Fixed features link
+• Fixed hero logo
+• Fixed blog hero background
+• Fixed blog categories listing
+• Fixed header logo
+• Updated gulpfile
+• Updated ACF fields json
 
 2.2.2 - 04-21-2021
 • Added link in block

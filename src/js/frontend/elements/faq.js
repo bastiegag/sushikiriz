@@ -6,11 +6,11 @@
 
             if ( me.is( '.is-active' ) ) {
                 me.removeClass( 'is-active' );
-                me.find( '.faq-answer' ).slideUp( 200 );
+                me.find( '> .faq-answer' ).slideUp( 200 );
 
             } else {
                 me.addClass( 'is-active' );
-                me.find( '.faq-answer' ).slideDown( 200 );
+                me.find( '> .faq-answer' ).slideDown( 200 );
             }
 
             if ( typeof pageScroll !== 'undefined' ) {
