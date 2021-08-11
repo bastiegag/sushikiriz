@@ -6,7 +6,7 @@
 • Added help
 • Added cheatsheet
 
-2.2.3 - 06-16-2021
+2.2.3 - 08-11-2021
 • Added shortcodes list
 • Fixed features link
 • Fixed hero logo
