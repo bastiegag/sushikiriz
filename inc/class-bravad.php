@@ -3,7 +3,7 @@
  * Bravad Class
  *
  * @package Sushikiriz
- * @version 2.2.2
+ * @version 2.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -59,6 +59,7 @@ if ( ! class_exists( 'Bravad' ) ) :
 			 * Disable Gutenburg
 			 */
 			add_filter( 'use_block_editor_for_post', '__return_false' );
+			remove_theme_support( 'widgets-block-editor' );
 
 			/*
 			 * Disable REST API link tag

@@ -49,11 +49,9 @@
             <div class="container">
 
                 <div class="help-page py-5">
-
                     <p class="h6">Général</p>
 
                     <div class="faq-list">
-
                         <div class="faq-item">
                             <?php section( 'Ajouter une <strong>page</strong>', 1 ); ?>
                             <div class="faq-answer">
@@ -83,7 +81,7 @@
                         </div><!-- .faq-item -->
 
                         <div class="faq-item">
-                            <?php section( 'Ajouter une catégorie/étiquette', 3 ); ?>
+                            <?php section( 'Ajouter une <strong>catégorie/étiquette</strong>', 3 ); ?>
                             <div class="faq-answer">
                                 <ol>
                                     <li>Dans l'onglet à gauche, cliquez sur -> <strong>Articles</strong> puis -> <strong>Catégories / Étiquettes</strong></li>
@@ -96,7 +94,7 @@
                         </div><!-- .faq-item -->
 
                         <div class="faq-item">
-                            <?php section( 'Entête de page', 4 ); ?>
+                            <?php section( 'Entête de <strong>page</strong>', 4 ); ?>
                             <div class="faq-answer">
                                 <ol>
                                     <li>Dans l'onglet à gauche, cliquez sur -> <strong>Page</strong> puis sélectionnez une page</li>
@@ -110,8 +108,52 @@
                             </div>
                         </div><!-- .faq-item -->
 
+                        <div class="faq-item">
+                            <?php section( 'Options du <strong>site</strong>', 5 ); ?>
+                            <div class="faq-answer">
+                                <ol>
+                                    <li>Dans l'onglet à gauche, cliquez sur -> <strong>Outils</strong> puis -> <strong>Options du site</strong></li>
+                                    <li>Dans l'onglet <strong>Contact</strong> de la page, vous pouvez définir un numéro de téléphone qui s'affichera dans l'entête du site sur mobile</li>
+                                    <li>Dans l'onglet <strong>Annonce</strong> de la page, vous pouvez choisir d'afficher ou non un message important dans l'entête du site</li>
+                                    <li>Ensuite vous inscrivez le message et vous pouvez aussi sélectionnez un lien</li>
+                                    <li>Dans l'onglet <strong>Réseaux sociaux</strong> de la page, c'est l'endroit ou vous pouvez entrer les différents liens des réseaux sociaux</li>
+                                </ol>
+
+                                <?php video( 'options' ); ?>
+                            </div>
+                        </div><!-- .faq-item -->
+
+                        <div class="faq-item">
+                            <?php section( 'Options de <strong>bloc</strong>', 6 ); ?>
+                            <div class="faq-answer">
+                                <ol>
+                                    <li>Dans l'onglet <strong>Optoins</strong> d'un bloc', vous pouvez définir un <strong>ID</strong> et des <strong>classes</strong> pour le bloc</li>
+                                    <li>Ensuite vous pouvez choisir d'afficher ou non le <strong>titre</strong> et de sélectionner la grosseur</li>
+                                    <li>Vous pouvez choisir l'<strong>arrière-plan</strong> du bloc, que ce soit une couleur, une image ou un vidéo</li>
+                                    <li>Pour finir, vous pouvez sélectionner l'<strong>alignement</strong> du texte et de choisir si le bloc prendra la pleine largeur du site ou non</li>
+                                </ol>
+
+                                <?php video( 'options-block' ); ?>
+                            </div>
+                        </div><!-- .faq-item -->
                     </div><!-- .faq-list -->
 
+                    <p class="h6 pt-5">Blocs</p>
+
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <?php section( 'Caractéristiques', 1 ); ?>
+                            <div class="faq-answer">
+                                <ol>
+                                    <li>Dans l'onglet à gauche, cliquez sur -> <strong>Pages</strong> puis -> <strong>Ajouter</strong></li>
+                                    <li>Inscrivez un titre de page</li>
+                                    <li>Pour finaliser, cliquez sur -> <strong>Publier</strong> en haut à droite</li>
+                                </ol>
+
+                                <?php video( 'page' ); ?>
+                            </div>
+                        </div><!-- .faq-item -->
+                    </div><!-- .faq-list -->
                 </div><!-- .help-page -->
                 
             </div><!-- .container -->

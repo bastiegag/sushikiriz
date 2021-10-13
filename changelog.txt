@@ -2,9 +2,8 @@
  * List of changes
  */
 
-2.3.0 - xx-xx-2021
-• Added help
-• Added cheatsheet
+2.3.0 - 10-12-2021
+• Fixed widgets
 
 2.2.3 - 08-11-2021
 • Added shortcodes list
