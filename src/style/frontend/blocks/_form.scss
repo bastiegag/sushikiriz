@@ -1,0 +1,64 @@
+label {
+	color: inherit;
+	font-size: $font-size-sm;
+	margin-bottom: $spacer * 0.25;
+}
+
+.form-control {
+	height: 4rem;
+}
+
+.ft-field {
+	margin-bottom: $spacer;
+
+	&.ft-invalid .form-control {
+		border-color: $danger;
+	}
+
+	&.ft-success .form-control {
+		border-color: $success;
+	}
+}
+
+span.ft-invalid {
+	color: $danger;
+	font-size: 1.3rem;
+}
+
+.ft-autofill {
+	font-size: $font-size-sm;
+}
+
+.ft-field--hidden {
+	margin: 0;
+}
+
+.input-text {
+	@extend .form-control;
+}
+
+.form-row {
+	display: block;
+	font-size: $font-size-sm;
+
+	em {
+		color: $gray;
+	}
+}
+
+legend {
+	font-size: $font-size-base;
+	text-transform: uppercase;
+}
+
+fieldset {
+	margin-top: $spacer;
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		margin-top: $spacer * 1.5;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		margin-top: $spacer * 2;
+	}
+}

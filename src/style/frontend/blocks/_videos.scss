@@ -1,0 +1,51 @@
+/* BLOCK VIDEOS */
+.videos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+.video{
+    height: auto;
+}
+.video-container{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+.video-player{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.v-100{
+    width: 100%;
+}
+.v-50{
+    width: 49%;
+}
+.v-33{
+    width: 32%;
+}
+@media (max-width: 1200px) {
+    .v-50{
+        width: 48%;
+    }
+    .v-33{
+        width: 31%;
+    }
+}
+@media (max-width: 768px) {
+    .v-50{
+        width: 100%;
+    }
+    .v-33{
+        width: 100%;
+    }
+}

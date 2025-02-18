@@ -1,0 +1,126 @@
+/**
+ * List of changes
+ */
+
+2.4.0 - 06-09-2023
+• Added AOS animations on blocks
+
+2.3.0 - xx-xx-2021
+• Added help
+• Added cheatsheet
+
+2.2.3 - 08-11-2021
+• Added shortcodes list
+• Fixed features link
+• Fixed hero logo
+• Fixed blog hero background
+• Fixed blog categories listing
+• Fixed header logo
+• Updated gulpfile
+• Updated ACF fields json
+
+2.2.2 - 04-21-2021
+• Added link in block
+• Added slides per view in slideshow
+• Added class in block options
+• Changed textarea to WYSIWYG in FAQ block
+• Fixed slideshow in hero
+• Fixed google fonts
+• Fixed parallax
+• Removed slideshow from background
+• Removed vertical align from block options
+• Removed padding from block options
+• Updated ACF fields json
+
+2.2.1 - 03-24-2021
+• Fixed google fonts
+• Updated ACF fields json
+
+2.2.0 - 03-15-2021
+• Added link to gallery image
+• Added sale points block
+• Fixed gallery
+• Fixed icons page
+• Fixed google fonts
+• Fixed variable product
+• Updated scss
+• Updated google map
+• Updated ACF fields json
+
+2.1.8 - 02-25-2021
+• Fixed related products, up-sells and cross-sells
+
+2.1.7 - 02-18-2021
+• Fixed tabs
+• Fixed footer flicker
+• Fixed file input
+• Fixed reusable blocks
+
+2.1.6 - 02-10-2021
+• Added files block
+• Removed logo fill
+• Fixed mobile nav
+• Fixed gulpfile
+• Updated ACF fields json
+
+2.1.5 - 01-26-2021
+• Fixed color select on the admin in english
+• Fixed package.json
+• Updated gulpfile
+• Updated ACF fields json
+• Removed jQuery migrate
+
+2.1.4 - 01-07-2021
+• Added slideshow
+• Added text/image block
+• Fixed PHP errors
+• Updated gulpfile
+• Updated ACF fields json
+
+2.1.3 - 12-18-2020
+• Added padding to block options
+• Fixed icons page
+• Fixed comments on single
+• Fixed phone shortcode
+• Fixed question padding
+• Updated ACF fields json
+
+2.1.2 - 12-08-2020
+• Fixed logo
+
+2.1.1 - 12-07-2020
+• Added blend mode
+• Added Clean CSS to gulpfile
+• Fixed logo
+• Fixed sourcemaps
+• Updated ACF fields json
+
+2.1.0 - 12-01-2020
+• Added button shortcode
+• Added slideshow block
+• Added logo on page hero
+• Updated block options
+• Updated ACF fields json
+• Updated language
+
+2.0.5 - 11-25-2020
+• Updated ACF fields json
+
+2.0.4 - 11-19-2020
+• Added ACF fields json
+
+2.0.3 - 11-18-2020
+• Fixed search in menu bar
+• Fixed PNG logo
+• Fixed mobile menu when woocommerce is activated
+• Fixed submenu
+
+2.0.2 - 11-12-2020
+• Fixed menu
+
+2.0.1 - 10-29-2020
+• Added Google Fonts selection on the admin
+• Updated reusable blocks to be on their own options page
+
+2.0.0 - 10-26-2020
+• Official release

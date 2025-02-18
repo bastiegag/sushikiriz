@@ -1,0 +1,181 @@
+.comments-list {
+	background: $white;
+	box-shadow: $box-shadow;
+	border-radius: $border-radius;
+	padding: 0 $spacer * 0.5;
+	color: $dark;
+
+	.row {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		padding: 0 $spacer * 0.75;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		padding: 0 $spacer;
+	}
+}
+
+.comment-reply {
+	padding: $spacer * 0.5 0;
+	margin-top: $spacer * 0.5;
+
+	.ft-autofill {
+		display: none;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		padding: $spacer * 0.75 0;
+		margin-top: $spacer * 0.75;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		padding: $spacer 0;
+		margin-top: $spacer;
+	}
+}
+
+.comment-unapproved > .media-body:before,
+.sub-comment-unapproved > .media-body:before {
+	background-color: $danger;
+	content: "";
+	display: block;
+	height: calc( 100% + 2rem );
+	left: -1rem;
+	opacity: 0.1;
+	position: absolute;
+	top: -1rem;
+	width: calc( 100% + 2rem );
+}
+
+.comment,
+.sub-comment {
+	font-size: $font-size-sm;
+
+	.media-body {
+		position: relative;
+	}
+
+	p {
+		color: $gray;
+
+		&:last-of-type {
+			margin: 0;
+		}
+	}
+
+	img {
+		border-radius: $border-radius;
+		margin-right: $spacer * 0.5;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		img {
+			margin-right: $spacer * 0.75;
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		img {
+			margin-right: $spacer;
+		}
+	}
+}
+
+.comment {
+	position: relative;
+
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -$spacer * 0.5;
+		left: -$spacer * 0.5;
+		right: -$spacer * 0.5;
+		height: $border-width;
+		background-color: $border-color;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		&:after {
+			bottom: -$spacer * 0.75;
+			left: -$spacer * 0.75;
+			right: -$spacer * 0.75;
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		&:after {
+			bottom: -$spacer;
+			left: -$spacer;
+			right: -$spacer;
+		}
+	}
+}
+
+.no-comment {
+	margin: 0;
+	position: relative;
+
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -$spacer * 0.5;
+		left: -$spacer * 0.5;
+		right: -$spacer * 0.5;
+		height: $border-width;
+		background-color: $border-color;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		&:after {
+			bottom: -$spacer * 0.75;
+			left: -$spacer * 0.75;
+			right: -$spacer * 0.75;
+		}
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		&:after {
+			bottom: -$spacer;
+			left: -$spacer;
+			right: -$spacer;
+		}
+	}
+}
+
+.sub-comment {
+	margin-left: -5.8rem;
+	padding-top: $spacer * 0.5;
+
+	img {
+		width: 4.8rem;
+		height: 4.8rem;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, md ) ) {
+		margin-left: -6.3rem;
+		padding-top: $spacer * 0.75;
+	}
+
+	@media ( min-width: map-get( $grid-breakpoints, lg ) ) {
+		margin-left: -6.8rem;
+		padding-top: $spacer;
+	}
+}
+
+.comment-author {
+	font-size: $font-size-base;
+	vertical-align: middle;
+}
+
+.comment-time {
+	margin: 0 $spacer * 0.5;
+	display: inline-block;
+	vertical-align: middle;
+	opacity: 0.5;
+}

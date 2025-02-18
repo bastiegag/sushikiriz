@@ -1,0 +1,53 @@
+.select2-results__option {
+	img {
+		display: inline-block;
+		height: 16px;
+		margin: -2px 10px 0 0;
+		vertical-align: middle;
+		width: 16px;
+	}
+	
+	span {
+		display: inline-block;
+		height: 20px;
+		margin-right: 10px;
+		vertical-align: middle;
+		width: 20px;
+
+		&.white {
+			background: $white;
+		}
+
+		&.black {
+			background: $black;
+		}
+
+		&.primary {
+			background: $primary;
+		}
+
+		&.secondary {
+			background: $secondary;
+		}
+
+		&.lighter {
+			background: $lighter;
+		}
+
+		&.light {
+			background: $light;
+		}
+
+		&.gray {
+			background: $gray;
+		}
+
+		&.dark {
+			background: $dark;
+		}
+
+		&.darker {
+			background: $darker;
+		}
+	}
+}

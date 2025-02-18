@@ -1,0 +1,67 @@
+.faq-list {
+	border-radius: $border-radius;
+	box-shadow: $box-shadow;
+	overflow: hidden;
+}
+
+.faq-item {
+	background: $white;
+	text-align: left;
+
+	.bg-white & {
+		background-color: $lighter;
+	}
+}
+
+.faq-question {
+	color: $dark;
+	display: block;
+	fill: $dark;
+	padding: $spacer * 0.75 $spacer;
+	padding-right: $spacer * 3;
+	position: relative;
+	text-decoration: none;
+
+	&:hover {
+		background-color: lighten($lighter, 2);
+		color: $dark;
+		fill: $dark;
+		text-decoration: none;
+	}
+
+	.icon {
+		background-color: $lighter;
+		border-radius: 100%;
+		height: 3rem;
+		padding: 0.75rem;
+		position: absolute;
+		right: 2rem;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: $transition-base;
+		width: 3rem;
+	}
+
+	.is-active & {
+		color: $white;
+		background-color: $dark;
+
+		.icon {
+			transform: translateY(-50%) rotate(180deg);
+		}
+	}
+}
+
+.faq-answer {
+	border-bottom: $border-width solid $border-color;
+	color: $dark;
+	display: none;
+	padding: $spacer;
+}
+
+@each $color, $value in $theme-colors {
+	.bg-#{$color} .faq-item .icon {
+		background-color: #{$value};
+		fill: map-get( $text-colors, #{$color} );
+	}
+}
